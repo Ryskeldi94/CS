@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
             this.NameTextBoxt = new System.Windows.Forms.TextBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
@@ -40,13 +41,13 @@
             this.ViewButoon = new System.Windows.Forms.Button();
             this.back = new System.Windows.Forms.Button();
             this.AddButton = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.NameTextBoxt);
             this.panel1.Controls.Add(this.textBox5);
             this.panel1.Controls.Add(this.textBox3);
@@ -58,12 +59,21 @@
             this.panel1.Controls.Add(this.ViewButoon);
             this.panel1.Controls.Add(this.back);
             this.panel1.Controls.Add(this.AddButton);
-            this.panel1.Controls.Add(this.textBox1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(591, 789);
             this.panel1.TabIndex = 2;
+            // 
+            // label2
+            // 
+            this.label2.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(73, 29);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(390, 70);
+            this.label2.TabIndex = 18;
+            this.label2.Text = "Добавление нового маталла:";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // NameTextBoxt
             // 
@@ -180,24 +190,13 @@
             this.AddButton.UseVisualStyleBackColor = false;
             this.AddButton.Click += new System.EventHandler(this.AddButton_Click);
             // 
-            // textBox1
-            // 
-            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.textBox1.CausesValidation = false;
-            this.textBox1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.textBox1.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(79, 26);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(358, 40);
-            this.textBox1.TabIndex = 0;
-            this.textBox1.Text = "Добавление нового маталла:\r\n";
-            // 
             // AddMetal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(591, 789);
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "AddMetal";
             this.Text = "AddMetal";
@@ -212,7 +211,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button back;
         private System.Windows.Forms.Button AddButton;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button ViewButoon;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.TextBox textBox2;
@@ -222,5 +220,6 @@
         private System.Windows.Forms.TextBox density;
         private System.Windows.Forms.TextBox NameTextBoxt;
         private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.Label label2;
     }
 }

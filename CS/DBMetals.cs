@@ -41,6 +41,17 @@ namespace Version2
             }
             this.KeyPreview = true;
             this.KeyDown += Singl_KeyDown;
+
+            textBox1.ReadOnly = true;
+            textBox1.TabStop = false;
+
+            comboBoxMetals.TabIndex = 0;
+            ShowItems.TabIndex = 1;
+            AddMetal.TabIndex = 2;
+            button1.TabIndex = 3;
+            button2.TabIndex = 4;
+            SelectThis.TabIndex = 5;
+            back.TabIndex = 6;
         }
 
         private void Singl_KeyDown(object sender, KeyEventArgs e)
@@ -51,73 +62,82 @@ namespace Version2
             }
         }
 
+
+
         private void ShowItems_Click(object sender, EventArgs e)
         {
-            // Получаем выбранный металл из ComboBox
-            string selectedMetalName = comboBoxMetals.SelectedItem.ToString();
-            Metal selectedMetal = metalsList.FirstOrDefault(m => m.Название == selectedMetalName);
-
-            if (selectedMetal != null)
+            if (comboBoxMetals.SelectedIndex == -1)
             {
-                // Отображаем свойства выбранного металла в MessageBox
-                MessageBox.Show(
-                                $"Плотность: {selectedMetal.Плотность} г/см³\n" +
-                                $"Удельная теплоемкость: {selectedMetal.УдельнаяТеплоемкость} Дж/г·°C\n" +
-                                $"Коэффициент теплопроводности: {selectedMetal.КоэффициентТеплопроводности} Вт/м·°C");
-
+                MessageBox.Show("Металл не выбран!");
             }
             else
             {
-                MessageBox.Show("Металл не выбран!");
+                // Получаем выбранный металл из ComboBox
+                string selectedMetalName = comboBoxMetals.SelectedItem.ToString();
+                Metal selectedMetal = metalsList.FirstOrDefault(m => m.Название == selectedMetalName);
+
+                if (selectedMetal != null)
+                {
+                    // Отображаем свойства выбранного металла в MessageBox
+                    MessageBox.Show(
+                                    $"Плотность: {selectedMetal.Плотность} г/см³\n" +
+                                    $"Удельная теплоемкость: {selectedMetal.УдельнаяТеплоемкость} Дж/г·°C\n" +
+                                    $"Коэффициент теплопроводности: {selectedMetal.КоэффициентТеплопроводности} Вт/м·°C");
+
+                }
+
+                else
+                {
+                    MessageBox.Show("Металл не выбран!");
+                }
             }
         }
 
         private void SelectThis_Click(object sender, EventArgs e)
         {
-            string selectedMetalName = comboBoxMetals.SelectedItem.ToString();
-            Metal selectedMetal = metalsList.FirstOrDefault(m => m.Название == selectedMetalName);
-
-            if (selectedMetal != null)
-            {
-                double density = selectedMetal.Плотность;
-                double specificHeat = selectedMetal.УдельнаяТеплоемкость;
-                double alpha = selectedMetal.КоэффициентТеплопроводности;
-
-                if (selectedMetod == 0)
-                {
-                    MessageBox.Show("Выберети метод тип решение");
-                }
-
-                if (selectedMetalName == null)
-                {
-                    MessageBox.Show("Выберети металл");
-                }
-
-                if (selectedMetod != 0 && selectedMetalName != null)
-                {
-                    if (Program.GlobalVariables.selectedMethod == true)
-                    {
-                        Singl form = new Singl(density, specificHeat, alpha); // Передача значений в конструктор
-                        form.Show();
-                        this.Hide();
-                    }
-                    if (Program.GlobalVariables.selectedMethod == false)
-                    {
-                        TDimen dimen = new TDimen(density, specificHeat, alpha);
-                        dimen.Show();
-                        this.Hide();
-                    }
-                }
-            }
-            else
+            if (comboBoxMetals.SelectedIndex == -1)
             {
                 MessageBox.Show("Металл не выбран!");
             }
+            else
+            {
+                string selectedMetalName = comboBoxMetals.SelectedItem.ToString();
+                Metal selectedMetal = metalsList.FirstOrDefault(m => m.Название == selectedMetalName);
+
+                if (selectedMetal != null)
+                {
+                    double density = selectedMetal.Плотность;
+                    double specificHeat = selectedMetal.УдельнаяТеплоемкость;
+                    double alpha = selectedMetal.КоэффициентТеплопроводности;
+
+                    if (selectedMetod == 0)
+                    {
+                        MessageBox.Show("Выберите метод типа решения");
+                    }
+                    else
+                    {
+                        if (Program.GlobalVariables.selectedMethod == true)
+                        {
+                            Singl form = new Singl(density, specificHeat, alpha); // Передача значений в конструктор
+                            form.Show();
+                            this.Hide();
+                        }
+                        else
+                        {
+                            TDimen dimen = new TDimen(density, specificHeat, alpha);
+                            dimen.Show();
+                            this.Hide();
+                        }
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Металл не найден в списке!");
+                }
+            }
+
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-        }
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -144,6 +164,16 @@ namespace Version2
             AddMetal Addmetal = new AddMetal();
             Addmetal.Show();
             this.Hide();
+        }
+
+        private void comboBoxMetals_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void DBMetals_Load(object sender, EventArgs e)
+        {
+
         }
     }
 

@@ -32,7 +32,7 @@
             this.back = new System.Windows.Forms.Button();
             this.highTempY = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.calculate = new System.Windows.Forms.Button();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -49,7 +49,7 @@
             this.panel1.Controls.Add(this.back);
             this.panel1.Controls.Add(this.highTempY);
             this.panel1.Controls.Add(this.textBox4);
-            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.calculate);
             this.panel1.Controls.Add(this.textBox3);
             this.panel1.Controls.Add(this.textBox2);
             this.panel1.Controls.Add(this.textBox1);
@@ -60,7 +60,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(834, 707);
+            this.panel1.Size = new System.Drawing.Size(813, 650);
             this.panel1.TabIndex = 3;
             // 
             // back
@@ -69,7 +69,7 @@
             this.back.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.back.Font = new System.Drawing.Font("Times New Roman", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.back.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.back.Location = new System.Drawing.Point(22, 648);
+            this.back.Location = new System.Drawing.Point(47, 547);
             this.back.Name = "back";
             this.back.Size = new System.Drawing.Size(160, 47);
             this.back.TabIndex = 8;
@@ -96,15 +96,16 @@
             this.textBox4.TabIndex = 9;
             this.textBox4.Text = "Введите местоположение с высокой температурой по y\r\n\r\n";
             // 
-            // button1
+            // calculate
             // 
-            this.button1.Location = new System.Drawing.Point(274, 542);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(307, 107);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            this.calculate.Font = new System.Drawing.Font("Times New Roman", 26F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.calculate.Location = new System.Drawing.Point(463, 519);
+            this.calculate.Name = "calculate";
+            this.calculate.Size = new System.Drawing.Size(307, 83);
+            this.calculate.TabIndex = 8;
+            this.calculate.Text = "Рассчитать";
+            this.calculate.UseVisualStyleBackColor = true;
+            this.calculate.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // textBox3
             // 
@@ -175,8 +176,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(834, 707);
+            this.ClientSize = new System.Drawing.Size(813, 650);
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "TDimen";
             this.Text = "TDimen";
             this.panel1.ResumeLayout(false);
@@ -188,7 +191,7 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button calculate;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox1;

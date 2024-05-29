@@ -22,6 +22,26 @@ namespace Version2
             density.KeyPress += density_KeyPress;
             this.KeyPreview = true;
             this.KeyDown += Singl_KeyDown;
+
+            textBox2.ReadOnly = true;
+            textBox2.TabStop = false;
+
+            textBox3.ReadOnly = true;
+            textBox3.TabStop = false;
+
+            textBox5.ReadOnly = true;
+            textBox5.TabStop = false;
+
+            textBox4.ReadOnly = true;
+            textBox4.TabStop = false;
+
+            NameTextBoxt.TabIndex = 0;
+            density.TabIndex = 1;
+            specificHeat.TabIndex = 2;
+            alpha.TabIndex = 3;
+            ViewButoon.TabIndex = 4;
+            AddButton.TabIndex = 5;
+            back.TabIndex = 6;
         }
 
         private void Singl_KeyDown(object sender, KeyEventArgs e)

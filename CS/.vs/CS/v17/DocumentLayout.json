@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\Ryskeldi\\Documents\\CS\\CS\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{329103F4-644B-4E71-95B2-B6B6B8B11FE7}|CS.csproj|c:\\users\\ryskeldi\\documents\\cs\\cs\\singl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{329103F4-644B-4E71-95B2-B6B6B8B11FE7}|CS.csproj|solutionrelative:singl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{329103F4-644B-4E71-95B2-B6B6B8B11FE7}|CS.csproj|c:\\users\\ryskeldi\\documents\\cs\\cs\\dbmetals.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{329103F4-644B-4E71-95B2-B6B6B8B11FE7}|CS.csproj|solutionrelative:dbmetals.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{329103F4-644B-4E71-95B2-B6B6B8B11FE7}|CS.csproj|c:\\users\\ryskeldi\\documents\\cs\\cs\\singl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{329103F4-644B-4E71-95B2-B6B6B8B11FE7}|CS.csproj|solutionrelative:singl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{329103F4-644B-4E71-95B2-B6B6B8B11FE7}|CS.csproj|c:\\users\\ryskeldi\\documents\\cs\\cs\\dbmetals.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{329103F4-644B-4E71-95B2-B6B6B8B11FE7}|CS.csproj|solutionrelative:dbmetals.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -23,26 +23,26 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Singl.cs",
-              "DocumentMoniker": "C:\\Users\\Ryskeldi\\Documents\\CS\\CS\\Singl.cs",
-              "RelativeDocumentMoniker": "Singl.cs",
-              "ToolTip": "C:\\Users\\Ryskeldi\\Documents\\CS\\CS\\Singl.cs",
-              "RelativeToolTip": "Singl.cs",
-              "ViewState": "AQIAADkAAAAAAAAAAAAiwEYAAAAAAAAA",
+              "Title": "DBMetals.cs",
+              "DocumentMoniker": "C:\\Users\\Ryskeldi\\Documents\\CS\\CS\\DBMetals.cs",
+              "RelativeDocumentMoniker": "DBMetals.cs",
+              "ToolTip": "C:\\Users\\Ryskeldi\\Documents\\CS\\CS\\DBMetals.cs",
+              "RelativeToolTip": "DBMetals.cs",
+              "ViewState": "AQIAADkAAAAAAAAAAAAYwEYAAAA1AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-29T09:27:40.706Z",
+              "WhenOpened": "2024-05-29T11:46:26.884Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Singl.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\Ryskeldi\\Documents\\CS\\CS\\Singl.cs",
-              "RelativeDocumentMoniker": "Singl.cs",
-              "ToolTip": "C:\\Users\\Ryskeldi\\Documents\\CS\\CS\\Singl.cs [Design]",
-              "RelativeToolTip": "Singl.cs [Design]",
+              "Title": "DBMetals.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Ryskeldi\\Documents\\CS\\CS\\DBMetals.cs",
+              "RelativeDocumentMoniker": "DBMetals.cs",
+              "ToolTip": "C:\\Users\\Ryskeldi\\Documents\\CS\\CS\\DBMetals.cs [Design]",
+              "RelativeToolTip": "DBMetals.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-29T09:27:38.883Z",
+              "WhenOpened": "2024-05-29T11:46:24.805Z",
               "EditorCaption": " [Design]"
             }
           ]

@@ -27,6 +27,25 @@ namespace Version2
 
             this.KeyPreview = true;
             this.KeyDown += Singl_KeyDown;
+
+            textBox1.ReadOnly = true;
+            textBox1.TabStop = false;
+
+            textBox2.ReadOnly = true;
+            textBox2.TabStop = false;
+
+            textBox3.ReadOnly = true;
+            textBox3.TabStop = false;
+
+            textBox4.ReadOnly = true;
+            textBox4.TabStop = false;
+
+            highTempX.TabIndex = 0;
+            highTempY.TabIndex = 1;
+            initialTemperature.TabIndex = 2;
+            ambientTemperature.TabIndex = 3;
+            calculate.TabIndex = 4;
+            
         }
 
         private void Singl_KeyDown(object sender, KeyEventArgs e)
@@ -75,6 +94,13 @@ namespace Version2
             if ((e.KeyChar == '.' || e.KeyChar == ',') && textBox.Text.Length < 2)
             {
                 e.Handled = true;
+            }
+
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                // Вызываем метод, обрабатывающий событие Click для кнопки calculate
+                button1_Click_1(sender, e);
+                e.Handled = true; // Предотвращение дальнейшей обработки нажатия клавиши Enter
             }
         }
 

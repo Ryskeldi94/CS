@@ -30,8 +30,8 @@
         {
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.back = new System.Windows.Forms.Button();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.back = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
@@ -58,6 +58,16 @@
             this.panel1.Size = new System.Drawing.Size(1098, 855);
             this.panel1.TabIndex = 3;
             // 
+            // dataGridView2
+            // 
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Location = new System.Drawing.Point(12, 72);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.RowHeadersWidth = 62;
+            this.dataGridView2.RowTemplate.Height = 28;
+            this.dataGridView2.Size = new System.Drawing.Size(1083, 762);
+            this.dataGridView2.TabIndex = 9;
+            // 
             // back
             // 
             this.back.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
@@ -72,16 +82,6 @@
             this.back.UseVisualStyleBackColor = false;
             this.back.Click += new System.EventHandler(this.back_Click);
             // 
-            // dataGridView2
-            // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(12, 72);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.RowHeadersWidth = 62;
-            this.dataGridView2.RowTemplate.Height = 28;
-            this.dataGridView2.Size = new System.Drawing.Size(1083, 762);
-            this.dataGridView2.TabIndex = 9;
-            // 
             // LoadData
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -89,6 +89,8 @@
             this.ClientSize = new System.Drawing.Size(1098, 855);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.dataGridView1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "LoadData";
             this.Text = "LoadData";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

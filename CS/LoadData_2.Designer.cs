@@ -168,6 +168,8 @@
             this.ClientSize = new System.Drawing.Size(877, 582);
             this.Controls.Add(this.back);
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "LoadData_2";
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
