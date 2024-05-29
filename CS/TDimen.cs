@@ -1,0 +1,197 @@
+﻿using System;
+using System.Diagnostics;
+using System.IO;
+using System.Linq;
+using System.Net.Sockets;
+using System.Windows.Forms;
+
+namespace Version2
+{
+    public partial class TDimen : Form
+    {
+        private double _density;
+        private double _specificHeat;
+        private double _thermalConductivity;
+
+        public TDimen(double density, double specificHeat, double thermalConductivity)
+        {
+            InitializeComponent();
+            initialTemperature.KeyPress += textBox1_KeyPress;
+            highTempX.KeyPress += textBox1_KeyPress;
+            ambientTemperature.KeyPress += textBox1_KeyPress;
+            highTempY.KeyPress += textBox1_KeyPress;
+
+            _density = density;
+            _specificHeat = specificHeat;
+            _thermalConductivity = thermalConductivity;
+
+            this.KeyPreview = true;
+            this.KeyDown += Singl_KeyDown;
+        }
+
+        private void Singl_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape)
+            {
+                back_Click(sender, e);
+            }
+        }
+
+        private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            System.Windows.Forms.TextBox textBox = sender as System.Windows.Forms.TextBox;
+
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && e.KeyChar != '.' && e.KeyChar != ',')
+            {
+                e.Handled = true;
+            }
+
+            if ((e.KeyChar == '.' || e.KeyChar == ',') && textBox.Text.Contains('.'))
+            {
+                e.Handled = true;
+            }
+
+            if (e.KeyChar == ',')
+            {
+                e.KeyChar = '.';
+            }
+
+            if ((textBox.SelectionStart == 0 || textBox.Text == "") && (e.KeyChar == '.' || e.KeyChar == ','))
+            {
+                textBox.Text = "0" + e.KeyChar;
+                textBox.SelectionStart = 2; 
+                e.Handled = true;
+            }
+
+            if (textBox.Text.Contains('.'))
+            {
+                int indexOfDot = textBox.Text.IndexOf('.');
+                if (textBox.Text.Length - indexOfDot > 2 && !char.IsControl(e.KeyChar))
+                {
+                    e.Handled = true;
+                }
+            }
+
+            if ((e.KeyChar == '.' || e.KeyChar == ',') && textBox.Text.Length < 2)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void back_Click(object sender, EventArgs e)
+        {
+            if (Program.GlobalVariables.selectedMethod == true)
+            {
+                DBMetals dbMetalsForm = new DBMetals();
+                dbMetalsForm.Show();
+                this.Close();
+            }
+            else if (Program.GlobalVariables.selectedMethod == false)
+            {
+                EnterPro enterProForm = new EnterPro();
+                enterProForm.Show();
+                this.Close();
+            }
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(highTempY.Text) || string.IsNullOrEmpty(initialTemperature.Text) || string.IsNullOrEmpty(highTempX.Text) || string.IsNullOrEmpty(ambientTemperature.Text))
+            {
+                MessageBox.Show("Пожалуйста, заполните все поля!");
+            }
+            else
+            {
+                double density = _density;
+                double specificHeat = _specificHeat;
+                double alpha = _thermalConductivity;
+
+                string highTempValueX = highTempX.Text;
+                string highTempValueY = highTempY.Text;
+                string ambientTemp = ambientTemperature.Text;
+                string initialTemp = initialTemperature.Text;
+
+                int highTempVX = int.Parse(highTempValueX);
+                int highTempVY = int.Parse(highTempValueY);
+                float ambientTempValue = float.Parse(ambientTemp);
+                float initialTempValue = float.Parse(initialTemp);
+
+                soket(density, specificHeat, alpha, highTempVX, highTempVY, initialTempValue, ambientTempValue);
+            }
+        }
+
+        static void soket(double density, double specificHeat, double alpha, int highTempX, int highTempY, float initialTemperature, float ambientTemperature)
+        {
+            ProcessStartInfo serverStartInfo = new ProcessStartInfo();
+            serverStartInfo.FileName = @"C:\Users\Ryskeldi\Documents\CS\Server for app\server.exe"; 
+            serverStartInfo.UseShellExecute = false;
+
+            Process serverProcess = Process.Start(serverStartInfo);
+
+            TcpClient client = new TcpClient("127.0.0.1", 54000); 
+
+            NetworkStream stream = client.GetStream();
+
+            int calculationType = 2;
+            int numSteps = 100, nx = 10, ny = 10;
+
+            if (highTempX < 1 || highTempX > nx)
+            {
+                highTempX = nx / 2;
+            }
+            else
+            {
+                highTempX--;
+            }
+
+            if (highTempY < 1 || highTempY > ny)
+            {
+                highTempY = ny / 2;
+            }
+            else
+            {
+                highTempY--;
+            }
+
+            stream.Write(BitConverter.GetBytes(calculationType), 0, sizeof(int));
+            stream.Write(BitConverter.GetBytes(density), 0, sizeof(double));
+            stream.Write(BitConverter.GetBytes(specificHeat), 0, sizeof(double));
+            stream.Write(BitConverter.GetBytes(alpha), 0, sizeof(double));
+            stream.Write(BitConverter.GetBytes(highTempX), 0, sizeof(int));
+            stream.Write(BitConverter.GetBytes(highTempY), 0, sizeof(int));
+            stream.Write(BitConverter.GetBytes(initialTemperature), 0, sizeof(float));
+            stream.Write(BitConverter.GetBytes(ambientTemperature), 0, sizeof(float));
+            stream.Write(BitConverter.GetBytes(numSteps), 0, sizeof(int));
+            stream.Write(BitConverter.GetBytes(nx), 0, sizeof(int));
+            stream.Write(BitConverter.GetBytes(ny), 0, sizeof(int));
+
+            byte[] buffer = new byte[sizeof(double) * nx * ny * numSteps];
+            int bytesRead = stream.Read(buffer, 0, buffer.Length);
+
+            if (bytesRead == sizeof(double) * nx * ny * numSteps)
+            {
+                double[] result = new double[nx * ny * numSteps];
+                for (int i = 0; i < nx * ny * numSteps; i++)
+                {
+                    result[i] = BitConverter.ToDouble(buffer, i * sizeof(double));
+                }
+
+                string filePath = "C:\\Users\\Ryskeldi\\Desktop\\out.txt";
+                using (StreamWriter writer = new StreamWriter(filePath))
+                {
+                    for (int i = 0; i < numSteps; i++)
+                    {
+                        writer.Write("Step " + (i + 1) + ": ");
+                        for (int j = 0; j < nx; j++)
+                        {
+                            writer.Write($"{result[i * nx + j]:F3} ");
+                        }
+                        writer.WriteLine();
+                    }
+                }
+            }
+            stream.Close();
+            client.Close();
+        }
+    }
+}
