@@ -7,13 +7,12 @@ namespace Version2
 {
     public partial class LoadData_2 : Form
     {
-        private double[,] data; // Storage for data in a 2D array for further use
+        private double[,] data; 
 
         public LoadData_2(double[] result)
         {
             InitializeComponent();
             PopulateData(result);
-            numericUpDown1.ValueChanged += numericUpDown1_ValueChanged; // Subscribe to event
             this.KeyPreview = true;
             this.KeyDown += Singl_KeyDown;
 
@@ -24,6 +23,7 @@ namespace Version2
             currentLine.MouseWheel += new MouseEventHandler(textBox_MouseWheel);
             previousLine.MouseWheel += new MouseEventHandler(textBox_MouseWheel);
         }
+
 
         private void Form_MouseWheel(object sender, MouseEventArgs e)
         {

@@ -81,11 +81,11 @@
     <Compile Include="LoadData_2.Designer.cs">
       <DependentUpon>LoadData_2.cs</DependentUpon>
     </Compile>
-    <Compile Include="LoadData.cs">
+    <Compile Include="LoadData_TD.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="LoadData.Designer.cs">
-      <DependentUpon>LoadData.cs</DependentUpon>
+    <Compile Include="LoadData_TD.Designer.cs">
+      <DependentUpon>LoadData_TD.cs</DependentUpon>
     </Compile>
     <Compile Include="TDimen.cs">
       <SubType>Form</SubType>
@@ -124,14 +124,14 @@
     <EmbeddedResource Include="LoadData_2.resx">
       <DependentUpon>LoadData_2.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="LoadData_TD.resx">
+      <DependentUpon>LoadData_TD.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="TDimen.resx">
       <DependentUpon>TDimen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Singl.resx">
       <DependentUpon>Singl.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="LoadData.resx">
-      <DependentUpon>LoadData.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainPage.resx">
       <DependentUpon>MainPage.cs</DependentUpon>

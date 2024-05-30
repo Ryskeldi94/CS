@@ -48,11 +48,10 @@ namespace Version2
             // 
             // numericUpDown1
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(251, 25);
+            this.numericUpDown1.Location = new System.Drawing.Point(225, 25);
             this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(555, 26);
-            this.numericUpDown1.TabIndex = 0;
-            this.numericUpDown1.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged);
+            this.numericUpDown1.Size = new System.Drawing.Size(621, 26);
+            this.numericUpDown1.TabIndex = 12;
             // 
             // dataGridView1
             // 

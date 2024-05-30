@@ -34,3 +34,4 @@ C:\Users\Ryskeldi\Documents\CS\CS\obj\Debug\CS.csproj.Up2Date
 C:\Users\Ryskeldi\Documents\CS\CS\obj\Debug\CS.exe
 C:\Users\Ryskeldi\Documents\CS\CS\obj\Debug\CS.pdb
 C:\Users\Ryskeldi\Documents\CS\CS\obj\Debug\Version2.LoadData_2.resources
+C:\Users\Ryskeldi\Documents\CS\CS\obj\Debug\Version2.LoadData_TD.resources

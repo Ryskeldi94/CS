@@ -1,53 +1,12 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\Ryskeldi\\Documents\\CS\\CS\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{329103F4-644B-4E71-95B2-B6B6B8B11FE7}|CS.csproj|C:\\Users\\Ryskeldi\\Documents\\CS\\CS\\loaddata_2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{329103F4-644B-4E71-95B2-B6B6B8B11FE7}|CS.csproj|solutionrelative:loaddata_2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{329103F4-644B-4E71-95B2-B6B6B8B11FE7}|CS.csproj|C:\\Users\\Ryskeldi\\Documents\\CS\\CS\\loaddata_2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{329103F4-644B-4E71-95B2-B6B6B8B11FE7}|CS.csproj|solutionrelative:loaddata_2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    }
-  ],
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": [
-        {
-          "DockedWidth": 232,
-          "SelectedChildIndex": 0,
-          "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "LoadData_2.cs",
-              "DocumentMoniker": "C:\\Users\\Ryskeldi\\Documents\\CS\\CS\\LoadData_2.cs",
-              "RelativeDocumentMoniker": "LoadData_2.cs",
-              "ToolTip": "C:\\Users\\Ryskeldi\\Documents\\CS\\CS\\LoadData_2.cs",
-              "RelativeToolTip": "LoadData_2.cs",
-              "ViewState": "AQIAAF8AAAAAAAAAAAAqwL4AAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-30T05:33:42.296Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "LoadData_2.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\Ryskeldi\\Documents\\CS\\CS\\LoadData_2.cs",
-              "RelativeDocumentMoniker": "LoadData_2.cs",
-              "ToolTip": "C:\\Users\\Ryskeldi\\Documents\\CS\\CS\\LoadData_2.cs [Design]",
-              "RelativeToolTip": "LoadData_2.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-30T05:33:40.499Z",
-              "EditorCaption": " [Design]"
-            }
-          ]
-        }
-      ]
+      "DocumentGroups": []
     }
   ]
 }

@@ -1,8 +1,10 @@
-﻿using System;
+﻿using CS;
+using System;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Net.Sockets;
+using System.Runtime.CompilerServices;
 using System.Windows.Forms;
 
 namespace Version2
@@ -146,7 +148,7 @@ namespace Version2
             }
         }
 
-        static void soket(double density, double specificHeat, double alpha, int highTempX, int highTempY, float initialTemperature, float ambientTemperature)
+        private void soket(double density, double specificHeat, double alpha, int highTempX, int highTempY, float initialTemperature, float ambientTemperature)
         {
             ProcessStartInfo serverStartInfo = new ProcessStartInfo();
             serverStartInfo.FileName = @"C:\Users\Ryskeldi\Documents\CS\Server for app\server.exe"; 
@@ -193,36 +195,23 @@ namespace Version2
 
             byte[] buffer = new byte[sizeof(double) * nx * ny * numSteps];
             int bytesRead = stream.Read(buffer, 0, buffer.Length);
+            double[] result = new double[nx * ny * numSteps];
 
             if (bytesRead == sizeof(double) * nx * ny * numSteps)
             {
-                double[] result = new double[nx * ny * numSteps];
+                
                 for (int i = 0; i < nx * ny * numSteps; i++)
                 {
                     result[i] = BitConverter.ToDouble(buffer, i * sizeof(double));
                 }
 
-                string filePath = "C:\\Users\\Ryskeldi\\Desktop\\out.txt";
-                using (StreamWriter writer = new StreamWriter(filePath))
-                {
-                    for (int step = 0; step < numSteps; step++)
-                    {
-                        writer.WriteLine("Step " + (step + 1) + ":");
-                        for (int y = 0; y < ny; y++)
-                        {
-                            for (int x = 0; x < nx; x++)
-                            {
-                                writer.Write($"{result[(step * nx * ny) + (y * nx) + x]:F3} ");
-                            }
-                            writer.WriteLine();
-                        }
-                        writer.WriteLine();
-                    }
-                }
             }
-
             stream.Close();
             client.Close();
+
+            LoadData_TD loadData_TD = new LoadData_TD(result, density, specificHeat, alpha);
+            loadData_TD.Show();
+            this.Hide();
         }
     }
 }
