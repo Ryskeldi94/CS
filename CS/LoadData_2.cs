@@ -1,16 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.IO; // Added for file operations
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using Version2;
+using System.IO;
 
-namespace CS
+namespace Version2
 {
     public partial class LoadData_2 : Form
     {
@@ -23,6 +16,30 @@ namespace CS
             numericUpDown1.ValueChanged += numericUpDown1_ValueChanged; // Subscribe to event
             this.KeyPreview = true;
             this.KeyDown += Singl_KeyDown;
+
+            // Add MouseWheel event handler for the entire form
+            this.MouseWheel += new MouseEventHandler(Form_MouseWheel);
+
+            nextLine.MouseWheel += new MouseEventHandler(textBox_MouseWheel);
+            currentLine.MouseWheel += new MouseEventHandler(textBox_MouseWheel);
+            previousLine.MouseWheel += new MouseEventHandler(textBox_MouseWheel);
+        }
+
+        private void Form_MouseWheel(object sender, MouseEventArgs e)
+        {
+            if (e.Delta > 0 && numericUpDown1.Value < numericUpDown1.Maximum) // Scroll up
+            {
+                numericUpDown1.Value++;
+            }
+            else if (e.Delta < 0 && numericUpDown1.Value > numericUpDown1.Minimum) // Scroll down
+            {
+                numericUpDown1.Value--;
+            }
+        }
+
+        private void textBox_MouseWheel(object sender, MouseEventArgs e)
+        {
+            Form_MouseWheel(sender, e); // Delegate to Form_MouseWheel for consistency
         }
 
         private void Singl_KeyDown(object sender, KeyEventArgs e)
@@ -40,11 +57,11 @@ namespace CS
 
             data = new double[numSteps, nx];
 
-            for (int i = 0; i < nx; i++)
+            for (int i = 0; i < numSteps; i++)
             {
-                for (int j = 0; j < numSteps; j++)
+                for (int j = 0; j < nx; j++)
                 {
-                    data[j, i] = result[i * numSteps + j];
+                    data[i, j] = result[i * nx + j];
                 }
             }
 
@@ -77,6 +94,8 @@ namespace CS
             // Additional settings for the DataGridView
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
             dataGridView1.ReadOnly = true;
+
+            numericUpDown1.Maximum = numSteps; // Set the maximum value for numericUpDown1
         }
 
         private void numericUpDown1_ValueChanged(object sender, EventArgs e)

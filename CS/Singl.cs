@@ -11,11 +11,11 @@ namespace Version2
     {
         private double _density;
         private double _specificHeat;
-        private double _thermalConductivity;
+        private double _alpha;
         int calculationType = 1;
         public int SelectedMethod { get; set; }
 
-        public Singl(double density, double specificHeat, double thermalConductivity)
+        public Singl(double density, double specificHeat, double alpha)
         {
             InitializeComponent();
             highTempLocation.KeyPress += textBox1_KeyPress;
@@ -24,7 +24,7 @@ namespace Version2
 
             _density = density;
             _specificHeat = specificHeat;
-            _thermalConductivity = thermalConductivity;
+            _alpha = alpha;
 
             textBox1.ReadOnly = true; 
             textBox1.TabStop = false; 
@@ -135,13 +135,13 @@ namespace Version2
             {
                 double density = _density;
                 double specificHeat = _specificHeat;
-                double alpha = _thermalConductivity;
+                double alpha = _alpha;
 
                 int highTempValue = int.Parse(highTempLocation.Text);
                 float ambientTempValue = float.Parse(ambientTemperature.Text);
                 float initialTempValue = float.Parse(initialTemperature.Text);
 
-                soket(density, specificHeat, alpha, highTempValue, ambientTempValue, initialTempValue);
+                soket(density, specificHeat, alpha, highTempValue, initialTempValue, ambientTempValue);
             }
         }
 
@@ -169,10 +169,7 @@ namespace Version2
             {
                 highTempLocation = nx / 2;
             }
-            else
-            {
-                highTempLocation--;
-            }
+            
 
             stream.Write(BitConverter.GetBytes(calculationType), 0, sizeof(int));
             stream.Write(BitConverter.GetBytes(density), 0, sizeof(double));

@@ -205,17 +205,22 @@ namespace Version2
                 string filePath = "C:\\Users\\Ryskeldi\\Desktop\\out.txt";
                 using (StreamWriter writer = new StreamWriter(filePath))
                 {
-                    for (int i = 0; i < numSteps; i++)
+                    for (int step = 0; step < numSteps; step++)
                     {
-                        writer.Write("Step " + (i + 1) + ": ");
-                        for (int j = 0; j < nx; j++)
+                        writer.WriteLine("Step " + (step + 1) + ":");
+                        for (int y = 0; y < ny; y++)
                         {
-                            writer.Write($"{result[i * nx + j]:F3} ");
+                            for (int x = 0; x < nx; x++)
+                            {
+                                writer.Write($"{result[(step * nx * ny) + (y * nx) + x]:F3} ");
+                            }
+                            writer.WriteLine();
                         }
                         writer.WriteLine();
                     }
                 }
             }
+
             stream.Close();
             client.Close();
         }

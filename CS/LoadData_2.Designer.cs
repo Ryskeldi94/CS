@@ -1,4 +1,6 @@
-﻿namespace CS
+﻿using System.Windows.Forms;
+
+namespace Version2
 {
     partial class LoadData_2
     {
