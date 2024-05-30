@@ -49,47 +49,40 @@ namespace Version2
         {
             TextBox textBox = sender as TextBox;
 
-            // Проверка, что введенный символ является цифрой, управляющим символом, точкой или запятой
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && e.KeyChar != '.' && e.KeyChar != ',')
             {
                 e.Handled = true;
-                return; // Выходим из метода, если символ не подходит
+                return; 
             }
 
-            // Проверка, что текст уже содержит точку и пытается ввести еще одну точку или запятую
             if ((e.KeyChar == '.' || e.KeyChar == ',') && textBox.Text.Contains('.'))
             {
                 e.Handled = true;
-                return; // Выходим из метода, если уже есть точка
+                return; 
             }
 
-            // Заменяем запятую на точку
             if (e.KeyChar == ',')
             {
                 e.KeyChar = '.';
             }
 
-            // Добавляем "0" перед точкой, если она вводится вначале
             if ((textBox.SelectionStart == 0 || textBox.Text == "") && e.KeyChar == '.')
             {
                 textBox.Text = "0.";
-                textBox.SelectionStart = 2; // Устанавливаем курсор после "0."
-                e.Handled = true;
-                return; // Выходим из метода, так как текст уже изменен
+                textBox.SelectionStart = 2; 
+                return; 
             }
 
-            // Проверка, что введено более двух знаков после точки
             if (textBox.Text.Contains('.'))
             {
                 int indexOfDot = textBox.Text.IndexOf('.');
                 if (textBox.Text.Length - indexOfDot > 3 && !char.IsControl(e.KeyChar))
                 {
                     e.Handled = true;
-                    return; // Выходим из метода, если больше двух знаков после точки
+                    return; 
                 }
             }
 
-            // Проверка, что вводится точка или запятая после одного символа, но текст еще слишком короткий
             if (e.KeyChar == '.' && textBox.Text.Length < 2 && textBox.SelectionStart != 0)
             {
                 e.Handled = false; 
@@ -100,9 +93,8 @@ namespace Version2
 
             if (e.KeyChar == (char)Keys.Enter)
             {
-                // Вызываем метод, обрабатывающий событие Click для кнопки calculate
                 button1_Click(sender, e);
-                e.Handled = true; // Предотвращение дальнейшей обработки нажатия клавиши Enter
+                e.Handled = true;
             }
         }
 

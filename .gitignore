@@ -151,6 +151,10 @@ coverage*.info
 *.coverage
 *.coveragexml
 
+# My files
+progress_log.txt
+error_log.txt
+
 # NCrunch
 _NCrunch_*
 .*crunch*.local.xml

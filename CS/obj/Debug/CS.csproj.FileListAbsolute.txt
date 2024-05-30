@@ -4,7 +4,6 @@ C:\Users\Ryskeldi\Documents\CS\CS\obj\Debug\Version2.DBMetals.resources
 C:\Users\Ryskeldi\Documents\CS\CS\obj\Debug\Version2.EnterPro.resources
 C:\Users\Ryskeldi\Documents\CS\CS\obj\Debug\Version2.TDimen.resources
 C:\Users\Ryskeldi\Documents\CS\CS\obj\Debug\Version2.Singl.resources
-C:\Users\Ryskeldi\Documents\CS\CS\obj\Debug\Version2.LoadData.resources
 C:\Users\Ryskeldi\Documents\CS\CS\obj\Debug\Version2.MainPage.resources
 C:\Users\Ryskeldi\Documents\CS\CS\obj\Debug\CS.Properties.Resources.resources
 C:\Users\Ryskeldi\Documents\CS\CS\obj\Debug\CS.csproj.GenerateResource.cache
