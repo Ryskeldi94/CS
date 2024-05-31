@@ -1,14 +1,7 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Ryskeldi\\Documents\\CS\\CS\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{8C3136C8-BBB2-4BE3-AFB7-C4A82CF59530}|..\\Server for app\\Server for app.vcxproj|C:\\Users\\Ryskeldi\\Documents\\CS\\Server for app\\server.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8C3136C8-BBB2-4BE3-AFB7-C4A82CF59530}|..\\Server for app\\Server for app.vcxproj|C:\\Users\\Ryskeldi\\Documents\\CS\\Server for app\\solveHeatEquation1D.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    }
-  ],
+  "WorkspaceRootPath": "C:\\My projects\\CS\\",
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -16,41 +9,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 232,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": -1,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "solveHeatEquation1D.cpp",
-              "DocumentMoniker": "C:\\Users\\Ryskeldi\\Documents\\CS\\Server for app\\solveHeatEquation1D.cpp",
-              "RelativeDocumentMoniker": "..\\Server for app\\solveHeatEquation1D.cpp",
-              "ToolTip": "C:\\Users\\Ryskeldi\\Documents\\CS\\Server for app\\solveHeatEquation1D.cpp",
-              "RelativeToolTip": "..\\Server for app\\solveHeatEquation1D.cpp",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAACkAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-05-30T13:27:27.169Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "server.cpp",
-              "DocumentMoniker": "C:\\Users\\Ryskeldi\\Documents\\CS\\Server for app\\server.cpp",
-              "RelativeDocumentMoniker": "..\\Server for app\\server.cpp",
-              "ToolTip": "C:\\Users\\Ryskeldi\\Documents\\CS\\Server for app\\server.cpp*",
-              "RelativeToolTip": "..\\Server for app\\server.cpp*",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAANAAAAAqAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-05-30T13:11:19.447Z",
-              "EditorCaption": ""
             }
           ]
         }

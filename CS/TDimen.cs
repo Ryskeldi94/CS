@@ -151,7 +151,7 @@ namespace Version2
         private void soket(double density, double specificHeat, double alpha, int highTempX, int highTempY, float initialTemperature, float ambientTemperature)
         {
             ProcessStartInfo serverStartInfo = new ProcessStartInfo();
-            serverStartInfo.FileName = @"C:\Users\Ryskeldi\Documents\CS\Server for app\server.exe"; 
+            serverStartInfo.FileName = @"C:\My projects\Server for app\server.exe";
             serverStartInfo.UseShellExecute = false;
 
             Process serverProcess = Process.Start(serverStartInfo);
@@ -162,24 +162,6 @@ namespace Version2
 
             int calculationType = 2;
             int numSteps = 100, nx = 10, ny = 10;
-
-            if (highTempX < 1 || highTempX > nx)
-            {
-                highTempX = nx / 2;
-            }
-            else
-            {
-                highTempX--;
-            }
-
-            if (highTempY < 1 || highTempY > ny)
-            {
-                highTempY = ny / 2;
-            }
-            else
-            {
-                highTempY--;
-            }
 
             stream.Write(BitConverter.GetBytes(calculationType), 0, sizeof(int));
             stream.Write(BitConverter.GetBytes(density), 0, sizeof(double));

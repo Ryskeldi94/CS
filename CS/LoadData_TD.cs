@@ -2,15 +2,30 @@
 using System.Text;
 using System.Windows.Forms;
 using System.IO;
+using System.Drawing;
 
 namespace Version2
 {
     public partial class LoadData_TD : Form
     {
-        private double[,,] data; 
+        private double[,,] data;
         private double _density;
         private double _specificHeat;
         private double _thermalConductivity;
+
+        private void InitializeTextBoxes()
+        {
+            for (int i = 1; i <= 10; i++)
+            {
+                TextBox textBox = (TextBox)this.Controls.Find("line" + i, true)[0];
+                textBox.BorderStyle = BorderStyle.FixedSingle;
+                textBox.BackColor = Color.Beige;
+                textBox.ForeColor = Color.DarkBlue;
+                textBox.Font = new Font("Courier New", 10, FontStyle.Bold);
+            }
+        }
+
+
         public LoadData_TD(double[] result, double density, double specificHeat, double thermalConductivity)
         {
             InitializeComponent();
@@ -38,6 +53,8 @@ namespace Version2
             line10.MouseWheel += new MouseEventHandler(textBox_MouseWheel);
 
             numericUpDown1.ValueChanged += numericUpDown1_ValueChanged; // Ensure this event handler is connected
+
+            InitializeTextBoxes(); // Initialize text boxes with styles
         }
 
         private void Form_MouseWheel(object sender, MouseEventArgs e)
@@ -86,9 +103,6 @@ namespace Version2
             numericUpDown1.Maximum = numSteps; // Set the maximum value for numericUpDown1
         }
 
-
-
-
         private void numericUpDown1_ValueChanged(object sender, EventArgs e)
         {
             int stepIndex = (int)numericUpDown1.Value - 1; // Get the step index
@@ -101,11 +115,12 @@ namespace Version2
             if (stepIndex >= 0 && stepIndex < data.GetLength(0))
             {
                 int nx = data.GetLength(1); // Get the size of the second dimension (number of rows)
-                                            // Display data for the selected step and corresponding rows in text boxes
+                // Display data for the selected step and corresponding rows in text boxes
                 for (int row = 0; row < nx; row++)
                 {
                     int textBoxIndex = row + 1; // Text box index starts from 1
                     TextBox textBox = (TextBox)this.Controls.Find("line" + textBoxIndex, true)[0];
+                    textBox.Font = new Font("Courier New", 10); // Use monospaced font for better alignment
                     textBox.Text = GetRowData(stepIndex, row);
                 }
             }
@@ -115,14 +130,12 @@ namespace Version2
             }
         }
 
-
-
-        private string GetRowData(int stepIndex, int rowIndex, string format = "F3", string delimiter = "|")
+        private string GetRowData(int stepIndex, int rowIndex, string format = "F3", string delimiter = " ")
         {
             StringBuilder rowData = new StringBuilder();
             for (int col = 0; col < data.GetLength(2); col++)
             {
-                rowData.Append(data[stepIndex, rowIndex, col].ToString(format)); // Format with specified decimal places
+                rowData.Append(data[stepIndex, rowIndex, col].ToString(format).PadLeft(7)); // Ensure fixed width
                 if (col < data.GetLength(2) - 1)
                 {
                     rowData.Append(delimiter);
@@ -130,7 +143,6 @@ namespace Version2
             }
             return rowData.ToString();
         }
-
 
         private void SaveDataToFile()
         {
@@ -162,9 +174,6 @@ namespace Version2
                 }
             }
         }
-
-
-
 
         private void saveButton_Click(object sender, EventArgs e)
         {

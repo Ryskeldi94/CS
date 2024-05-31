@@ -2,6 +2,8 @@
 using System.Text;
 using System.Windows.Forms;
 using System.IO;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using System.Drawing;
 
 namespace Version2
 {
@@ -15,6 +17,7 @@ namespace Version2
             PopulateData(result);
             this.KeyPreview = true;
             this.KeyDown += Singl_KeyDown;
+            numericUpDown1.ValueChanged += numericUpDown1_ValueChanged;
 
             // Add MouseWheel event handler for the entire form
             this.MouseWheel += new MouseEventHandler(Form_MouseWheel);
@@ -22,9 +25,42 @@ namespace Version2
             nextLine.MouseWheel += new MouseEventHandler(textBox_MouseWheel);
             currentLine.MouseWheel += new MouseEventHandler(textBox_MouseWheel);
             previousLine.MouseWheel += new MouseEventHandler(textBox_MouseWheel);
+
+            stylLines();
         }
 
+        private void stylLines()
+        {
+            nextLine.BorderStyle = BorderStyle.FixedSingle;
+            nextLine.BackColor = Color.Beige;
+            nextLine.ForeColor = Color.DarkBlue;
+            nextLine.Font = new Font("Courier New", 10, FontStyle.Bold);
 
+            previousLine.BorderStyle = BorderStyle.FixedSingle;
+            previousLine.BackColor = Color.Beige;
+            previousLine.ForeColor = Color.DarkBlue;
+            previousLine.Font = new Font("Courier New", 10, FontStyle.Bold);
+
+            currentLine.BorderStyle = BorderStyle.FixedSingle;
+            currentLine.BackColor = Color.Beige;
+            currentLine.ForeColor = Color.DarkBlue;
+            currentLine.Font = new Font("Courier New", 10, FontStyle.Bold);
+
+            N_nextLine.BorderStyle = BorderStyle.FixedSingle;
+            N_nextLine.BackColor = Color.Beige;
+            N_nextLine.ForeColor = Color.DarkBlue;
+            N_nextLine.Font = new Font("Courier New", 10, FontStyle.Bold);
+
+            N_previousLine.BorderStyle = BorderStyle.FixedSingle;
+            N_previousLine.BackColor = Color.Beige;
+            N_previousLine.ForeColor = Color.DarkBlue;
+            N_previousLine.Font = new Font("Courier New", 10, FontStyle.Bold);
+
+            N_currentLine.BorderStyle = BorderStyle.FixedSingle;
+            N_currentLine.BackColor = Color.Beige;
+            N_currentLine.ForeColor = Color.DarkBlue;
+            N_currentLine.Font = new Font("Courier New", 10, FontStyle.Bold);
+        }
         private void Form_MouseWheel(object sender, MouseEventArgs e)
         {
             if (e.Delta > 0 && numericUpDown1.Value < numericUpDown1.Maximum) // Scroll up

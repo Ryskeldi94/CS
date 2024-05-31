@@ -6,6 +6,7 @@ using System.Net.NetworkInformation;
 using System.Windows.Forms;
 using Newtonsoft.Json;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using static Version2.AddMetal;
 
 namespace Version2
 {
@@ -23,7 +24,7 @@ namespace Version2
             textBox1.ReadOnly = true;
 
             // Загрузка данных из JSON файла
-            string jsonFilePath = @"C:\Users\Ryskeldi\Documents\Clone\ParallelHeatFlowAnalysis\metals.json";
+            string jsonFilePath = @"C:\My projects\CS\metals.json"; 
             if (File.Exists(jsonFilePath))
             {
                 string jsonData = File.ReadAllText(jsonFilePath);

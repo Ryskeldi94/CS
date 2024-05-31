@@ -34,3 +34,39 @@ C:\Users\Ryskeldi\Documents\CS\CS\obj\Debug\CS.exe
 C:\Users\Ryskeldi\Documents\CS\CS\obj\Debug\CS.pdb
 C:\Users\Ryskeldi\Documents\CS\CS\obj\Debug\Version2.LoadData_2.resources
 C:\Users\Ryskeldi\Documents\CS\CS\obj\Debug\Version2.LoadData_TD.resources
+C:\My projects\CS\bin\Debug\CS.exe.config
+C:\My projects\CS\bin\Debug\CS.exe
+C:\My projects\CS\bin\Debug\CS.pdb
+C:\My projects\CS\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+C:\My projects\CS\bin\Debug\Newtonsoft.Json.dll
+C:\My projects\CS\bin\Debug\System.Memory.Data.dll
+C:\My projects\CS\bin\Debug\System.Memory.dll
+C:\My projects\CS\bin\Debug\System.Text.Encodings.Web.dll
+C:\My projects\CS\bin\Debug\System.Text.Json.dll
+C:\My projects\CS\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\My projects\CS\bin\Debug\System.Numerics.Vectors.dll
+C:\My projects\CS\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\My projects\CS\bin\Debug\System.Buffers.dll
+C:\My projects\CS\bin\Debug\System.ValueTuple.dll
+C:\My projects\CS\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+C:\My projects\CS\bin\Debug\Newtonsoft.Json.xml
+C:\My projects\CS\bin\Debug\System.Memory.Data.xml
+C:\My projects\CS\bin\Debug\System.Text.Encodings.Web.xml
+C:\My projects\CS\bin\Debug\System.Text.Json.xml
+C:\My projects\CS\obj\Debug\CS.csproj.AssemblyReference.cache
+C:\My projects\CS\obj\Debug\CS.csproj.SuggestedBindingRedirects.cache
+C:\My projects\CS\obj\Debug\CS.exe.config
+C:\My projects\CS\obj\Debug\Version2.AddMetal.resources
+C:\My projects\CS\obj\Debug\Version2.DBMetals.resources
+C:\My projects\CS\obj\Debug\Version2.EnterPro.resources
+C:\My projects\CS\obj\Debug\Version2.LoadData_2.resources
+C:\My projects\CS\obj\Debug\Version2.LoadData_TD.resources
+C:\My projects\CS\obj\Debug\Version2.TDimen.resources
+C:\My projects\CS\obj\Debug\Version2.Singl.resources
+C:\My projects\CS\obj\Debug\Version2.MainPage.resources
+C:\My projects\CS\obj\Debug\CS.Properties.Resources.resources
+C:\My projects\CS\obj\Debug\CS.csproj.GenerateResource.cache
+C:\My projects\CS\obj\Debug\CS.csproj.CoreCompileInputs.cache
+C:\My projects\CS\obj\Debug\CS.csproj.Up2Date
+C:\My projects\CS\obj\Debug\CS.exe
+C:\My projects\CS\obj\Debug\CS.pdb

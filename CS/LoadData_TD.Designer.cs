@@ -65,7 +65,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(917, 544);
+            this.panel1.Size = new System.Drawing.Size(1070, 516);
             this.panel1.TabIndex = 12;
             // 
             // line10
@@ -73,7 +73,7 @@
             this.line10.Location = new System.Drawing.Point(44, 425);
             this.line10.Name = "line10";
             this.line10.ReadOnly = true;
-            this.line10.Size = new System.Drawing.Size(802, 26);
+            this.line10.Size = new System.Drawing.Size(971, 26);
             this.line10.TabIndex = 20;
             // 
             // line9
@@ -81,7 +81,7 @@
             this.line9.Location = new System.Drawing.Point(44, 393);
             this.line9.Name = "line9";
             this.line9.ReadOnly = true;
-            this.line9.Size = new System.Drawing.Size(802, 26);
+            this.line9.Size = new System.Drawing.Size(971, 26);
             this.line9.TabIndex = 19;
             // 
             // line8
@@ -89,7 +89,7 @@
             this.line8.Location = new System.Drawing.Point(44, 361);
             this.line8.Name = "line8";
             this.line8.ReadOnly = true;
-            this.line8.Size = new System.Drawing.Size(802, 26);
+            this.line8.Size = new System.Drawing.Size(971, 26);
             this.line8.TabIndex = 18;
             // 
             // line7
@@ -97,7 +97,7 @@
             this.line7.Location = new System.Drawing.Point(44, 329);
             this.line7.Name = "line7";
             this.line7.ReadOnly = true;
-            this.line7.Size = new System.Drawing.Size(802, 26);
+            this.line7.Size = new System.Drawing.Size(971, 26);
             this.line7.TabIndex = 17;
             // 
             // line6
@@ -105,7 +105,7 @@
             this.line6.Location = new System.Drawing.Point(44, 297);
             this.line6.Name = "line6";
             this.line6.ReadOnly = true;
-            this.line6.Size = new System.Drawing.Size(802, 26);
+            this.line6.Size = new System.Drawing.Size(971, 26);
             this.line6.TabIndex = 16;
             // 
             // line5
@@ -113,7 +113,7 @@
             this.line5.Location = new System.Drawing.Point(44, 265);
             this.line5.Name = "line5";
             this.line5.ReadOnly = true;
-            this.line5.Size = new System.Drawing.Size(802, 26);
+            this.line5.Size = new System.Drawing.Size(971, 26);
             this.line5.TabIndex = 15;
             // 
             // line4
@@ -121,7 +121,7 @@
             this.line4.Location = new System.Drawing.Point(44, 233);
             this.line4.Name = "line4";
             this.line4.ReadOnly = true;
-            this.line4.Size = new System.Drawing.Size(802, 26);
+            this.line4.Size = new System.Drawing.Size(971, 26);
             this.line4.TabIndex = 14;
             // 
             // back_1
@@ -157,7 +157,7 @@
             this.line3.Location = new System.Drawing.Point(44, 201);
             this.line3.Name = "line3";
             this.line3.ReadOnly = true;
-            this.line3.Size = new System.Drawing.Size(802, 26);
+            this.line3.Size = new System.Drawing.Size(971, 26);
             this.line3.TabIndex = 4;
             // 
             // line2
@@ -165,7 +165,7 @@
             this.line2.Location = new System.Drawing.Point(44, 169);
             this.line2.Name = "line2";
             this.line2.ReadOnly = true;
-            this.line2.Size = new System.Drawing.Size(802, 26);
+            this.line2.Size = new System.Drawing.Size(971, 26);
             this.line2.TabIndex = 3;
             // 
             // line1
@@ -173,12 +173,12 @@
             this.line1.Location = new System.Drawing.Point(44, 137);
             this.line1.Name = "line1";
             this.line1.ReadOnly = true;
-            this.line1.Size = new System.Drawing.Size(802, 26);
+            this.line1.Size = new System.Drawing.Size(971, 26);
             this.line1.TabIndex = 2;
             // 
             // numericUpDown1
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(225, 33);
+            this.numericUpDown1.Location = new System.Drawing.Point(232, 25);
             this.numericUpDown1.Name = "numericUpDown1";
             this.numericUpDown1.Size = new System.Drawing.Size(621, 26);
             this.numericUpDown1.TabIndex = 12;
@@ -187,7 +187,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(917, 544);
+            this.ClientSize = new System.Drawing.Size(1070, 516);
             this.Controls.Add(this.panel1);
             this.MaximizeBox = false;
             this.Name = "LoadData_TD";

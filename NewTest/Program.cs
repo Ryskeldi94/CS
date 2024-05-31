@@ -17,7 +17,7 @@ class Program
             try
             {
                 ProcessStartInfo serverStartInfo = new ProcessStartInfo();
-                serverStartInfo.FileName = @"C:\Users\Ryskeldi\Documents\CS\Server for app\server.exe"; // Путь к исполняемому файлу сервера
+                serverStartInfo.FileName = @"C:\My projects\Server for app\server.exe"; // Путь к исполняемому файлу сервера
                 serverStartInfo.UseShellExecute = false;
 
                 // Создаем новый процесс для сервера

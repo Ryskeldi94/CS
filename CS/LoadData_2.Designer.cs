@@ -62,7 +62,7 @@ namespace Version2
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.RowTemplate.Height = 28;
-            this.dataGridView1.Size = new System.Drawing.Size(877, 332);
+            this.dataGridView1.Size = new System.Drawing.Size(988, 332);
             this.dataGridView1.TabIndex = 1;
             // 
             // back
@@ -94,7 +94,7 @@ namespace Version2
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(877, 582);
+            this.panel1.Size = new System.Drawing.Size(988, 582);
             this.panel1.TabIndex = 10;
             // 
             // saveButton
@@ -114,28 +114,28 @@ namespace Version2
             // N_nextLine
             // 
             this.N_nextLine.Cursor = System.Windows.Forms.Cursors.No;
-            this.N_nextLine.Location = new System.Drawing.Point(25, 201);
+            this.N_nextLine.Location = new System.Drawing.Point(44, 201);
             this.N_nextLine.Name = "N_nextLine";
             this.N_nextLine.ReadOnly = true;
-            this.N_nextLine.Size = new System.Drawing.Size(87, 26);
+            this.N_nextLine.Size = new System.Drawing.Size(88, 26);
             this.N_nextLine.TabIndex = 7;
             // 
             // N_currentLine
             // 
             this.N_currentLine.Cursor = System.Windows.Forms.Cursors.No;
-            this.N_currentLine.Location = new System.Drawing.Point(25, 169);
+            this.N_currentLine.Location = new System.Drawing.Point(44, 169);
             this.N_currentLine.Name = "N_currentLine";
             this.N_currentLine.ReadOnly = true;
-            this.N_currentLine.Size = new System.Drawing.Size(87, 26);
+            this.N_currentLine.Size = new System.Drawing.Size(88, 26);
             this.N_currentLine.TabIndex = 6;
             // 
             // N_previousLine
             // 
             this.N_previousLine.Cursor = System.Windows.Forms.Cursors.No;
-            this.N_previousLine.Location = new System.Drawing.Point(25, 137);
+            this.N_previousLine.Location = new System.Drawing.Point(44, 137);
             this.N_previousLine.Name = "N_previousLine";
             this.N_previousLine.ReadOnly = true;
-            this.N_previousLine.Size = new System.Drawing.Size(87, 26);
+            this.N_previousLine.Size = new System.Drawing.Size(88, 26);
             this.N_previousLine.TabIndex = 5;
             // 
             // nextLine
@@ -143,7 +143,7 @@ namespace Version2
             this.nextLine.Location = new System.Drawing.Point(138, 201);
             this.nextLine.Name = "nextLine";
             this.nextLine.ReadOnly = true;
-            this.nextLine.Size = new System.Drawing.Size(708, 26);
+            this.nextLine.Size = new System.Drawing.Size(817, 26);
             this.nextLine.TabIndex = 4;
             // 
             // currentLine
@@ -151,7 +151,7 @@ namespace Version2
             this.currentLine.Location = new System.Drawing.Point(138, 169);
             this.currentLine.Name = "currentLine";
             this.currentLine.ReadOnly = true;
-            this.currentLine.Size = new System.Drawing.Size(708, 26);
+            this.currentLine.Size = new System.Drawing.Size(817, 26);
             this.currentLine.TabIndex = 3;
             // 
             // previousLine
@@ -159,14 +159,14 @@ namespace Version2
             this.previousLine.Location = new System.Drawing.Point(138, 137);
             this.previousLine.Name = "previousLine";
             this.previousLine.ReadOnly = true;
-            this.previousLine.Size = new System.Drawing.Size(708, 26);
+            this.previousLine.Size = new System.Drawing.Size(817, 26);
             this.previousLine.TabIndex = 2;
             // 
             // LoadData_2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(877, 582);
+            this.ClientSize = new System.Drawing.Size(988, 582);
             this.Controls.Add(this.back);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;

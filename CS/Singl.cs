@@ -154,7 +154,7 @@ namespace Version2
         {
             ProcessStartInfo serverStartInfo = new ProcessStartInfo
             {
-                FileName = @"C:\Users\Ryskeldi\Documents\CS\Server for app\server.exe", 
+                FileName = @"C:\My projects\Server for app\server.exe", 
                 UseShellExecute = false
             };
 
@@ -164,12 +164,6 @@ namespace Version2
 
             NetworkStream stream = client.GetStream();
             int numSteps = 100, nx = 10;
-
-            if (highTempLocation < 1 || highTempLocation > nx)
-            {
-                highTempLocation = nx / 2;
-            }
-            
 
             stream.Write(BitConverter.GetBytes(calculationType), 0, sizeof(int));
             stream.Write(BitConverter.GetBytes(density), 0, sizeof(double));

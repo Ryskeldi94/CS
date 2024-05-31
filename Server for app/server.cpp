@@ -12,7 +12,7 @@
 #pragma comment(lib, "ws2_32.lib")
 
 void logError(const std::string& errorMessage) {
-    std::ofstream errorFile("C:\\Users\\Ryskeldi\\Documents\\CS\\Server for app\\error_log.txt", std::ios::app);
+    std::ofstream errorFile("C:/My projects/Server for app/error_log.txt", std::ios::app);
     if (errorFile.is_open()) {
         time_t now = time(0);
         tm* localTime = localtime(&now);
@@ -26,7 +26,7 @@ void logError(const std::string& errorMessage) {
 }
 
 void logProgress(const std::string& logMessage) {
-    std::ofstream progressFile("C:\\Users\\Ryskeldi\\Documents\\CS\\Server for app\\progress_log.txt", std::ios::app);
+    std::ofstream progressFile("C:/My projects/Server for app/progress_log.txt", std::ios::app);
     if (progressFile.is_open()) {
         time_t now = time(0);
         tm* localTime = localtime(&now);
@@ -40,7 +40,7 @@ void logProgress(const std::string& logMessage) {
 }
 
 void initializeProgressLog() {
-    std::ofstream progressFile("C:\\Users\\Ryskeldi\\Documents\\CS\\Server for app\\progress_log.txt");
+    std::ofstream progressFile("C:/My projects/Server for app/  progress_log.txt");
     if (!progressFile.is_open()) {
         std::cerr << "Error opening progress_log.txt for writing." << std::endl;
     }
