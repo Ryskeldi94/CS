@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Net.NetworkInformation;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using Newtonsoft.Json;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
@@ -14,24 +15,35 @@ namespace Version2
     {
         private List<Metal> metalsList; // объявляем переменную как член класса
         int selectedMetod = 0;
-
         public DBMetals()
         {
             InitializeComponent();
-
             comboBoxMetals.DropDownStyle = ComboBoxStyle.DropDownList;
+            LoadMetalsData();
+            this.KeyPreview = true;
+            this.KeyDown += Singl_KeyDown;
+            SetTabIndexes();
+        }
 
-            textBox1.ReadOnly = true;
+        private void SetTabIndexes()
+        {
+            comboBoxMetals.TabIndex = 0;
+            ShowItems.TabIndex = 1;
+            AddMetal.TabIndex = 2;
+            button1.TabIndex = 3;
+            button2.TabIndex = 4;
+            SelectThis.TabIndex = 5;
+            back.TabIndex = 6;
+        }
 
-            // Загрузка данных из JSON файла
-            string jsonFilePath = @"C:\My projects\CS\metals.json"; 
+        private void LoadMetalsData()
+        {
+            string jsonFilePath = @"C:\My projects\CS\metals.json";
             if (File.Exists(jsonFilePath))
             {
                 string jsonData = File.ReadAllText(jsonFilePath);
-
-                // Десериализация JSON данных в список металлов
-                metalsList = JsonConvert.DeserializeObject<MetalsList>(jsonData).Металлы; // присваиваем значение переменной
-                foreach (var metal in this.metalsList)
+                metalsList = JsonConvert.DeserializeObject<MetalsList>(jsonData).Металлы;
+                foreach (var metal in metalsList)
                 {
                     comboBoxMetals.Items.Add(metal.Название);
                 }
@@ -40,19 +52,21 @@ namespace Version2
             {
                 MessageBox.Show("Файл 'metals.json' не найден!");
             }
-            this.KeyPreview = true;
-            this.KeyDown += Singl_KeyDown;
+        }
 
-            textBox1.ReadOnly = true;
-            textBox1.TabStop = false;
+        private async void FadeIn()
+        {
+            for (double i = 0.0; i <= 1.0; i += 0.1)
+            {
+                this.Opacity = i;
+                await Task.Delay(50); // Регулируйте задержку для скорости появления
+            }
+        }
 
-            comboBoxMetals.TabIndex = 0;
-            ShowItems.TabIndex = 1;
-            AddMetal.TabIndex = 2;
-            button1.TabIndex = 3;
-            button2.TabIndex = 4;
-            SelectThis.TabIndex = 5;
-            back.TabIndex = 6;
+        protected override void OnShown(EventArgs e)
+        {
+            base.OnShown(e);
+            FadeIn();
         }
 
         private void Singl_KeyDown(object sender, KeyEventArgs e)

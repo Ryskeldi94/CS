@@ -1,19 +1,127 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\My projects\\CS\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{329103F4-644B-4E71-95B2-B6B6B8B11FE7}|CS.csproj|c:\\my projects\\cs\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{329103F4-644B-4E71-95B2-B6B6B8B11FE7}|CS.csproj|solutionrelative:class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{329103F4-644B-4E71-95B2-B6B6B8B11FE7}|CS.csproj|c:\\my projects\\cs\\mainpage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{329103F4-644B-4E71-95B2-B6B6B8B11FE7}|CS.csproj|solutionrelative:mainpage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{329103F4-644B-4E71-95B2-B6B6B8B11FE7}|CS.csproj|c:\\my projects\\cs\\dbmetals.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{329103F4-644B-4E71-95B2-B6B6B8B11FE7}|CS.csproj|solutionrelative:dbmetals.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{329103F4-644B-4E71-95B2-B6B6B8B11FE7}|CS.csproj|c:\\my projects\\cs\\mainpage.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{329103F4-644B-4E71-95B2-B6B6B8B11FE7}|CS.csproj|solutionrelative:mainpage.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{329103F4-644B-4E71-95B2-B6B6B8B11FE7}|CS.csproj|c:\\my projects\\cs\\dbmetals.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{329103F4-644B-4E71-95B2-B6B6B8B11FE7}|CS.csproj|solutionrelative:dbmetals.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{329103F4-644B-4E71-95B2-B6B6B8B11FE7}|CS.csproj|C:\\My projects\\CS\\mainpage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{329103F4-644B-4E71-95B2-B6B6B8B11FE7}|CS.csproj|solutionrelative:mainpage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedWidth": 232,
-          "SelectedChildIndex": -1,
+          "DockedWidth": 250,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Class1.cs",
+              "DocumentMoniker": "C:\\My projects\\CS\\Class1.cs",
+              "RelativeDocumentMoniker": "Class1.cs",
+              "ToolTip": "C:\\My projects\\CS\\Class1.cs*",
+              "RelativeToolTip": "Class1.cs*",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAoAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-03T04:20:45.555Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "DBMetals.cs",
+              "DocumentMoniker": "C:\\My projects\\CS\\DBMetals.cs",
+              "RelativeDocumentMoniker": "DBMetals.cs",
+              "ToolTip": "C:\\My projects\\CS\\DBMetals.cs*",
+              "RelativeToolTip": "DBMetals.cs*",
+              "ViewState": "AQIAABoAAAAAAAAAAAAYwEYAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-03T04:04:12.3Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MainPage.cs",
+              "DocumentMoniker": "C:\\My projects\\CS\\MainPage.cs",
+              "RelativeDocumentMoniker": "MainPage.cs",
+              "ToolTip": "C:\\My projects\\CS\\MainPage.cs*",
+              "RelativeToolTip": "MainPage.cs*",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAhAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-03T04:04:00.605Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "DBMetals.Designer.cs",
+              "DocumentMoniker": "C:\\My projects\\CS\\DBMetals.Designer.cs",
+              "RelativeDocumentMoniker": "DBMetals.Designer.cs",
+              "ToolTip": "C:\\My projects\\CS\\DBMetals.Designer.cs",
+              "RelativeToolTip": "DBMetals.Designer.cs",
+              "ViewState": "AQIAAMsAAAAAAAAAAAAQwNgAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-01T19:56:31.818Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "MainPage.cs [Design]",
+              "DocumentMoniker": "C:\\My projects\\CS\\MainPage.cs",
+              "RelativeDocumentMoniker": "MainPage.cs",
+              "ToolTip": "C:\\My projects\\CS\\MainPage.cs [Design]*",
+              "RelativeToolTip": "MainPage.cs [Design]*",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-01T08:40:50.447Z",
+              "EditorCaption": " [Design]"
+            }
+          ]
+        },
+        {
+          "DockedWidth": 214,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "MainPage.Designer.cs",
+              "DocumentMoniker": "C:\\My projects\\CS\\MainPage.Designer.cs",
+              "RelativeDocumentMoniker": "MainPage.Designer.cs",
+              "ToolTip": "C:\\My projects\\CS\\MainPage.Designer.cs",
+              "RelativeToolTip": "MainPage.Designer.cs",
+              "ViewState": "AQIAABUAAAAAAAAAAAAUwHoAAAAZAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-01T20:35:18.088Z",
+              "EditorCaption": ""
             }
           ]
         }
