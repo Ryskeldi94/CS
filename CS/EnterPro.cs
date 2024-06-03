@@ -8,6 +8,9 @@ namespace Version2
     public partial class EnterPro : Form
     {
         int selectedMetod = 0;
+        private MainPage mainPageForm;
+        private Singl Singl;
+        private TDimen dimen1;
 
         public EnterPro()
         {
@@ -124,18 +127,45 @@ namespace Version2
                 double specificHeatValue = double.Parse(specificHeat.Text);
                 double alphaValue = double.Parse(alpha.Text);
                 selectedMetod = 2;
-                Singl singl = new Singl(densityValue, specificHeatValue, alphaValue);
-                singl.Show();
-                this.Hide();
+                panel1.Controls.Clear();
+
+                // Создаем экземпляр формы MainPage (если еще не создан)
+                if (Singl == null)
+                {
+                    Singl = new Singl(densityValue, specificHeatValue, alphaValue);
+                    Singl.TopLevel = false;
+                    Singl.FormBorderStyle = FormBorderStyle.None;
+                    Singl.Dock = DockStyle.Fill;
+                }
+
+                // Добавляем форму MainPage на панель panel1
+                panel1.Controls.Add(Singl);
+
+                // Отображаем форму MainPage на панели panel1
+                Singl.Show();
             }
             else if (Program.GlobalVariables.selectedMethod == false)
             {
                 double densityValue = double.Parse(density.Text);
                 double specificHeatValue = double.Parse(specificHeat.Text);
                 double alphaValue = double.Parse(alpha.Text);
-                TDimen dimen = new TDimen(densityValue, specificHeatValue, alphaValue);
-                dimen.Show();
-                this.Hide();
+
+                panel1.Controls.Clear();
+
+                // Создаем экземпляр формы MainPage (если еще не создан)
+                if (dimen1 == null)
+                {
+                    dimen1 = new TDimen(densityValue, specificHeatValue, alphaValue);
+                    dimen1.TopLevel = false;
+                    dimen1.FormBorderStyle = FormBorderStyle.None;
+                    dimen1.Dock = DockStyle.Fill;
+                }
+
+                // Добавляем форму MainPage на панель panel1
+                panel1.Controls.Add(dimen1);
+
+                // Отображаем форму MainPage на панели panel1
+                dimen1.Show();
             }
         }
 
@@ -153,9 +183,24 @@ namespace Version2
 
         private void back_Click(object sender, EventArgs e)
         {
-            MainPage mainPage = new MainPage();
-            mainPage.Show();
-            this.Close();
+            // Очищаем панель panel1 перед добавлением нового контента
+            panel1.Controls.Clear();
+
+            // Создаем экземпляр формы MainPage (если еще не создан)
+            if (mainPageForm == null)
+            {
+                mainPageForm = new MainPage();
+                mainPageForm.TopLevel = false;
+                mainPageForm.FormBorderStyle = FormBorderStyle.None;
+                mainPageForm.Dock = DockStyle.Fill;
+            }
+
+            // Добавляем форму MainPage на панель panel1
+            panel1.Controls.Add(mainPageForm);
+
+            // Отображаем форму MainPage на панели panel1
+            mainPageForm.Show();
         }
+
     }
 }

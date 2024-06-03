@@ -15,6 +15,10 @@ namespace Version2
         private double _specificHeat;
         private double _thermalConductivity;
 
+        private DBMetals dbMetalsForm;
+        private EnterPro enterProForm;
+        private LoadData_TD LoadData_TD;
+
         public TDimen(double density, double specificHeat, double thermalConductivity)
         {
             InitializeComponent();
@@ -110,15 +114,43 @@ namespace Version2
         {
             if (Program.GlobalVariables.selectedMethod == true)
             {
-                DBMetals dbMetalsForm = new DBMetals();
+                // Очищаем панель panel1 перед добавлением нового контента
+                panel1.Controls.Clear();
+
+                // Создаем экземпляр формы DBMetals (если еще не создан)
+                if (dbMetalsForm == null)
+                {
+                    dbMetalsForm = new DBMetals();
+                    dbMetalsForm.TopLevel = false;
+                    dbMetalsForm.FormBorderStyle = FormBorderStyle.None;
+                    dbMetalsForm.Dock = DockStyle.Fill;
+                }
+
+                // Добавляем форму DBMetals на панель panel1
+                panel1.Controls.Add(dbMetalsForm);
+
+                // Отображаем форму DBMetals на панели panel1
                 dbMetalsForm.Show();
-                this.Close();
             }
             else if (Program.GlobalVariables.selectedMethod == false)
             {
-                EnterPro enterProForm = new EnterPro();
+                // Очищаем панель panel1 перед добавлением нового контента
+                panel1.Controls.Clear();
+
+                // Создаем экземпляр формы EnterPro (если еще не создан)
+                if (enterProForm == null)
+                {
+                    enterProForm = new EnterPro();
+                    enterProForm.TopLevel = false;
+                    enterProForm.FormBorderStyle = FormBorderStyle.None;
+                    enterProForm.Dock = DockStyle.Fill;
+                }
+
+                // Добавляем форму EnterPro на панель panel1
+                panel1.Controls.Add(enterProForm);
+
+                // Отображаем форму EnterPro на панели panel1
                 enterProForm.Show();
-                this.Close();
             }
         }
 
@@ -191,9 +223,19 @@ namespace Version2
             stream.Close();
             client.Close();
 
-            LoadData_TD loadData_TD = new LoadData_TD(result, density, specificHeat, alpha);
-            loadData_TD.Show();
-            this.Hide();
+            panel1.Controls.Clear();
+
+            if (LoadData_TD == null)
+            {
+                LoadData_TD = new LoadData_TD(result, _density, _specificHeat, _thermalConductivity);
+                LoadData_TD.TopLevel = false;
+                LoadData_TD.FormBorderStyle = FormBorderStyle.None;
+                LoadData_TD.Dock = DockStyle.Fill;
+            }
+
+            panel1.Controls.Add(LoadData_TD);
+
+            LoadData_TD.Show();
         }
     }
 }

@@ -12,6 +12,11 @@ namespace Version2
         private double _density;
         private double _specificHeat;
         private double _alpha;
+
+        private EnterPro EnterPro;
+        private DBMetals DBMetals;
+        private LoadData_2 LoadData_2;
+
         int calculationType = 1;
         public int SelectedMethod { get; set; }
 
@@ -190,26 +195,63 @@ namespace Version2
             stream.Close();
             client.Close();
 
+            panel1.Controls.Clear();
 
-            LoadData_2 loadData_2 = new LoadData_2(result);
-            loadData_2.Show();
+            // Создаем экземпляр формы MainPage (если еще не создан)
+            if (LoadData_2 == null)
+            {
+                LoadData_2 = new LoadData_2(result);
+                LoadData_2.TopLevel = false;
+                LoadData_2.FormBorderStyle = FormBorderStyle.None;
+                LoadData_2.Dock = DockStyle.Fill;
+            }
 
-            this.Hide();
+            // Добавляем форму MainPage на панель panel1
+            panel1.Controls.Add(LoadData_2);
+
+            // Отображаем форму MainPage на панели panel1
+            LoadData_2.Show();
         }
 
         private void back_Click(object sender, EventArgs e)
         {
             if (Program.GlobalVariables.selectedMethod == true)
             {
-                DBMetals dbMetalsForm = new DBMetals();
-                dbMetalsForm.Show();
-                this.Close();
+                panel1.Controls.Clear();
+
+                // Создаем экземпляр формы MainPage (если еще не создан)
+                if (DBMetals == null)
+                {
+                    DBMetals = new DBMetals();
+                    DBMetals.TopLevel = false;
+                    DBMetals.FormBorderStyle = FormBorderStyle.None;
+                    DBMetals.Dock = DockStyle.Fill;
+                }
+
+                // Добавляем форму MainPage на панель panel1
+                panel1.Controls.Add(DBMetals);
+
+                // Отображаем форму MainPage на панели panel1
+                DBMetals.Show();
             }
             else if (SelectedMethod == 2)
             {
-                EnterPro enterProForm = new EnterPro();
-                enterProForm.Show();
-                this.Close();
+                panel1.Controls.Clear();
+
+                // Создаем экземпляр формы MainPage (если еще не создан)
+                if (EnterPro == null)
+                {
+                    EnterPro = new EnterPro();
+                    EnterPro.TopLevel = false;
+                    DBMetals.FormBorderStyle = FormBorderStyle.None;
+                    EnterPro.Dock = DockStyle.Fill;
+                }
+
+                // Добавляем форму MainPage на панель panel1
+                panel1.Controls.Add(EnterPro);
+
+                // Отображаем форму MainPage на панели panel1
+                EnterPro.Show();
             }
         }
 

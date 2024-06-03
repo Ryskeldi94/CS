@@ -41,6 +41,7 @@ namespace Version2
             this.nextLine = new System.Windows.Forms.TextBox();
             this.currentLine = new System.Windows.Forms.TextBox();
             this.previousLine = new System.Windows.Forms.TextBox();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
@@ -83,6 +84,7 @@ namespace Version2
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.panel1.Controls.Add(this.saveButton);
+            this.panel1.Controls.Add(this.back);
             this.panel1.Controls.Add(this.numericUpDown1);
             this.panel1.Controls.Add(this.N_nextLine);
             this.panel1.Controls.Add(this.N_currentLine);
@@ -194,5 +196,6 @@ namespace Version2
         private System.Windows.Forms.TextBox N_currentLine;
         private System.Windows.Forms.TextBox N_previousLine;
         private System.Windows.Forms.Button saveButton;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
     }
 }

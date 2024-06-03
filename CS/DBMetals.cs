@@ -13,6 +13,12 @@ namespace Version2
 {
     public partial class DBMetals : Form
     {
+
+        private MainPage mainPageForm;
+        private AddMetal addMetal;
+        private Singl Singl;
+        private TDimen dimen1;
+
         private List<Metal> metalsList; // объявляем переменную как член класса
         int selectedMetod = 0;
         public DBMetals()
@@ -133,15 +139,44 @@ namespace Version2
                     {
                         if (Program.GlobalVariables.selectedMethod == true)
                         {
-                            Singl form = new Singl(density, specificHeat, alpha); // Передача значений в конструктор
-                            form.Show();
-                            this.Hide();
+
+                            // Очищаем панель panel1 перед добавлением нового контента
+                            panel1.Controls.Clear();
+
+                            // Создаем экземпляр формы MainPage (если еще не создан)
+                            if (Singl == null)
+                            {
+                                Singl = new Singl(density, specificHeat, alpha);
+                                Singl.TopLevel = false;
+                                Singl.FormBorderStyle = FormBorderStyle.None;
+                                Singl.Dock = DockStyle.Fill;
+                            }
+
+                            // Добавляем форму MainPage на панель panel1
+                            panel1.Controls.Add(Singl);
+
+                            // Отображаем форму MainPage на панели panel1
+                            Singl.Show();
                         }
                         else
                         {
-                            TDimen dimen = new TDimen(density, specificHeat, alpha);
-                            dimen.Show();
-                            this.Hide();
+                            // Очищаем панель panel1 перед добавлением нового контента
+                            panel1.Controls.Clear();
+
+                            // Создаем экземпляр формы MainPage (если еще не создан)
+                            if (dimen1 == null)
+                            {
+                                dimen1 = new TDimen(density, specificHeat, alpha);
+                                dimen1.TopLevel = false;
+                                dimen1.FormBorderStyle = FormBorderStyle.None;
+                                dimen1.Dock = DockStyle.Fill;
+                            }
+
+                            // Добавляем форму MainPage на панель panel1
+                            panel1.Controls.Add(dimen1);
+
+                            // Отображаем форму MainPage на панели panel1
+                            dimen1.Show();
                         }
                     }
                 }
@@ -168,17 +203,46 @@ namespace Version2
 
         private void back_Click(object sender, EventArgs e)
         {
-            // Create an instance of MainPage and show it
-            MainPage mainPage = new MainPage();
-            mainPage.Show(); // Show the instance
-            this.Close(); // Close the current form
+            // Очищаем панель panel1 перед добавлением нового контента
+            panel1.Controls.Clear();
+
+            // Создаем экземпляр формы MainPage (если еще не создан)
+            if (mainPageForm == null)
+            {
+                mainPageForm = new MainPage();
+                mainPageForm.TopLevel = false;
+                mainPageForm.FormBorderStyle = FormBorderStyle.None;
+                mainPageForm.Dock = DockStyle.Fill;
+            }
+
+            // Добавляем форму MainPage на панель panel1
+            panel1.Controls.Add(mainPageForm);
+
+            // Отображаем форму MainPage на панели panel1
+            mainPageForm.Show();
         }
+
 
         private void AddMetal_Click(object sender, EventArgs e)
         {
-            AddMetal Addmetal = new AddMetal();
-            Addmetal.Show();
-            this.Hide();
+            
+
+            panel1.Controls.Clear();
+
+            // Создаем экземпляр формы MainPage (если еще не создан)
+            if (addMetal == null)
+            {
+                addMetal = new AddMetal();
+                addMetal.TopLevel = false;
+                addMetal.FormBorderStyle = FormBorderStyle.None;
+                addMetal.Dock = DockStyle.Fill;
+            }
+
+            // Добавляем форму MainPage на панель panel1
+            panel1.Controls.Add(addMetal);
+
+            // Отображаем форму MainPage на панели panel1
+            addMetal.Show();
         }
 
         private void comboBoxMetals_SelectedIndexChanged(object sender, EventArgs e)

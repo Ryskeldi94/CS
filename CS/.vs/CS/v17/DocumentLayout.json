@@ -3,28 +3,28 @@
   "WorkspaceRootPath": "C:\\My projects\\CS\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{329103F4-644B-4E71-95B2-B6B6B8B11FE7}|CS.csproj|c:\\my projects\\cs\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{329103F4-644B-4E71-95B2-B6B6B8B11FE7}|CS.csproj|solutionrelative:class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{329103F4-644B-4E71-95B2-B6B6B8B11FE7}|CS.csproj|c:\\my projects\\cs\\loaddata_2.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{329103F4-644B-4E71-95B2-B6B6B8B11FE7}|CS.csproj|solutionrelative:loaddata_2.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{329103F4-644B-4E71-95B2-B6B6B8B11FE7}|CS.csproj|c:\\my projects\\cs\\mainpage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{329103F4-644B-4E71-95B2-B6B6B8B11FE7}|CS.csproj|solutionrelative:mainpage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{329103F4-644B-4E71-95B2-B6B6B8B11FE7}|CS.csproj|c:\\my projects\\cs\\loaddata_2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{329103F4-644B-4E71-95B2-B6B6B8B11FE7}|CS.csproj|solutionrelative:loaddata_2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{329103F4-644B-4E71-95B2-B6B6B8B11FE7}|CS.csproj|c:\\my projects\\cs\\dbmetals.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{329103F4-644B-4E71-95B2-B6B6B8B11FE7}|CS.csproj|solutionrelative:dbmetals.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{329103F4-644B-4E71-95B2-B6B6B8B11FE7}|CS.csproj|c:\\my projects\\cs\\loaddata_td.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{329103F4-644B-4E71-95B2-B6B6B8B11FE7}|CS.csproj|solutionrelative:loaddata_td.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{329103F4-644B-4E71-95B2-B6B6B8B11FE7}|CS.csproj|c:\\my projects\\cs\\mainpage.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{329103F4-644B-4E71-95B2-B6B6B8B11FE7}|CS.csproj|solutionrelative:mainpage.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{329103F4-644B-4E71-95B2-B6B6B8B11FE7}|CS.csproj|c:\\my projects\\cs\\singl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{329103F4-644B-4E71-95B2-B6B6B8B11FE7}|CS.csproj|solutionrelative:singl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{329103F4-644B-4E71-95B2-B6B6B8B11FE7}|CS.csproj|c:\\my projects\\cs\\dbmetals.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{329103F4-644B-4E71-95B2-B6B6B8B11FE7}|CS.csproj|solutionrelative:dbmetals.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{329103F4-644B-4E71-95B2-B6B6B8B11FE7}|CS.csproj|c:\\my projects\\cs\\tdimen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{329103F4-644B-4E71-95B2-B6B6B8B11FE7}|CS.csproj|solutionrelative:tdimen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{329103F4-644B-4E71-95B2-B6B6B8B11FE7}|CS.csproj|C:\\My projects\\CS\\mainpage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{329103F4-644B-4E71-95B2-B6B6B8B11FE7}|CS.csproj|solutionrelative:mainpage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{329103F4-644B-4E71-95B2-B6B6B8B11FE7}|CS.csproj|c:\\my projects\\cs\\tdimen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{329103F4-644B-4E71-95B2-B6B6B8B11FE7}|CS.csproj|solutionrelative:tdimen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,7 +34,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 250,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -42,86 +42,78 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Class1.cs",
-              "DocumentMoniker": "C:\\My projects\\CS\\Class1.cs",
-              "RelativeDocumentMoniker": "Class1.cs",
-              "ToolTip": "C:\\My projects\\CS\\Class1.cs*",
-              "RelativeToolTip": "Class1.cs*",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAoAAAA",
+              "DocumentIndex": 2,
+              "Title": "LoadData_TD.Designer.cs",
+              "DocumentMoniker": "C:\\My projects\\CS\\LoadData_TD.Designer.cs",
+              "RelativeDocumentMoniker": "LoadData_TD.Designer.cs",
+              "ToolTip": "C:\\My projects\\CS\\LoadData_TD.Designer.cs",
+              "RelativeToolTip": "LoadData_TD.Designer.cs",
+              "ViewState": "AQIAACYAAAAAAAAAAAAAwDsAAAA2AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-03T04:20:45.555Z",
+              "WhenOpened": "2024-06-03T12:35:19.712Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "DBMetals.cs",
-              "DocumentMoniker": "C:\\My projects\\CS\\DBMetals.cs",
-              "RelativeDocumentMoniker": "DBMetals.cs",
-              "ToolTip": "C:\\My projects\\CS\\DBMetals.cs*",
-              "RelativeToolTip": "DBMetals.cs*",
-              "ViewState": "AQIAABoAAAAAAAAAAAAYwEYAAAAAAAAA",
+              "DocumentIndex": 0,
+              "Title": "LoadData_2.Designer.cs",
+              "DocumentMoniker": "C:\\My projects\\CS\\LoadData_2.Designer.cs",
+              "RelativeDocumentMoniker": "LoadData_2.Designer.cs",
+              "ToolTip": "C:\\My projects\\CS\\LoadData_2.Designer.cs",
+              "RelativeToolTip": "LoadData_2.Designer.cs",
+              "ViewState": "AQIAACkAAAAAAAAAAAAqwGkAAAA5AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-03T04:04:12.3Z",
+              "WhenOpened": "2024-06-03T12:34:49.623Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "MainPage.cs",
-              "DocumentMoniker": "C:\\My projects\\CS\\MainPage.cs",
-              "RelativeDocumentMoniker": "MainPage.cs",
-              "ToolTip": "C:\\My projects\\CS\\MainPage.cs*",
-              "RelativeToolTip": "MainPage.cs*",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAhAAAA",
+              "Title": "LoadData_2.cs [Design]",
+              "DocumentMoniker": "C:\\My projects\\CS\\LoadData_2.cs",
+              "RelativeDocumentMoniker": "LoadData_2.cs",
+              "ToolTip": "C:\\My projects\\CS\\LoadData_2.cs [Design]",
+              "RelativeToolTip": "LoadData_2.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-03T04:04:00.605Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-03T12:34:31.508Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Singl.cs [Design]",
+              "DocumentMoniker": "C:\\My projects\\CS\\Singl.cs",
+              "RelativeDocumentMoniker": "Singl.cs",
+              "ToolTip": "C:\\My projects\\CS\\Singl.cs [Design]",
+              "RelativeToolTip": "Singl.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-03T12:34:24.578Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "DBMetals.Designer.cs",
-              "DocumentMoniker": "C:\\My projects\\CS\\DBMetals.Designer.cs",
-              "RelativeDocumentMoniker": "DBMetals.Designer.cs",
-              "ToolTip": "C:\\My projects\\CS\\DBMetals.Designer.cs",
-              "RelativeToolTip": "DBMetals.Designer.cs",
-              "ViewState": "AQIAAMsAAAAAAAAAAAAQwNgAAAAAAAAA",
+              "Title": "TDimen.cs",
+              "DocumentMoniker": "C:\\My projects\\CS\\TDimen.cs",
+              "RelativeDocumentMoniker": "TDimen.cs",
+              "ToolTip": "C:\\My projects\\CS\\TDimen.cs",
+              "RelativeToolTip": "TDimen.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAB0AAAAfAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-01T19:56:31.818Z",
+              "WhenOpened": "2024-06-03T12:30:24.584Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "MainPage.cs [Design]",
-              "DocumentMoniker": "C:\\My projects\\CS\\MainPage.cs",
-              "RelativeDocumentMoniker": "MainPage.cs",
-              "ToolTip": "C:\\My projects\\CS\\MainPage.cs [Design]*",
-              "RelativeToolTip": "MainPage.cs [Design]*",
+              "Title": "TDimen.cs [Design]",
+              "DocumentMoniker": "C:\\My projects\\CS\\TDimen.cs",
+              "RelativeDocumentMoniker": "TDimen.cs",
+              "ToolTip": "C:\\My projects\\CS\\TDimen.cs [Design]",
+              "RelativeToolTip": "TDimen.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-01T08:40:50.447Z",
+              "WhenOpened": "2024-06-03T12:30:22.262Z",
               "EditorCaption": " [Design]"
-            }
-          ]
-        },
-        {
-          "DockedWidth": 214,
-          "SelectedChildIndex": 0,
-          "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "MainPage.Designer.cs",
-              "DocumentMoniker": "C:\\My projects\\CS\\MainPage.Designer.cs",
-              "RelativeDocumentMoniker": "MainPage.Designer.cs",
-              "ToolTip": "C:\\My projects\\CS\\MainPage.Designer.cs",
-              "RelativeToolTip": "MainPage.Designer.cs",
-              "ViewState": "AQIAABUAAAAAAAAAAAAUwHoAAAAZAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-01T20:35:18.088Z",
-              "EditorCaption": ""
             }
           ]
         }

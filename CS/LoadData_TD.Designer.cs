@@ -207,7 +207,6 @@
         private System.Windows.Forms.TextBox line3;
         private System.Windows.Forms.TextBox line2;
         private System.Windows.Forms.TextBox line1;
-        private System.Windows.Forms.Button back;
         private System.Windows.Forms.Button back_1;
         private System.Windows.Forms.TextBox line10;
         private System.Windows.Forms.TextBox line9;

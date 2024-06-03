@@ -10,6 +10,7 @@ namespace Version2
 {
     public partial class AddMetal : Form
     {
+        private DBMetals DBMetals;
         private readonly string jsonFilePath = @"C:\Users\Ryskeldi\Documents\Clone\ParallelHeatFlowAnalysis\metals.json";
         private List<Metal> metals = new List<Metal>();
 
@@ -120,9 +121,22 @@ namespace Version2
 
         private void back_Click(object sender, EventArgs e)
         {
-            DBMetals dBMetals = new DBMetals();
-            dBMetals.Show();
-            this.Close();
+            panel1.Controls.Clear();
+
+            // Создаем экземпляр формы MainPage (если еще не создан)
+            if (DBMetals == null)
+            {
+                DBMetals = new DBMetals();
+                DBMetals.TopLevel = false;
+                DBMetals.FormBorderStyle = FormBorderStyle.None;
+                DBMetals.Dock = DockStyle.Fill;
+            }
+
+            // Добавляем форму MainPage на панель panel1
+            panel1.Controls.Add(DBMetals);
+
+            // Отображаем форму MainPage на панели panel1
+            DBMetals.Show();
         }
 
         private void highTempLocation_TextChanged(object sender, EventArgs e)

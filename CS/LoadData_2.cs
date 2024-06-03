@@ -9,7 +9,8 @@ namespace Version2
 {
     public partial class LoadData_2 : Form
     {
-        private double[,] data; 
+        private double[,] data;
+        private Singl Singl;
 
         public LoadData_2(double[] result)
         {
@@ -187,8 +188,27 @@ namespace Version2
             }
             return rowData.ToString();
         }
+       
+        private void back_Click(object sender, EventArgs e)
+        {
+            panel1.Controls.Clear();
 
-        private void SaveDataToFile()
+            if (Singl == null)
+            {
+                Singl= new Singl();
+                Singl.TopLevel = false;
+                Singl.FormBorderStyle = FormBorderStyle.None;
+                Singl.Dock = DockStyle.Fill;
+            }
+
+            // Добавляем форму MainPage на панель panel1
+            panel1.Controls.Add(Singl);
+
+            // Отображаем форму MainPage на панели panel1
+            Singl.Show();
+        }
+
+        private void saveButton_Click(object sender, EventArgs e)
         {
             using (SaveFileDialog saveFileDialog = new SaveFileDialog())
             {
@@ -209,18 +229,6 @@ namespace Version2
                     MessageBox.Show("Data saved successfully.", "Save Data", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
-        }
-
-        private void back_Click(object sender, EventArgs e)
-        {
-            Singl singl = new Singl();
-            singl.Show();
-            this.Close();
-        }
-
-        private void saveButton_Click(object sender, EventArgs e)
-        {
-            SaveDataToFile();
         }
     }
 }

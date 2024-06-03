@@ -12,6 +12,7 @@ namespace Version2
         private double _density;
         private double _specificHeat;
         private double _thermalConductivity;
+        private TDimen dimen1;
 
         private void InitializeTextBoxes()
         {
@@ -187,9 +188,22 @@ namespace Version2
 
         private void Back(object sender, EventArgs e)
         {
-            TDimen dimen = new TDimen(_density, _specificHeat, _thermalConductivity);
-            dimen.Show();
-            this.Close();
+            panel1.Controls.Clear();
+
+            // Создаем экземпляр формы MainPage (если еще не создан)
+            if (dimen1 == null)
+            {
+                dimen1 = new TDimen(_density, _specificHeat, _thermalConductivity);
+                dimen1.TopLevel = false;
+                dimen1.FormBorderStyle = FormBorderStyle.None;
+                dimen1.Dock = DockStyle.Fill;
+            }
+
+            // Добавляем форму MainPage на панель panel1
+            panel1.Controls.Add(dimen1);
+
+            // Отображаем форму MainPage на панели panel1
+            dimen1.Show();
         }
     }
 }
