@@ -54,5 +54,10 @@ namespace Version2
             // Отображаем форму DBMetals на панели panel1
             dbMetalsForm.Show();
         }
+
+        private void MainPage_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

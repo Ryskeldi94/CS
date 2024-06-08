@@ -44,7 +44,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(770, 584);
+            this.panel1.Size = new System.Drawing.Size(849, 662);
             this.panel1.TabIndex = 0;
             // 
             // tableLayoutPanel1
@@ -65,7 +65,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(770, 584);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(849, 662);
             this.tableLayoutPanel1.TabIndex = 4;
             // 
             // label1
@@ -75,7 +75,7 @@
             this.label1.AutoSize = true;
             this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 26F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(175, 64);
+            this.label1.Location = new System.Drawing.Point(214, 77);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(419, 60);
             this.label1.TabIndex = 0;
@@ -89,9 +89,9 @@
             this.ChoiceIn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.ChoiceIn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ChoiceIn.Font = new System.Drawing.Font("Times New Roman", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ChoiceIn.Location = new System.Drawing.Point(157, 379);
+            this.ChoiceIn.Location = new System.Drawing.Point(172, 431);
             this.ChoiceIn.Name = "ChoiceIn";
-            this.ChoiceIn.Size = new System.Drawing.Size(456, 182);
+            this.ChoiceIn.Size = new System.Drawing.Size(503, 208);
             this.ChoiceIn.TabIndex = 3;
             this.ChoiceIn.Text = "Ввести свои свойства металла";
             this.ChoiceIn.UseVisualStyleBackColor = true;
@@ -104,9 +104,9 @@
             this.ChoiceShow.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.ChoiceShow.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ChoiceShow.Font = new System.Drawing.Font("Times New Roman", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ChoiceShow.Location = new System.Drawing.Point(157, 191);
+            this.ChoiceShow.Location = new System.Drawing.Point(172, 217);
             this.ChoiceShow.Name = "ChoiceShow";
-            this.ChoiceShow.Size = new System.Drawing.Size(456, 182);
+            this.ChoiceShow.Size = new System.Drawing.Size(503, 208);
             this.ChoiceShow.TabIndex = 2;
             this.ChoiceShow.Text = "Выбрать металл из списка";
             this.ChoiceShow.UseVisualStyleBackColor = true;
@@ -116,7 +116,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(770, 584);
+            this.ClientSize = new System.Drawing.Size(849, 662);
             this.Controls.Add(this.panel1);
             this.Cursor = System.Windows.Forms.Cursors.Default;
             this.ForeColor = System.Drawing.Color.DarkRed;
@@ -124,6 +124,7 @@
             this.Name = "MainPage";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.MainPage_Load);
             this.panel1.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();

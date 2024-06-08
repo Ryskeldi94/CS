@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text.Json;
@@ -11,16 +12,16 @@ namespace Version2
     public partial class AddMetal : Form
     {
         private DBMetals DBMetals;
-        private readonly string jsonFilePath = @"C:\Users\Ryskeldi\Documents\Clone\ParallelHeatFlowAnalysis\metals.json";
+        private readonly string jsonFilePath = @"C:\My projects\CS\metals.json";
         private List<Metal> metals = new List<Metal>();
 
         public AddMetal()
         {
             InitializeComponent();
-            alpha.KeyPress += alpha_KeyPress;
-            NameTextBoxt.KeyPress += nameTextBoxt_KeyPress;
-            specificHeat.KeyPress += specificHeat_KeyPress;
-            density.KeyPress += density_KeyPress;
+            AlphaBox.KeyPress += alpha_KeyPress;
+            NameBox.KeyPress += nameTextBoxt_KeyPress;
+            SpecificHeatBox.KeyPress += specificHeat_KeyPress;
+            DensityBox.KeyPress += density_KeyPress;
             this.KeyPreview = true;
             this.KeyDown += Singl_KeyDown;
 
@@ -30,26 +31,26 @@ namespace Version2
             textBox3.ReadOnly = true;
             textBox3.TabStop = false;
 
-            textBox5.ReadOnly = true;
-            textBox5.TabStop = false;
+            textBox1.ReadOnly = true;
+            textBox1.TabStop = false;
 
             textBox4.ReadOnly = true;
             textBox4.TabStop = false;
 
-            NameTextBoxt.TabIndex = 0;
-            density.TabIndex = 1;
-            specificHeat.TabIndex = 2;
-            alpha.TabIndex = 3;
-            ViewButoon.TabIndex = 4;
+            NameBox.TabIndex = 0;
+            DensityBox.TabIndex = 1;
+            SpecificHeatBox.TabIndex = 2;
+            AlphaBox.TabIndex = 3;
+            ViewButton.TabIndex = 4;
             AddButton.TabIndex = 5;
-            back.TabIndex = 6;
+            Back.TabIndex = 6;
         }
 
         private void Singl_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Escape)
             {
-                back_Click(sender, e);
+                Back_Click(sender, e);
             }
         }
 
@@ -119,7 +120,7 @@ namespace Version2
             density_KeyPress(sender, e);
         }
 
-        private void back_Click(object sender, EventArgs e)
+        private void Back_Click(object sender, EventArgs e)
         {
             panel1.Controls.Clear();
 
@@ -146,10 +147,10 @@ namespace Version2
         private void AddButton_Click(object sender, EventArgs e)
         {
             // Получаем данные из текстовых полей
-            string name = NameTextBoxt.Text;
-            if (double.TryParse(density.Text, out double densityValue) &&
-                double.TryParse(specificHeat.Text, out double specificHeatValue) &&
-                double.TryParse(alpha.Text, out double alphaValue))
+            string name = NameBox.Text;
+            if (double.TryParse(DensityBox.Text, out double densityValue) &&
+                double.TryParse(SpecificHeatBox.Text, out double specificHeatValue) &&
+                double.TryParse(AlphaBox.Text, out double alphaValue))
             {
                 // Читаем существующие данные из файла
                 string jsonString = string.Empty;
@@ -193,10 +194,10 @@ namespace Version2
                 File.WriteAllText(jsonFilePath, jsonString);
 
                 // Очищаем текстовые поля после добавления
-                NameTextBoxt.Clear();
-                density.Clear();
-                specificHeat.Clear();
-                alpha.Clear();
+                NameBox.Clear();
+                DensityBox.Clear();
+                SpecificHeatBox.Clear();
+                AlphaBox.Clear();
 
                 MessageBox.Show("Металл успешно добавлен!");
             }
@@ -206,13 +207,13 @@ namespace Version2
             }
         }
 
-        private void ViewButoon_Click(object sender, EventArgs e)
+        private void ViewButton_Click(object sender, EventArgs e)
         {
             MessageBox.Show(
-                $"Названия металла: {NameTextBoxt.Text}\n" +
-                $"Плотность: {density.Text} г/см³\n" +
-                $"Удельная теплоемкость: {specificHeat.Text} Дж/г·°C\n" +
-                $"Коэффициент теплопроводности: {alpha.Text} Вт/м·°C");
+                $"Названия металла: {NameBox.Text}\n" +
+                $"Плотность: {DensityBox.Text} г/см³\n" +
+                $"Удельная теплоемкость: {SpecificHeatBox.Text} Дж/г·°C\n" +
+                $"Коэффициент теплопроводности: {AlphaBox.Text} Вт/м·°C");
         }
 
         public class Metal
