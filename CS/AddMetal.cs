@@ -239,5 +239,10 @@ namespace Version2
             [JsonPropertyName("металлы")]
             public List<Metal> Metals { get; set; }
         }
+
+        private void NameBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

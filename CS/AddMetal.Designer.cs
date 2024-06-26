@@ -184,6 +184,7 @@ namespace Version2
             this.NameBox.Name = "NameBox";
             this.NameBox.Size = new System.Drawing.Size(472, 40);
             this.NameBox.TabIndex = 5;
+            this.NameBox.TextChanged += new System.EventHandler(this.NameBox_TextChanged);
             // 
             // DensityBox
             // 

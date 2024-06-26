@@ -4,11 +4,13 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Net.NetworkInformation;
+using System.Text.Json;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Newtonsoft.Json;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using static Version2.AddMetal;
+using System.Text.Json.Serialization;
 
 namespace Version2
 {
@@ -19,7 +21,7 @@ namespace Version2
         private AddMetal addMetal;
         private Singl Singl;
         private TDimen dimen1;
-
+        private readonly string jsonFilePath = @"C:\My projects\CS\metals.json";
         private List<Metal> metalsList; // объявляем переменную как член класса
         int selectedMetod = 0;
         public DBMetals()
@@ -29,7 +31,91 @@ namespace Version2
             LoadMetalsData();
             this.KeyPreview = true;
             this.KeyDown += Singl_KeyDown;
+
+            textBox2.ReadOnly = true;
+            textBox2.TabStop = false;
+
+            textBox3.ReadOnly = true;
+            textBox3.TabStop = false;
+
+            textBox1.ReadOnly = true;
+            textBox1.TabStop = false;
+
+            textBox4.ReadOnly = true;
+            textBox4.TabStop = false;
+
+            AlphaBox.KeyPress += alpha_KeyPress;
+            NameBox.KeyPress += nameTextBoxt_KeyPress;
+            SpecificHeatBox.KeyPress += specificHeat_KeyPress;
+            DensityBox.KeyPress += density_KeyPress;
+
             SetTabIndexes();
+        }
+
+        private void density_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            System.Windows.Forms.TextBox textBox = sender as System.Windows.Forms.TextBox;
+
+            // Проверка на ввод только числовых символов, Backspace и точку
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && e.KeyChar != '.' && e.KeyChar != ',')
+            {
+                e.Handled = true;
+            }
+
+            // Проверка на точку или запятую для ввода дробных чисел
+            if ((e.KeyChar == '.' || e.KeyChar == ',') && textBox.Text.Contains('.'))
+            {
+                e.Handled = true;
+            }
+
+            // Замена запятой на точку для правильного ввода дробных чисел
+            if (e.KeyChar == ',')
+            {
+                e.KeyChar = '.';
+            }
+
+            // Если пользователь начинает вводить десятичную часть с запятой или точки, автоматически добавляем "0."
+            if ((textBox.SelectionStart == 0 || textBox.Text == "") && (e.KeyChar == '.' || e.KeyChar == ','))
+            {
+                textBox.Text = "0" + e.KeyChar;
+                textBox.SelectionStart = 2; // Переместить курсор в конец
+                e.Handled = true; // Предотвращаем добавление второй точки или запятой
+            }
+
+            // Проверка на количество цифр после десятичной точки
+            if (textBox.Text.Contains('.'))
+            {
+                int indexOfDot = textBox.Text.IndexOf('.');
+                if (textBox.Text.Length - indexOfDot > 2 && !char.IsControl(e.KeyChar))
+                {
+                    e.Handled = true;
+                }
+            }
+
+            // Разрешаем вводить точку только после ввода двух цифр
+            if ((e.KeyChar == '.' || e.KeyChar == ',') && textBox.Text.Length < 2)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void nameTextBoxt_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            /// Проверка на ввод только буквенных символов
+            if (!char.IsControl(e.KeyChar) && !char.IsLetter(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void specificHeat_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            density_KeyPress(sender, e);
+        }
+
+        private void alpha_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            density_KeyPress(sender, e);
         }
 
         private void SetTabIndexes()
@@ -226,24 +312,66 @@ namespace Version2
 
         private void AddMetal_Click(object sender, EventArgs e)
         {
-            
 
-            panel1.Controls.Clear();
-
-            // Создаем экземпляр формы MainPage (если еще не создан)
-            if (addMetal == null)
+            string name = NameBox.Text;
+            if (double.TryParse(DensityBox.Text, out double densityValue) &&
+                double.TryParse(SpecificHeatBox.Text, out double specificHeatValue) &&
+                double.TryParse(AlphaBox.Text, out double alphaValue))
             {
-                addMetal = new AddMetal();
-                addMetal.TopLevel = false;
-                addMetal.FormBorderStyle = FormBorderStyle.None;
-                addMetal.Dock = DockStyle.Fill;
+                // Читаем существующие данные из файла
+                string jsonString = string.Empty;
+
+                if (File.Exists(jsonFilePath))
+                {
+                    jsonString = File.ReadAllText(jsonFilePath);
+                    try
+                    {
+                        var metalData = JsonSerializer.Deserialize<MetalData>(jsonString);
+                        metals = metalData.Metals;
+                    }
+                    catch (JsonException ex)
+                    {
+                        MessageBox.Show($"Ошибка десериализации JSON: {ex.Message}");
+                        metals = new List<Metal>();
+                    }
+                }
+                else
+                {
+                    metals = new List<Metal>();
+                }
+
+                // Создаем новый объект Metal
+                int number = metals.Count + 1; // Присваиваем номер следующего элемента
+                Metal newMetal = new Metal
+                {
+                    Number = number,
+                    Name = name,
+                    Density = densityValue,
+                    SpecificHeat = specificHeatValue,
+                    Alpha = alphaValue
+                };
+
+                // Добавляем новый объект в список
+                metals.Add(newMetal);
+
+                // Сериализуем список обратно в JSON
+                var metalDataToUpdate = new MetalData { Metals = metals };
+                jsonString = JsonSerializer.Serialize(metalDataToUpdate, new JsonSerializerOptions { WriteIndented = true });
+                File.WriteAllText(jsonFilePath, jsonString);
+
+                // Очищаем текстовые поля после добавления
+                NameBox.Clear();
+                DensityBox.Clear();
+                SpecificHeatBox.Clear();
+                AlphaBox.Clear();
+
+                MessageBox.Show("Металл успешно добавлен!");
+            }
+            else
+            {
+                MessageBox.Show("Пожалуйста, введите корректные значения.");
             }
 
-            // Добавляем форму MainPage на панель panel1
-            panel1.Controls.Add(addMetal);
-
-            // Отображаем форму MainPage на панели panel1
-            addMetal.Show();
         }
 
         private void comboBoxMetals_SelectedIndexChanged(object sender, EventArgs e)
@@ -255,6 +383,7 @@ namespace Version2
         {
 
         }
+
     }
 
     // Classes for deserializing JSON
