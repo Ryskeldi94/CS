@@ -1,29 +1,22 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Drawing;
 using System.IO;
 using System.Linq;
-using System.Net.NetworkInformation;
-using System.Text.Json;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Newtonsoft.Json;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
-using static Version2.AddMetal;
 using System.Text.Json.Serialization;
 
 namespace Version2
 {
     public partial class DBMetals : Form
     {
-
         private MainPage mainPageForm;
-        private AddMetal addMetal;
         private Singl Singl;
         private TDimen dimen1;
         private readonly string jsonFilePath = @"C:\My projects\CS\metals.json";
-        private List<Metal> metalsList; // объявляем переменную как член класса
         int selectedMetod = 0;
+        private List<Metal> metals = new List<Metal>();
+
         public DBMetals()
         {
             InitializeComponent();
@@ -56,33 +49,28 @@ namespace Version2
         {
             System.Windows.Forms.TextBox textBox = sender as System.Windows.Forms.TextBox;
 
-            // Проверка на ввод только числовых символов, Backspace и точку
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && e.KeyChar != '.' && e.KeyChar != ',')
             {
                 e.Handled = true;
             }
 
-            // Проверка на точку или запятую для ввода дробных чисел
             if ((e.KeyChar == '.' || e.KeyChar == ',') && textBox.Text.Contains('.'))
             {
                 e.Handled = true;
             }
 
-            // Замена запятой на точку для правильного ввода дробных чисел
             if (e.KeyChar == ',')
             {
                 e.KeyChar = '.';
             }
 
-            // Если пользователь начинает вводить десятичную часть с запятой или точки, автоматически добавляем "0."
             if ((textBox.SelectionStart == 0 || textBox.Text == "") && (e.KeyChar == '.' || e.KeyChar == ','))
             {
                 textBox.Text = "0" + e.KeyChar;
-                textBox.SelectionStart = 2; // Переместить курсор в конец
-                e.Handled = true; // Предотвращаем добавление второй точки или запятой
+                textBox.SelectionStart = 2;
+                e.Handled = true;
             }
 
-            // Проверка на количество цифр после десятичной точки
             if (textBox.Text.Contains('.'))
             {
                 int indexOfDot = textBox.Text.IndexOf('.');
@@ -92,7 +80,6 @@ namespace Version2
                 }
             }
 
-            // Разрешаем вводить точку только после ввода двух цифр
             if ((e.KeyChar == '.' || e.KeyChar == ',') && textBox.Text.Length < 2)
             {
                 e.Handled = true;
@@ -101,7 +88,6 @@ namespace Version2
 
         private void nameTextBoxt_KeyPress(object sender, KeyPressEventArgs e)
         {
-            /// Проверка на ввод только буквенных символов
             if (!char.IsControl(e.KeyChar) && !char.IsLetter(e.KeyChar))
             {
                 e.Handled = true;
@@ -131,35 +117,22 @@ namespace Version2
 
         private void LoadMetalsData()
         {
+            comboBoxMetals.Items.Clear();
             string jsonFilePath = @"C:\My projects\CS\metals.json";
             if (File.Exists(jsonFilePath))
             {
                 string jsonData = File.ReadAllText(jsonFilePath);
-                metalsList = JsonConvert.DeserializeObject<MetalsList>(jsonData).Металлы;
-                foreach (var metal in metalsList)
+                metals = System.Text.Json.JsonSerializer.Deserialize<MetalData>(jsonData).Metals;
+                foreach (var metal in metals)
                 {
-                    comboBoxMetals.Items.Add(metal.Название);
+                    comboBoxMetals.Items.Add(metal.Name); 
                 }
+
             }
             else
             {
                 MessageBox.Show("Файл 'metals.json' не найден!");
             }
-        }
-
-        private async void FadeIn()
-        {
-            for (double i = 0.0; i <= 1.0; i += 0.1)
-            {
-                this.Opacity = i;
-                await Task.Delay(50); // Регулируйте задержку для скорости появления
-            }
-        }
-
-        protected override void OnShown(EventArgs e)
-        {
-            base.OnShown(e);
-            FadeIn();
         }
 
         private void Singl_KeyDown(object sender, KeyEventArgs e)
@@ -170,8 +143,6 @@ namespace Version2
             }
         }
 
-
-
         private void ShowItems_Click(object sender, EventArgs e)
         {
             if (comboBoxMetals.SelectedIndex == -1)
@@ -180,17 +151,15 @@ namespace Version2
             }
             else
             {
-                // Получаем выбранный металл из ComboBox
                 string selectedMetalName = comboBoxMetals.SelectedItem.ToString();
-                Metal selectedMetal = metalsList.FirstOrDefault(m => m.Название == selectedMetalName);
+                Metal selectedMetal = metals.FirstOrDefault(m => m.Name == selectedMetalName);
 
                 if (selectedMetal != null)
                 {
-                    // Отображаем свойства выбранного металла в MessageBox
                     MessageBox.Show(
-                                    $"Плотность: {selectedMetal.Плотность} г/см³\n" +
-                                    $"Удельная теплоемкость: {selectedMetal.УдельнаяТеплоемкость} Дж/г·°C\n" +
-                                    $"Коэффициент теплопроводности: {selectedMetal.КоэффициентТеплопроводности} Вт/м·°C");
+                                    $"Плотность: {selectedMetal.Density} г/см³\n" +
+                                    $"Удельная теплоемкость: {selectedMetal.SpecificHeat} Дж/г·°C\n" +
+                                    $"Коэффициент теплопроводности: {selectedMetal.Alpha} Вт/м·°C");
 
                 }
 
@@ -203,6 +172,8 @@ namespace Version2
 
         private void SelectThis_Click(object sender, EventArgs e)
         {
+            
+
             if (comboBoxMetals.SelectedIndex == -1)
             {
                 MessageBox.Show("Металл не выбран!");
@@ -210,13 +181,13 @@ namespace Version2
             else
             {
                 string selectedMetalName = comboBoxMetals.SelectedItem.ToString();
-                Metal selectedMetal = metalsList.FirstOrDefault(m => m.Название == selectedMetalName);
+                Metal selectedMetal = metals.FirstOrDefault(m => m.Name == selectedMetalName);
 
                 if (selectedMetal != null)
                 {
-                    double density = selectedMetal.Плотность;
-                    double specificHeat = selectedMetal.УдельнаяТеплоемкость;
-                    double alpha = selectedMetal.КоэффициентТеплопроводности;
+                    double density = selectedMetal.Density;
+                    double specificHeat = selectedMetal.SpecificHeat;
+                    double alpha = selectedMetal.Alpha;
 
                     if (selectedMetod == 0)
                     {
@@ -227,10 +198,8 @@ namespace Version2
                         if (Program.GlobalVariables.selectedMethod == true)
                         {
 
-                            // Очищаем панель panel1 перед добавлением нового контента
                             panel1.Controls.Clear();
 
-                            // Создаем экземпляр формы MainPage (если еще не создан)
                             if (Singl == null)
                             {
                                 Singl = new Singl(density, specificHeat, alpha);
@@ -239,18 +208,14 @@ namespace Version2
                                 Singl.Dock = DockStyle.Fill;
                             }
 
-                            // Добавляем форму MainPage на панель panel1
                             panel1.Controls.Add(Singl);
 
-                            // Отображаем форму MainPage на панели panel1
                             Singl.Show();
                         }
                         else
                         {
-                            // Очищаем панель panel1 перед добавлением нового контента
                             panel1.Controls.Clear();
 
-                            // Создаем экземпляр формы MainPage (если еще не создан)
                             if (dimen1 == null)
                             {
                                 dimen1 = new TDimen(density, specificHeat, alpha);
@@ -259,10 +224,8 @@ namespace Version2
                                 dimen1.Dock = DockStyle.Fill;
                             }
 
-                            // Добавляем форму MainPage на панель panel1
                             panel1.Controls.Add(dimen1);
 
-                            // Отображаем форму MainPage на панели panel1
                             dimen1.Show();
                         }
                     }
@@ -275,25 +238,25 @@ namespace Version2
 
         }
 
-
         private void button1_Click(object sender, EventArgs e)
         {
             selectedMetod = 1;
             Program.GlobalVariables.selectedMethod = true;
+            this.Update_Fore(sender, e);
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             selectedMetod = 2;
             Program.GlobalVariables.selectedMethod = false;
+            this.Update_Fore(sender, e);
         }
+
 
         private void back_Click(object sender, EventArgs e)
         {
-            // Очищаем панель panel1 перед добавлением нового контента
             panel1.Controls.Clear();
 
-            // Создаем экземпляр формы MainPage (если еще не создан)
             if (mainPageForm == null)
             {
                 mainPageForm = new MainPage();
@@ -302,23 +265,18 @@ namespace Version2
                 mainPageForm.Dock = DockStyle.Fill;
             }
 
-            // Добавляем форму MainPage на панель panel1
             panel1.Controls.Add(mainPageForm);
 
-            // Отображаем форму MainPage на панели panel1
             mainPageForm.Show();
         }
 
-
         private void AddMetal_Click(object sender, EventArgs e)
         {
-
             string name = NameBox.Text;
             if (double.TryParse(DensityBox.Text, out double densityValue) &&
                 double.TryParse(SpecificHeatBox.Text, out double specificHeatValue) &&
                 double.TryParse(AlphaBox.Text, out double alphaValue))
             {
-                // Читаем существующие данные из файла
                 string jsonString = string.Empty;
 
                 if (File.Exists(jsonFilePath))
@@ -326,10 +284,10 @@ namespace Version2
                     jsonString = File.ReadAllText(jsonFilePath);
                     try
                     {
-                        var metalData = JsonSerializer.Deserialize<MetalData>(jsonString);
+                        var metalData = System.Text.Json.JsonSerializer.Deserialize<MetalData>(jsonString);
                         metals = metalData.Metals;
                     }
-                    catch (JsonException ex)
+                    catch (System.Text.Json.JsonException ex)
                     {
                         MessageBox.Show($"Ошибка десериализации JSON: {ex.Message}");
                         metals = new List<Metal>();
@@ -340,7 +298,6 @@ namespace Version2
                     metals = new List<Metal>();
                 }
 
-                // Создаем новый объект Metal
                 int number = metals.Count + 1; // Присваиваем номер следующего элемента
                 Metal newMetal = new Metal
                 {
@@ -354,9 +311,8 @@ namespace Version2
                 // Добавляем новый объект в список
                 metals.Add(newMetal);
 
-                // Сериализуем список обратно в JSON
                 var metalDataToUpdate = new MetalData { Metals = metals };
-                jsonString = JsonSerializer.Serialize(metalDataToUpdate, new JsonSerializerOptions { WriteIndented = true });
+                jsonString = System.Text.Json.JsonSerializer.Serialize(metalDataToUpdate, new System.Text.Json.JsonSerializerOptions { WriteIndented = true });
                 File.WriteAllText(jsonFilePath, jsonString);
 
                 // Очищаем текстовые поля после добавления
@@ -364,6 +320,8 @@ namespace Version2
                 DensityBox.Clear();
                 SpecificHeatBox.Clear();
                 AlphaBox.Clear();
+
+                LoadMetalsData();
 
                 MessageBox.Show("Металл успешно добавлен!");
             }
@@ -374,30 +332,75 @@ namespace Version2
 
         }
 
-        private void comboBoxMetals_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void DBMetals_Load(object sender, EventArgs e)
         {
 
         }
+
+        private void DelMetal_Click(object sender, EventArgs e)
+        {
+            if (comboBoxMetals.SelectedIndex == -1)
+            {
+                MessageBox.Show("Металл не выбран для удаления!");
+                return;
+            }
+
+            string selectedMetalName = comboBoxMetals.SelectedItem.ToString();
+            Metal selectedMetal = metals.FirstOrDefault(m => m.Name == selectedMetalName);
+
+            if (selectedMetal != null)
+            {
+                // Удаление металла из списка
+                metals.Remove(selectedMetal);
+
+                // Обновление данных в файле metals.json
+                UpdateMetalsFile();
+
+                // Обновление выпадающего списка
+                LoadMetalsData();
+
+                MessageBox.Show($"Металл '{selectedMetal.Name}' успешно удален!");
+            }
+            else
+            {
+                MessageBox.Show("Ошибка при удалении металла!");
+            }
+        }
+
+        private void UpdateMetalsFile()
+        {
+            var metalDataToUpdate = new MetalData { Metals = metals };
+            string jsonString = System.Text.Json.JsonSerializer.Serialize(metalDataToUpdate, new System.Text.Json.JsonSerializerOptions { WriteIndented = true });
+            File.WriteAllText(jsonFilePath, jsonString);
+        }
+
+
 
     }
 
     // Classes for deserializing JSON
     public class Metal
     {
-        public int Номер { get; set; }
-        public string Название { get; set; }
-        public double Плотность { get; set; }
-        public double УдельнаяТеплоемкость { get; set; }
-        public double КоэффициентТеплопроводности { get; set; }
+        [JsonPropertyName("номер")]
+        public int Number { get; set; }
+
+        [JsonPropertyName("название")]
+        public string Name { get; set; }
+
+        [JsonPropertyName("Плотность")]
+        public double Density { get; set; }
+
+        [JsonPropertyName("удельнаяТеплоемкость")]
+        public double SpecificHeat { get; set; }
+
+        [JsonPropertyName("КоэффициентТеплопроводности")]
+        public double Alpha { get; set; }
     }
 
-    public class MetalsList
+    public class MetalData
     {
-        public List<Metal> Металлы { get; set; }
+        [JsonPropertyName("металлы")]
+        public List<Metal> Metals { get; set; }
     }
+
 }

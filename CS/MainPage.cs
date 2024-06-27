@@ -1,38 +1,62 @@
-﻿using System;
+﻿using CS.Properties;
+using System;
+using System.Globalization;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace Version2
 {
     public partial class MainPage : Form
     {
-        private DBMetals dbMetalsForm; // Объявляем форму DBMetals
-        private EnterPro enterProForm; // Объявляем форму EnterPro
+        private DBMetals dbMetalsForm;
+
 
         public MainPage()
         {
+            Thread.CurrentThread.CurrentUICulture = CultureInfo.GetCultureInfo("");
             InitializeComponent();
+
+            languageComboBox.SelectedIndex = 0;
+            languageComboBox.SelectedIndexChanged += LanguageComboBox_SelectedIndexChanged;
         }
 
-        private void ChoiceIn_Click(object sender, EventArgs e)
+        private void LanguageComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            // Очищаем панель panel1 перед добавлением нового контента
-            panel1.Controls.Clear();
+            ComboBox comboBox = (ComboBox)sender;
+            string selectedLanguage = (string)comboBox.SelectedItem;
 
-            // Создаем экземпляр формы EnterPro (если еще не создан)
-            if (enterProForm == null)
+            if (selectedLanguage == "English")
             {
-                enterProForm = new EnterPro();
-                enterProForm.TopLevel = false;
-                enterProForm.FormBorderStyle = FormBorderStyle.None;
-                enterProForm.Dock = DockStyle.Fill;
+                Thread.CurrentThread.CurrentUICulture = CultureInfo.GetCultureInfo("en-US");
+            }
+            else if (selectedLanguage == "Русский")
+            {
+                Thread.CurrentThread.CurrentUICulture = CultureInfo.GetCultureInfo("ru-RU");
+            }
+            else if (selectedLanguage == "Қазақша")
+            {
+                Thread.CurrentThread.CurrentUICulture = CultureInfo.GetCultureInfo("");
             }
 
-            // Добавляем форму EnterPro на панель panel1
-            panel1.Controls.Add(enterProForm);
-
-            // Отображаем форму EnterPro на панели panel1
-            enterProForm.Show();
+            UpdateFormTexts();
         }
+
+        private void UpdateFormTexts()
+        {
+            
+            this.ThemeComboBox.Items.AddRange(new object[] {
+            Program.ResourceManager.GetString("ThemeWhite"),
+            Program.ResourceManager.GetString("ThemeDark"),
+            Program.ResourceManager.GetString("ThemeSystem")
+            });
+
+            label1.Text = Program.ResourceManager.GetString("WelcomeMessage");
+            ChoiceShow.Text = Program.ResourceManager.GetString("Start");
+            label2.Text = Program.ResourceManager.GetString("ChangeLanguage");
+            label3.Text = Program.ResourceManager.GetString("ChangeTheme");
+
+        }
+
 
         private void ChoiceShow_Click_1(object sender, EventArgs e)
         {
@@ -55,9 +79,5 @@ namespace Version2
             dbMetalsForm.Show();
         }
 
-        private void MainPage_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }

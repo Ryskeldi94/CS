@@ -77,12 +77,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AddMetal.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AddMetal.Designer.cs">
-      <DependentUpon>AddMetal.cs</DependentUpon>
-    </Compile>
     <Compile Include="Class1.cs" />
     <Compile Include="DBMetals.cs">
       <SubType>Form</SubType>
@@ -102,6 +96,16 @@
     <Compile Include="LoadData_TD.Designer.cs">
       <DependentUpon>LoadData_TD.cs</DependentUpon>
     </Compile>
+    <Compile Include="Properties\Resources.ru-RU.Designer.cs">
+      <DependentUpon>Resources.ru-RU.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Properties\Resources.en-US.Designer.cs">
+      <DependentUpon>Resources.en-US.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -119,12 +123,6 @@
     <Compile Include="Singl.Designer.cs">
       <DependentUpon>Singl.cs</DependentUpon>
     </Compile>
-    <Compile Include="EnterPro.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="EnterPro.Designer.cs">
-      <DependentUpon>EnterPro.cs</DependentUpon>
-    </Compile>
     <Compile Include="MainPage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -132,20 +130,24 @@
       <DependentUpon>MainPage.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="AddMetal.resx">
-      <DependentUpon>AddMetal.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="DBMetals.resx">
       <DependentUpon>DBMetals.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="EnterPro.resx">
-      <DependentUpon>EnterPro.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoadData_2.resx">
       <DependentUpon>LoadData_2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoadData_TD.resx">
       <DependentUpon>LoadData_TD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.ru-RU.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.ru-RU.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.en-US.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.en-US.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="TDimen.resx">
       <DependentUpon>TDimen.cs</DependentUpon>

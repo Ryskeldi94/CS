@@ -117,4 +117,31 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="ChangeLanguage" xml:space="preserve">
+    <value>Тілді өзгерту</value>
+  </data>
+  <data name="ChangeTheme" xml:space="preserve">
+    <value>Тема өзгерту</value>
+  </data>
+  <data name="MainLabel" xml:space="preserve">
+    <value>Выберите опцию:</value>
+  </data>
+  <data name="Start" xml:space="preserve">
+    <value>Бастау</value>
+  </data>
+  <data name="ThemeDark" xml:space="preserve">
+    <value>Қара</value>
+  </data>
+  <data name="ThemeSystem" xml:space="preserve">
+    <value>Жүйері</value>
+  </data>
+  <data name="ThemeWhite" xml:space="preserve">
+    <value>Ақ</value>
+  </data>
+  <data name="WelcomeMessage" xml:space="preserve">
+    <value>Қош келдіңіз</value>
+  </data>
+  <data name="в" xml:space="preserve">
+    <value />
+  </data>
 </root>

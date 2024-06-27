@@ -16,7 +16,6 @@ namespace Version2
         private double _thermalConductivity;
 
         private DBMetals dbMetalsForm;
-        private EnterPro enterProForm;
         private LoadData_TD LoadData_TD;
 
         public TDimen(double density, double specificHeat, double thermalConductivity)
@@ -112,8 +111,7 @@ namespace Version2
 
         private void back_Click(object sender, EventArgs e)
         {
-            if (Program.GlobalVariables.selectedMethod == true)
-            {
+            
                 // Очищаем панель panel1 перед добавлением нового контента
                 panel1.Controls.Clear();
 
@@ -131,27 +129,8 @@ namespace Version2
 
                 // Отображаем форму DBMetals на панели panel1
                 dbMetalsForm.Show();
-            }
-            else if (Program.GlobalVariables.selectedMethod == false)
-            {
-                // Очищаем панель panel1 перед добавлением нового контента
-                panel1.Controls.Clear();
-
-                // Создаем экземпляр формы EnterPro (если еще не создан)
-                if (enterProForm == null)
-                {
-                    enterProForm = new EnterPro();
-                    enterProForm.TopLevel = false;
-                    enterProForm.FormBorderStyle = FormBorderStyle.None;
-                    enterProForm.Dock = DockStyle.Fill;
-                }
-
-                // Добавляем форму EnterPro на панель panel1
-                panel1.Controls.Add(enterProForm);
-
-                // Отображаем форму EnterPro на панели panel1
-                enterProForm.Show();
-            }
+            
+            
         }
 
         private void button1_Click_1(object sender, EventArgs e)

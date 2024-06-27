@@ -13,7 +13,6 @@ namespace Version2
         private double _specificHeat;
         private double _alpha;
 
-        private EnterPro EnterPro;
         private DBMetals DBMetals;
         private LoadData_2 LoadData_2;
 
@@ -215,8 +214,7 @@ namespace Version2
 
         private void back_Click(object sender, EventArgs e)
         {
-            if (Program.GlobalVariables.selectedMethod == true)
-            {
+            
                 panel1.Controls.Clear();
 
                 // Создаем экземпляр формы MainPage (если еще не создан)
@@ -233,31 +231,9 @@ namespace Version2
 
                 // Отображаем форму MainPage на панели panel1
                 DBMetals.Show();
-            }
-            else if (SelectedMethod == 2)
-            {
-                panel1.Controls.Clear();
-
-                // Создаем экземпляр формы MainPage (если еще не создан)
-                if (EnterPro == null)
-                {
-                    EnterPro = new EnterPro();
-                    EnterPro.TopLevel = false;
-                    DBMetals.FormBorderStyle = FormBorderStyle.None;
-                    EnterPro.Dock = DockStyle.Fill;
-                }
-
-                // Добавляем форму MainPage на панель panel1
-                panel1.Controls.Add(EnterPro);
-
-                // Отображаем форму MainPage на панели panel1
-                EnterPro.Show();
-            }
+            
+           
         }
 
-        private void dataGridViewResults_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
     }
 }
