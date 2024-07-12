@@ -10,6 +10,7 @@
 #include "solveHeatEquation2D.h"
 
 #pragma comment(lib, "ws2_32.lib")
+//g++ -o server.exe server.cpp solveHeatEquation1D.cpp solveHeatEquation2D.cpp -lws2_32 -fopenmp
 
 void logError(const std::string& errorMessage) {
     std::ofstream errorFile("C:/My projects/Server for app/error_log.txt", std::ios::app);
