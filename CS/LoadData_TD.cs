@@ -56,6 +56,8 @@ namespace Version2
             numericUpDown1.ValueChanged += numericUpDown1_ValueChanged; // Ensure this event handler is connected
 
             InitializeTextBoxes(); // Initialize text boxes with styles
+            ThemeHelper.UpdateTheme(this);
+            ThemeHelper.ApplyLanguage(this);
         }
 
         private void Form_MouseWheel(object sender, MouseEventArgs e)
@@ -182,6 +184,11 @@ namespace Version2
         }
 
         private void button1_Click(object sender, EventArgs e)
+        {
+            Back(sender, e);
+        }
+
+        private void back_Click(object sender, EventArgs e) 
         {
             Back(sender, e);
         }

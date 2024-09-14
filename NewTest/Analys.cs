@@ -34,7 +34,6 @@ namespace Test
                 float initialTemperature = 100.0f;
                 float ambientTemperature = 20.0f;
                 int nx = 10;
-                int ny = 10;
                 int calculationType = 1;
                 // Временные шаги для анализа
 
@@ -164,8 +163,6 @@ namespace Test
 
                 }
 
-
-                // Close the stream and client when done
                 stream.Close();
                 client.Close();
             }

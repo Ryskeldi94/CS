@@ -43,6 +43,8 @@ namespace Version2
 
             this.KeyPreview = true; 
             this.KeyDown += Singl_KeyDown;
+
+            ThemeHelper.UpdateTheme(this);
         }
 
         private void Singl_KeyDown(object sender, KeyEventArgs e)
@@ -159,7 +161,9 @@ namespace Version2
             ProcessStartInfo serverStartInfo = new ProcessStartInfo
             {
                 FileName = @"C:\My projects\Server for app\server.exe", 
-                UseShellExecute = false
+                UseShellExecute = false,
+                CreateNoWindow = true, // Скрыть консольное окно
+                WindowStyle = ProcessWindowStyle.Hidden
             };
 
             Process serverProcess = Process.Start(serverStartInfo);

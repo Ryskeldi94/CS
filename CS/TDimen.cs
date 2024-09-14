@@ -21,6 +21,9 @@ namespace Version2
         public TDimen(double density, double specificHeat, double thermalConductivity)
         {
             InitializeComponent();
+
+            ThemeHelper.UpdateTheme(this);
+
             initialTemperature.KeyPress += textBox1_KeyPress;
             highTempX.KeyPress += textBox1_KeyPress;
             ambientTemperature.KeyPress += textBox1_KeyPress;
@@ -109,30 +112,7 @@ namespace Version2
             }
         }
 
-        private void back_Click(object sender, EventArgs e)
-        {
-            
-                // Очищаем панель panel1 перед добавлением нового контента
-                panel1.Controls.Clear();
-
-                // Создаем экземпляр формы DBMetals (если еще не создан)
-                if (dbMetalsForm == null)
-                {
-                    dbMetalsForm = new DBMetals();
-                    dbMetalsForm.TopLevel = false;
-                    dbMetalsForm.FormBorderStyle = FormBorderStyle.None;
-                    dbMetalsForm.Dock = DockStyle.Fill;
-                }
-
-                // Добавляем форму DBMetals на панель panel1
-                panel1.Controls.Add(dbMetalsForm);
-
-                // Отображаем форму DBMetals на панели panel1
-                dbMetalsForm.Show();
-            
-            
-        }
-
+        
         private void button1_Click_1(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(highTempY.Text) || string.IsNullOrEmpty(initialTemperature.Text) || string.IsNullOrEmpty(highTempX.Text) || string.IsNullOrEmpty(ambientTemperature.Text))
@@ -164,6 +144,8 @@ namespace Version2
             ProcessStartInfo serverStartInfo = new ProcessStartInfo();
             serverStartInfo.FileName = @"C:\My projects\Server for app\server.exe";
             serverStartInfo.UseShellExecute = false;
+            serverStartInfo.CreateNoWindow = true; // Скрыть консольное окно
+            serverStartInfo.WindowStyle = ProcessWindowStyle.Hidden;
 
             Process serverProcess = Process.Start(serverStartInfo);
 
@@ -215,6 +197,27 @@ namespace Version2
             panel1.Controls.Add(LoadData_TD);
 
             LoadData_TD.Show();
+        }
+
+        private void back_Click(object sender, EventArgs e)
+        {
+            // Очищаем панель panel1 перед добавлением нового контента
+            panel1.Controls.Clear();
+
+            // Создаем экземпляр формы DBMetals (если еще не создан)
+            if (dbMetalsForm == null)
+            {
+                dbMetalsForm = new DBMetals();
+                dbMetalsForm.TopLevel = false;
+                dbMetalsForm.FormBorderStyle = FormBorderStyle.None;
+                dbMetalsForm.Dock = DockStyle.Fill;
+            }
+
+            // Добавляем форму DBMetals на панель panel1
+            panel1.Controls.Add(dbMetalsForm);
+
+            // Отображаем форму DBMetals на панели panel1
+            dbMetalsForm.Show();
         }
     }
 }

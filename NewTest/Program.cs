@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Diagnostics;
-using System.IO;
 using System.Net.Sockets;
 using Test;
 
@@ -10,7 +9,11 @@ class Program
     {
 
         Console.WriteLine("Please choose: server test or processing time test?  1 or 2");
-        int pro = int.Parse(Console.ReadLine());
+        int pro;
+        while (!int.TryParse(Console.ReadLine(), out pro) || (pro != 1 && pro != 2))
+        {
+            Console.WriteLine("Please enter a valid option: 1 for server test, 2 for processing time test.");
+        }
 
         if (pro == 1)
         {
@@ -19,6 +22,8 @@ class Program
                 ProcessStartInfo serverStartInfo = new ProcessStartInfo();
                 serverStartInfo.FileName = @"C:\My projects\Server for app\server.exe"; // Путь к исполняемому файлу сервера
                 serverStartInfo.UseShellExecute = false;
+                serverStartInfo.CreateNoWindow = true; // Скрыть консольное окно
+                serverStartInfo.WindowStyle = ProcessWindowStyle.Hidden;
 
                 // Создаем новый процесс для сервера
                 Process serverProcess = Process.Start(serverStartInfo);
@@ -26,30 +31,26 @@ class Program
                 // Ждем, пока сервер не завершит запуск
                 Console.WriteLine("Server is running.");
 
-                TcpClient client = new TcpClient("127.0.0.1", 54000); // Connect to server
+                // Подключаемся к серверу
+
+                TcpClient client = new TcpClient("127.0.0.1", 54000); // Подключаемся к серверу
                 Console.WriteLine("Connected to server.");
 
                 NetworkStream stream = client.GetStream();
 
 
-                // Example 1D heat equation calculation
-                int calculationType = 1; // 1D calculation
-                double density = 7.78;
-                double specificHeat = 0.449;
-                double alpha = 80.2;
-                int highTempLocation = 5;
-                int highTempY = 5;
-                int highTempX = 5;
-                float initialTemperature = 100.0f;
-                float ambientTemperature = 20.0f;
-                int numSteps = 100;
-                int nx = 10;
-                int ny = 10;
+                double density = 7.78, specificHeat = 0.449, alpha = 80.2;
+                int highTempLocation = 5, highTempY = 5, highTempX = 5, numSteps = 100, nx = 10, ny = 10;
+                float initialTemperature = 100.0f, ambientTemperature = 20.0f;
 
                 while (true)
                 {
-                    Console.WriteLine("\nPlease enter the calculation type:");
-                    calculationType = int.Parse(Console.ReadLine());
+                    Console.WriteLine("\nPlease enter the calculation type. 1 for 1D test, 2 for 2D test:");
+                    int calculationType;
+                    while (!int.TryParse(Console.ReadLine(), out calculationType) || (calculationType != 1 && calculationType != 2))
+                    {
+                        Console.WriteLine("Invalid input. Enter 1 for 1D or 2 for 2D calculation:");
+                    }
 
                     if (calculationType == 1)
                     {
@@ -140,6 +141,7 @@ class Program
 
                         }
                     }
+
                     else
                     {
                         calculationType = 0;
@@ -151,6 +153,7 @@ class Program
                 // Close the stream and client when done
                 stream.Close();
                 client.Close();
+
             }
             catch (Exception e)
             {

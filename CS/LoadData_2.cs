@@ -28,6 +28,8 @@ namespace Version2
             previousLine.MouseWheel += new MouseEventHandler(textBox_MouseWheel);
 
             stylLines();
+            ThemeHelper.ApplyLanguage(this);
+            ThemeHelper.UpdateTheme(this);
         }
 
         private void stylLines()
@@ -189,24 +191,7 @@ namespace Version2
             return rowData.ToString();
         }
        
-        private void back_Click(object sender, EventArgs e)
-        {
-            panel1.Controls.Clear();
-
-            if (Singl == null)
-            {
-                Singl= new Singl();
-                Singl.TopLevel = false;
-                Singl.FormBorderStyle = FormBorderStyle.None;
-                Singl.Dock = DockStyle.Fill;
-            }
-
-            // Добавляем форму MainPage на панель panel1
-            panel1.Controls.Add(Singl);
-
-            // Отображаем форму MainPage на панели panel1
-            Singl.Show();
-        }
+        
 
         private void saveButton_Click(object sender, EventArgs e)
         {
@@ -231,5 +216,23 @@ namespace Version2
             }
         }
 
+        private void back_Click(object sender, EventArgs e)
+        {
+            panel1.Controls.Clear();
+
+            if (Singl == null)
+            {
+                Singl = new Singl();
+                Singl.TopLevel = false;
+                Singl.FormBorderStyle = FormBorderStyle.None;
+                Singl.Dock = DockStyle.Fill;
+            }
+
+            // Добавляем форму MainPage на панель panel1
+            panel1.Controls.Add(Singl);
+
+            // Отображаем форму MainPage на панели panel1
+            Singl.Show();
+        }
     }
 }

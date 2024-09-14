@@ -41,7 +41,7 @@ void logProgress(const std::string& logMessage) {
 }
 
 void initializeProgressLog() {
-    std::ofstream progressFile("C:/My projects/Server for app/  progress_log.txt");
+    std::ofstream progressFile("C:/My projects/Server for app/progress_log.txt");
     if (!progressFile.is_open()) {
         std::cerr << "Error opening progress_log.txt for writing." << std::endl;
     }

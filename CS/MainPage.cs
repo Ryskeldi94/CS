@@ -10,53 +10,39 @@ namespace Version2
     {
         private DBMetals dbMetalsForm;
 
-
         public MainPage()
         {
-            Thread.CurrentThread.CurrentUICulture = CultureInfo.GetCultureInfo("");
             InitializeComponent();
-
-            languageComboBox.SelectedIndex = 0;
-            languageComboBox.SelectedIndexChanged += LanguageComboBox_SelectedIndexChanged;
+            ThemeHelper.UpdateTheme(this);
+            ThemeHelper.ApplyLanguage(this);
         }
 
-        private void LanguageComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        private void languageComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            ComboBox comboBox = (ComboBox)sender;
-            string selectedLanguage = (string)comboBox.SelectedItem;
-
-            if (selectedLanguage == "English")
+            if (languageComboBox.Text == "English")
             {
-                Thread.CurrentThread.CurrentUICulture = CultureInfo.GetCultureInfo("en-US");
+                Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("en");
+                Program.GlobalVariables.Language = "en";
             }
-            else if (selectedLanguage == "Русский")
-            {
-                Thread.CurrentThread.CurrentUICulture = CultureInfo.GetCultureInfo("ru-RU");
-            }
-            else if (selectedLanguage == "Қазақша")
-            {
-                Thread.CurrentThread.CurrentUICulture = CultureInfo.GetCultureInfo("");
-            }
-
-            UpdateFormTexts();
-        }
-
-        private void UpdateFormTexts()
-        {
             
-            this.ThemeComboBox.Items.AddRange(new object[] {
-            Program.ResourceManager.GetString("ThemeWhite"),
-            Program.ResourceManager.GetString("ThemeDark"),
-            Program.ResourceManager.GetString("ThemeSystem")
-            });
+            if (languageComboBox.Text == "Русский")
+            {
+                Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("ru-RU");
+                Program.GlobalVariables.Language = "ru";
+            }
+            
+            if (languageComboBox.Text == "Қазақша")
+            {
+                Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("kk-KZ");
+                Program.GlobalVariables.Language = "kz";
+            }
 
-            label1.Text = Program.ResourceManager.GetString("WelcomeMessage");
-            ChoiceShow.Text = Program.ResourceManager.GetString("Start");
-            label2.Text = Program.ResourceManager.GetString("ChangeLanguage");
-            label3.Text = Program.ResourceManager.GetString("ChangeTheme");
+            this.Controls.Clear();
+            
+            InitializeComponent();
+            ThemeHelper.UpdateTheme(this);
 
         }
-
 
         private void ChoiceShow_Click_1(object sender, EventArgs e)
         {
@@ -77,6 +63,7 @@ namespace Version2
 
             // Отображаем форму DBMetals на панели panel1
             dbMetalsForm.Show();
+          
         }
 
     }

@@ -71,7 +71,7 @@ namespace Version2
             this.back.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.back.ForeColor = System.Drawing.Color.White;
             this.back.Image = ((System.Drawing.Image)(resources.GetObject("back.Image")));
-            this.back.Location = new System.Drawing.Point(3, 615);
+            this.back.Location = new System.Drawing.Point(3, 606);
             this.back.Name = "back";
             this.back.Size = new System.Drawing.Size(83, 66);
             this.back.TabIndex = 8;
@@ -82,7 +82,7 @@ namespace Version2
             // calculate
             // 
             this.calculate.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.calculate.Location = new System.Drawing.Point(410, 489);
+            this.calculate.Location = new System.Drawing.Point(870, 593);
             this.calculate.Name = "calculate";
             this.calculate.Size = new System.Drawing.Size(360, 53);
             this.calculate.TabIndex = 8;
@@ -103,7 +103,7 @@ namespace Version2
             // textBox2
             // 
             this.textBox2.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(47, 402);
+            this.textBox2.Location = new System.Drawing.Point(47, 430);
             this.textBox2.Name = "textBox2";
             this.textBox2.ReadOnly = true;
             this.textBox2.Size = new System.Drawing.Size(619, 40);
@@ -113,7 +113,7 @@ namespace Version2
             // textBox1
             // 
             this.textBox1.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(47, 299);
+            this.textBox1.Location = new System.Drawing.Point(47, 313);
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
             this.textBox1.Size = new System.Drawing.Size(619, 40);
@@ -123,9 +123,9 @@ namespace Version2
             // label2
             // 
             this.label2.Font = new System.Drawing.Font("Times New Roman", 26F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(106, 18);
+            this.label2.Location = new System.Drawing.Point(71, 22);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(664, 136);
+            this.label2.Size = new System.Drawing.Size(1132, 136);
             this.label2.TabIndex = 4;
             this.label2.Text = "Решение теплопроводност в одномерном плотности";
             this.label2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -133,7 +133,7 @@ namespace Version2
             // ambientTemperature
             // 
             this.ambientTemperature.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ambientTemperature.Location = new System.Drawing.Point(691, 402);
+            this.ambientTemperature.Location = new System.Drawing.Point(691, 430);
             this.ambientTemperature.Name = "ambientTemperature";
             this.ambientTemperature.Size = new System.Drawing.Size(79, 40);
             this.ambientTemperature.TabIndex = 2;
@@ -141,7 +141,7 @@ namespace Version2
             // initialTemperature
             // 
             this.initialTemperature.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.initialTemperature.Location = new System.Drawing.Point(691, 299);
+            this.initialTemperature.Location = new System.Drawing.Point(691, 313);
             this.initialTemperature.Name = "initialTemperature";
             this.initialTemperature.Size = new System.Drawing.Size(79, 40);
             this.initialTemperature.TabIndex = 1;

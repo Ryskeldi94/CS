@@ -19,6 +19,7 @@ namespace Version2
 
         public DBMetals()
         {
+            ThemeHelper.ApplyLanguage(this);
             InitializeComponent();
             comboBoxMetals.DropDownStyle = ComboBoxStyle.DropDownList;
             LoadMetalsData();
@@ -43,6 +44,7 @@ namespace Version2
             DensityBox.KeyPress += density_KeyPress;
 
             SetTabIndexes();
+            ThemeHelper.UpdateTheme(this);
         }
 
         private void density_KeyPress(object sender, KeyPressEventArgs e)

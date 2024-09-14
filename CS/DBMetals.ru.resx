@@ -117,25 +117,23 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="ChangeLanguage" xml:space="preserve">
-    <value>Изменить язык</value>
-  </data>
-  <data name="ChangeTheme" xml:space="preserve">
-    <value>Изменить тему</value>
-  </data>
-  <data name="Start" xml:space="preserve">
-    <value>Старт</value>
-  </data>
-  <data name="ThemeDark" xml:space="preserve">
-    <value>Темный</value>
-  </data>
-  <data name="ThemeSystem" xml:space="preserve">
-    <value>Системный</value>
-  </data>
-  <data name="ThemeWhite" xml:space="preserve">
-    <value>Белый</value>
-  </data>
-  <data name="WelcomeMessage" xml:space="preserve">
-    <value>Добро</value>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="back.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        vwAADr8BOAVTJAAAArJJREFUaEPV2UuITmEcx/HXkHGpKWnkPmOyMA0pk4TkspCJhbJAshMahWIhWc6S
+        LVJKTKPEQkpZSBFKbkkRNjLjvmDIuPP9qX/9e5uNef+nzv9Xn5pO03Oe53nPeW6nUmOGYQ/6cQHDkSZj
+        0IM/TitSpBn34Ct/BSl+gRV4B1/5IxiJUkfP+278gFX8K7ag9BmNk/C93oeFKH2m4TZ85W9gEkqfpXgD
+        X/ljKP3zruzAd1jFv2E7Sp8ROA7f6/IcF4dAE5zmi4PQCz8XdSgsq1Fd+Wh6LA+jHeGZhQEMduMiXMYC
+        hEYF9sLf6BnWoeM/rcEm7McZvIYvV35Dg0MDwjIR1+FvdBdNqCWaEJfgFPwgIU8xB2HRcHkU/iZvsQwR
+        acE5+PI/QsN3aLZCw6jdRD23E1FZD1Xcyv+MxQjNIryE3UROYBQiMhsvYGW/xwyEZjJuwjfiFqYiIjPx
+        Cr5szUuhqUf1RKeRRS9mRDQCapVrZe9DIemEH0W+oBER0TbVyv0EjYiFRL1uiz3tE6YgItrZ3Yc14hAK
+        i57/LmjSioxf0nzAWKSKJrxHsEZsRLpo+WENOK0L2aKltzVAW9h00cusUcgaMQHposnMGqDVQLqchzVg
+        rS5ki15ea8AGXcgWv9zWhipdrsIasFwXssVvQcOX10VnOqzy2vBodk4VnSNZAy7pQrboyMUasEsXMqUN
+        Om5R5bVU124wVc7Cel9/p8pKWOV/YR7SRNtSfyqoDytpoi9B12CV13Y1ap9deLRl1FBplf+JVUgRfba9
+        A6u8pBg2tWHZBm3areIaOrWVLHV0HLkZD+F7PfSzrXongk649SLOhyrXDd/j5jH0PzVnPB6g+gZFUWMO
+        IOqQ+N+mYbAbRXsCnXuOQ2hUoD5saxiLoO8KOirXr6pPTHuh45KApXGl8hf43mqJty9aIgAAAABJRU5E
+        rkJggg==
+</value>
   </data>
 </root>

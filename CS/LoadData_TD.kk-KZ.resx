@@ -117,4 +117,94 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="back.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="back.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 606</value>
+  </data>
+  <data name="back.Size" type="System.Drawing.Size, System.Drawing">
+    <value>83, 66</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="back.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="line10.Location" type="System.Drawing.Point, System.Drawing">
+    <value>32, 373</value>
+  </data>
+  <data name="line10.Size" type="System.Drawing.Size, System.Drawing">
+    <value>967, 26</value>
+  </data>
+  <data name="line9.Location" type="System.Drawing.Point, System.Drawing">
+    <value>32, 341</value>
+  </data>
+  <data name="line9.Size" type="System.Drawing.Size, System.Drawing">
+    <value>967, 26</value>
+  </data>
+  <data name="line8.Location" type="System.Drawing.Point, System.Drawing">
+    <value>32, 309</value>
+  </data>
+  <data name="line8.Size" type="System.Drawing.Size, System.Drawing">
+    <value>967, 26</value>
+  </data>
+  <data name="line7.Location" type="System.Drawing.Point, System.Drawing">
+    <value>32, 277</value>
+  </data>
+  <data name="line7.Size" type="System.Drawing.Size, System.Drawing">
+    <value>967, 26</value>
+  </data>
+  <data name="line6.Location" type="System.Drawing.Point, System.Drawing">
+    <value>32, 245</value>
+  </data>
+  <data name="line6.Size" type="System.Drawing.Size, System.Drawing">
+    <value>967, 26</value>
+  </data>
+  <data name="line5.Location" type="System.Drawing.Point, System.Drawing">
+    <value>32, 213</value>
+  </data>
+  <data name="line5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>967, 26</value>
+  </data>
+  <data name="line4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>32, 181</value>
+  </data>
+  <data name="line4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>967, 26</value>
+  </data>
+  <data name="saveButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>42, 12</value>
+  </data>
+  <data name="saveButton.Text" xml:space="preserve">
+    <value>Сақтау</value>
+  </data>
+  <data name="line3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>32, 149</value>
+  </data>
+  <data name="line3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>967, 26</value>
+  </data>
+  <data name="line2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>32, 117</value>
+  </data>
+  <data name="line2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>967, 26</value>
+  </data>
+  <data name="line1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>32, 85</value>
+  </data>
+  <data name="line1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>967, 26</value>
+  </data>
+  <data name="numericUpDown1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>767, 26</value>
+  </data>
+  <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1278, 684</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>1278, 684</value>
+  </data>
 </root>
