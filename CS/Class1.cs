@@ -79,11 +79,9 @@ namespace Version2
                 textBoxForeColor = System.Drawing.Color.Black;
             }
 
-            // Обновить цвета формы
             form.BackColor = backColor;
             form.ForeColor = foreColor;
 
-            // Обновить цвета контролов на форме
             foreach (Control control in form.Controls)
             {
                 if (control is Panel panel)

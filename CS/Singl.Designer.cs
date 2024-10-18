@@ -48,6 +48,7 @@ namespace Version2
             // 
             // panel1
             // 
+            resources.ApplyResources(this.panel1, "panel1");
             this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.Controls.Add(this.back);
             this.panel1.Controls.Add(this.calculate);
@@ -58,113 +59,72 @@ namespace Version2
             this.panel1.Controls.Add(this.ambientTemperature);
             this.panel1.Controls.Add(this.initialTemperature);
             this.panel1.Controls.Add(this.highTempLocation);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1278, 684);
-            this.panel1.TabIndex = 2;
             // 
             // back
             // 
+            resources.ApplyResources(this.back, "back");
             this.back.BackColor = System.Drawing.Color.White;
             this.back.FlatAppearance.BorderSize = 0;
-            this.back.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.back.ForeColor = System.Drawing.Color.White;
-            this.back.Image = ((System.Drawing.Image)(resources.GetObject("back.Image")));
-            this.back.Location = new System.Drawing.Point(3, 606);
             this.back.Name = "back";
-            this.back.Size = new System.Drawing.Size(83, 66);
-            this.back.TabIndex = 8;
             this.back.UseVisualStyleBackColor = false;
             this.back.Click += new System.EventHandler(this.back_Click);
             this.back.Paint += new System.Windows.Forms.PaintEventHandler(this.back_Paint);
             // 
             // calculate
             // 
-            this.calculate.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.calculate.Location = new System.Drawing.Point(870, 593);
+            resources.ApplyResources(this.calculate, "calculate");
             this.calculate.Name = "calculate";
-            this.calculate.Size = new System.Drawing.Size(360, 53);
-            this.calculate.TabIndex = 8;
-            this.calculate.Text = "Рассчитать";
             this.calculate.UseVisualStyleBackColor = true;
             this.calculate.Click += new System.EventHandler(this.button1_Click);
             // 
             // textBox3
             // 
-            this.textBox3.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(47, 193);
+            resources.ApplyResources(this.textBox3, "textBox3");
             this.textBox3.Name = "textBox3";
             this.textBox3.ReadOnly = true;
-            this.textBox3.Size = new System.Drawing.Size(619, 40);
-            this.textBox3.TabIndex = 7;
-            this.textBox3.Text = "Введите местоположение с высокой температурой\r\n\r\n";
             // 
             // textBox2
             // 
-            this.textBox2.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(47, 430);
+            resources.ApplyResources(this.textBox2, "textBox2");
             this.textBox2.Name = "textBox2";
             this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(619, 40);
-            this.textBox2.TabIndex = 6;
-            this.textBox2.Text = "Введите окружающую температуру\r\n";
             // 
             // textBox1
             // 
-            this.textBox1.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(47, 313);
+            resources.ApplyResources(this.textBox1, "textBox1");
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(619, 40);
-            this.textBox1.TabIndex = 5;
-            this.textBox1.Text = "Введите начальную температуру";
             // 
             // label2
             // 
-            this.label2.Font = new System.Drawing.Font("Times New Roman", 26F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(71, 22);
+            resources.ApplyResources(this.label2, "label2");
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(1132, 136);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Решение теплопроводност в одномерном плотности";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // ambientTemperature
             // 
-            this.ambientTemperature.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ambientTemperature.Location = new System.Drawing.Point(691, 430);
+            resources.ApplyResources(this.ambientTemperature, "ambientTemperature");
             this.ambientTemperature.Name = "ambientTemperature";
-            this.ambientTemperature.Size = new System.Drawing.Size(79, 40);
-            this.ambientTemperature.TabIndex = 2;
             // 
             // initialTemperature
             // 
-            this.initialTemperature.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.initialTemperature.Location = new System.Drawing.Point(691, 313);
+            resources.ApplyResources(this.initialTemperature, "initialTemperature");
             this.initialTemperature.Name = "initialTemperature";
-            this.initialTemperature.Size = new System.Drawing.Size(79, 40);
-            this.initialTemperature.TabIndex = 1;
             // 
             // highTempLocation
             // 
-            this.highTempLocation.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.highTempLocation.Location = new System.Drawing.Point(691, 193);
+            resources.ApplyResources(this.highTempLocation, "highTempLocation");
             this.highTempLocation.Name = "highTempLocation";
-            this.highTempLocation.Size = new System.Drawing.Size(79, 40);
-            this.highTempLocation.TabIndex = 0;
-            this.highTempLocation.Text = "\r\n";
             // 
             // Singl
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1278, 684);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "Singl";
-            this.Text = "Form3";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);

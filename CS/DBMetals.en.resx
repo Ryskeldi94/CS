@@ -117,8 +117,48 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="textBox7.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Times New Roman, 14pt</value>
+  </data>
+  <data name="textBox7.Size" type="System.Drawing.Size, System.Drawing">
+    <value>112, 40</value>
+  </data>
+  <data name="textBox7.Text" xml:space="preserve">
+    <value>Вт/м*C</value>
+  </data>
+  <data name="textBox6.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Times New Roman, 14pt</value>
+  </data>
+  <data name="textBox6.Size" type="System.Drawing.Size, System.Drawing">
+    <value>112, 40</value>
+  </data>
+  <data name="textBox6.Text" xml:space="preserve">
+    <value>Дж/г*C</value>
+  </data>
+  <data name="textBox5.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Times New Roman, 14pt</value>
+  </data>
+  <data name="textBox5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>112, 40</value>
+  </data>
+  <data name="textBox5.Text" xml:space="preserve">
+    <value>г/см^3</value>
+  </data>
   <data name="DelMetal.Text" xml:space="preserve">
     <value>Remove metal</value>
+  </data>
+  <data name="AlphaBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 40</value>
+  </data>
+  <data name="SpecificHeatBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 40</value>
+  </data>
+  <data name="DensityBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 40</value>
+  </data>
+  <data name="NameBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>298, 40</value>
   </data>
   <data name="textBox4.Text" xml:space="preserve">
     <value>Coefficient of thermal conductivity</value>
@@ -131,6 +171,9 @@
   </data>
   <data name="textBox1.Text" xml:space="preserve">
     <value>Name metal</value>
+  </data>
+  <data name="ShowItems.Size" type="System.Drawing.Size, System.Drawing">
+    <value>392, 44</value>
   </data>
   <data name="ShowItems.Text" xml:space="preserve">
     <value>Display properties</value>
@@ -147,7 +190,6 @@
   <data name="AddMetal.Text" xml:space="preserve">
     <value>Add metal</value>
   </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
     <value>389, 55</value>
   </data>

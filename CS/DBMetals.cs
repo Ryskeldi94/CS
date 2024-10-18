@@ -13,7 +13,7 @@ namespace Version2
         private MainPage mainPageForm;
         private Singl Singl;
         private TDimen dimen1;
-        private readonly string jsonFilePath = @"C:\My projects\CS\metals.json";
+        private readonly string jsonFilePath = CS.Properties.Settings.Default.UserFilePathForJson;
         int selectedMetod = 0;
         private List<Metal> metals = new List<Metal>();
 
@@ -38,13 +38,49 @@ namespace Version2
             textBox4.ReadOnly = true;
             textBox4.TabStop = false;
 
+            textBox5.ReadOnly = true;
+            textBox5.TabStop = false;
+
+            textBox6.ReadOnly = true;
+            textBox6.TabStop = false;
+
+            textBox7.ReadOnly = true;
+            textBox7.TabStop = false;
+
+
             AlphaBox.KeyPress += alpha_KeyPress;
             NameBox.KeyPress += nameTextBoxt_KeyPress;
             SpecificHeatBox.KeyPress += specificHeat_KeyPress;
             DensityBox.KeyPress += density_KeyPress;
+            comboBoxMetals.SelectedIndexChanged += ComboBoxMetals_SelectedIndexChanged;
 
             SetTabIndexes();
             ThemeHelper.UpdateTheme(this);
+        }
+
+        
+
+        private void ComboBoxMetals_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboBoxMetals.SelectedIndex != -1)
+            {
+                string selectedMetalName = comboBoxMetals.SelectedItem.ToString();
+                Metal selectedMetal = metals.FirstOrDefault(m => m.Name == selectedMetalName);
+
+                if (selectedMetal != null)
+                {
+                    DensityBox.Text = selectedMetal.Density.ToString();       
+                    SpecificHeatBox.Text = selectedMetal.SpecificHeat.ToString();  
+                    AlphaBox.Text = selectedMetal.Alpha.ToString();        
+                    NameBox.Text = selectedMetal.Name;    
+                    
+
+                }
+                else
+                {
+                    MessageBox.Show("Металл не найден!");
+                }
+            }
         }
 
         private void density_KeyPress(object sender, KeyPressEventArgs e)
@@ -120,7 +156,7 @@ namespace Version2
         private void LoadMetalsData()
         {
             comboBoxMetals.Items.Clear();
-            string jsonFilePath = @"C:\My projects\CS\metals.json";
+            string jsonFilePath = CS.Properties.Settings.Default.UserFilePathForJson;
             if (File.Exists(jsonFilePath))
             {
                 string jsonData = File.ReadAllText(jsonFilePath);
@@ -133,7 +169,17 @@ namespace Version2
             }
             else
             {
-                MessageBox.Show("Файл 'metals.json' не найден!");
+                if (Program.GlobalVariables.Language == "ru")
+                {
+                    MessageBox.Show("Файл 'metals.json' не найден!");
+                } 
+                else if (Program.GlobalVariables.Language == "kz")
+                {
+                    MessageBox.Show("Файл 'metals.json' табылмады!");
+                } else
+                {
+                    MessageBox.Show("The 'metals.json' file not found!");
+                }
             }
         }
 
@@ -149,7 +195,16 @@ namespace Version2
         {
             if (comboBoxMetals.SelectedIndex == -1)
             {
-                MessageBox.Show("Металл не выбран!");
+                if (Program.GlobalVariables.Language == "ru") {
+                    MessageBox.Show("Металл не выбран!");
+                } 
+                else if (Program.GlobalVariables.Language == "kz")
+                {
+                    MessageBox.Show("Метал түрі таңдалмаған!");
+                } else
+                {
+                    MessageBox.Show("Metal not selected");
+                }
             }
             else
             {
@@ -162,7 +217,6 @@ namespace Version2
                                     $"Плотность: {selectedMetal.Density} г/см³\n" +
                                     $"Удельная теплоемкость: {selectedMetal.SpecificHeat} Дж/г·°C\n" +
                                     $"Коэффициент теплопроводности: {selectedMetal.Alpha} Вт/м·°C");
-
                 }
 
                 else

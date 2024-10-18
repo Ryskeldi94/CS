@@ -93,3 +93,10 @@ C:\My projects\CS\obj\Debug\Version2.LoadData_2.ru-RU.resources
 C:\My projects\CS\obj\Debug\Version2.LoadData_TD.en.resources
 C:\My projects\CS\obj\Debug\Version2.LoadData_TD.kk-KZ.resources
 C:\My projects\CS\obj\Debug\Version2.LoadData_TD.ru-RU.resources
+C:\My projects\CS\obj\Debug\Version2.Singl.en.resources
+C:\My projects\CS\obj\Debug\Version2.Singl.ru.resources
+C:\My projects\CS\bin\Debug\CS.exe.manifest
+C:\My projects\CS\bin\Debug\CS.application
+C:\My projects\CS\obj\Debug\CS.exe.manifest
+C:\My projects\CS\obj\Debug\CS.application
+C:\My projects\CS\obj\Debug\CS.SettingsPage.resources

@@ -20,20 +20,20 @@ class Program
             try
             {
                 ProcessStartInfo serverStartInfo = new ProcessStartInfo();
-                serverStartInfo.FileName = @"C:\My projects\Server for app\server.exe"; // Путь к исполняемому файлу сервера
+                serverStartInfo.FileName = @"C:\My projects\Server for app\server.exe"; 
                 serverStartInfo.UseShellExecute = false;
-                serverStartInfo.CreateNoWindow = true; // Скрыть консольное окно
+                serverStartInfo.CreateNoWindow = true; 
                 serverStartInfo.WindowStyle = ProcessWindowStyle.Hidden;
 
-                // Создаем новый процесс для сервера
-                Process serverProcess = Process.Start(serverStartInfo);
-
-                // Ждем, пока сервер не завершит запуск
+                Process? serverProcess = Process.Start(serverStartInfo);
+                if (serverProcess == null)
+                {
+                    Console.WriteLine("Failed to start server process.");
+                    return; 
+                }
                 Console.WriteLine("Server is running.");
 
-                // Подключаемся к серверу
-
-                TcpClient client = new TcpClient("127.0.0.1", 54000); // Подключаемся к серверу
+                TcpClient client = new TcpClient("127.0.0.1", 54000); 
                 Console.WriteLine("Connected to server.");
 
                 NetworkStream stream = client.GetStream();
@@ -54,7 +54,6 @@ class Program
 
                     if (calculationType == 1)
                     {
-                        // Send calculation type and parameters to server
                         stream.Write(BitConverter.GetBytes(calculationType), 0, sizeof(int));
                         stream.Write(BitConverter.GetBytes(density), 0, sizeof(double));
                         stream.Write(BitConverter.GetBytes(specificHeat), 0, sizeof(double));
@@ -65,21 +64,17 @@ class Program
                         stream.Write(BitConverter.GetBytes(numSteps), 0, sizeof(int));
                         stream.Write(BitConverter.GetBytes(nx), 0, sizeof(int));
 
-                        // Receive result from server
                         byte[] buffer = new byte[sizeof(double) * nx * numSteps];
                         int bytesRead = stream.Read(buffer, 0, buffer.Length);
 
-                        // Process result (e.g., display, save to file)
                         if (bytesRead == sizeof(double) * nx * numSteps)
                         {
-                            // Interpret received bytes as double values
                             double[] result = new double[nx * numSteps];
                             for (int i = 0; i < nx * numSteps; i++)
                             {
                                 result[i] = BitConverter.ToDouble(buffer, i * sizeof(double));
                             }
 
-                            // Display each step's result on a new line with three decimal places
                             Console.WriteLine("Received result from server:");
                             for (int i = 0; i < numSteps; i++)
                             {
@@ -95,8 +90,6 @@ class Program
                     }
                     else if (calculationType == 2)
                     {
-                        //exsample for 2d
-                        // Send calculation type and parameters to server
                         stream.Write(BitConverter.GetBytes(calculationType), 0, sizeof(int));
                         stream.Write(BitConverter.GetBytes(density), 0, sizeof(double));
                         stream.Write(BitConverter.GetBytes(specificHeat), 0, sizeof(double));
@@ -109,21 +102,17 @@ class Program
                         stream.Write(BitConverter.GetBytes(nx), 0, sizeof(int));
                         stream.Write(BitConverter.GetBytes(ny), 0, sizeof(int));
 
-                        // Receive result from server
                         byte[] buffer = new byte[sizeof(double) * nx * ny * numSteps];
                         int bytesRead = stream.Read(buffer, 0, buffer.Length);
 
-                        // Process result (e.g., display, save to file)
                         if (bytesRead == sizeof(double) * nx * ny * numSteps)
                         {
-                            // Interpret received bytes as double values
                             double[] result = new double[nx * ny * numSteps];
                             for (int i = 0; i < nx * ny * numSteps; i++)
                             {
                                 result[i] = BitConverter.ToDouble(buffer, i * sizeof(double));
                             }
 
-                            // Display each step's result on a new line with three decimal places
                             Console.WriteLine("Received result from server:");
                             for (int i = 0; i < numSteps; i++)
                             {
@@ -134,9 +123,9 @@ class Program
                                     {
                                         Console.Write($"{result[i * nx * ny + row * ny + col]:F3} ");
                                     }
-                                    Console.WriteLine(); // Move to the next line after printing each row
+                                    Console.WriteLine(); 
                                 }
-                                Console.WriteLine(); // Separate each step with an empty line
+                                Console.WriteLine(); 
                             }
 
                         }
@@ -150,7 +139,6 @@ class Program
                     }
                 }
 
-                // Close the stream and client when done
                 stream.Close();
                 client.Close();
 
@@ -163,7 +151,12 @@ class Program
         else
         {
             Console.WriteLine("Please choose: (1 - s1d, 2 - s2d):");
-            int method = int.Parse(Console.ReadLine());
+
+            int method;
+            while (!int.TryParse(Console.ReadLine(), out method) || (method != 1 && method != 2)) 
+            {
+                Console.WriteLine("Invalid input. Enter 1 for 1D or 2 for 2D calculation:");
+            }
 
             if (method == 1)
             {

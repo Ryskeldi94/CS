@@ -59,6 +59,8 @@ int main() {
         return 1;
     }
 
+    logProgress("WSAStartup successfully initialized.");
+
     SOCKET ListenSocket = socket(AF_INET, SOCK_STREAM, IPPROTO_TCP);
     if (ListenSocket == INVALID_SOCKET) {
         logError("Error at socket(): " + std::to_string(WSAGetLastError()));
@@ -66,6 +68,8 @@ int main() {
         WSACleanup();
         return 1;
     }
+
+    logProgress("Socket successfully created.");
 
     sockaddr_in serverAddr;
     serverAddr.sin_family = AF_INET;
@@ -78,6 +82,8 @@ int main() {
         WSACleanup();
         return 1;
     }
+
+    logProgress("Socket successfully bound to port 54000.");
 
     if (listen(ListenSocket, SOMAXCONN) == SOCKET_ERROR) {
         logError("listen failed: " + std::to_string(WSAGetLastError()));
@@ -100,12 +106,14 @@ int main() {
         return 1;
     }
 
-    std::cout << "Client connected." << std::endl;
     logProgress("Client connected.");
 
     while (1) {
+        logProgress("Waiting for calculation type from client...");
+
         int calculationType;
         int recvResult = recv(ClientSocket, (char*)&calculationType, sizeof(calculationType), 0);
+
         if (recvResult == SOCKET_ERROR) {
             logError("recv failed: " + std::to_string(WSAGetLastError()));
             logProgress("recv failed");
@@ -114,8 +122,8 @@ int main() {
             WSACleanup();
             return 1;
         }
+
         if (recvResult != sizeof(calculationType)) {
-            logError("Incomplete data received for calculation type.");
             logProgress("Incomplete data received for calculation type.");
             closesocket(ClientSocket);
             closesocket(ListenSocket);
@@ -128,6 +136,9 @@ int main() {
         std::vector<double> result;
 
         if (calculationType == 1) {
+
+            logProgress("Starting 1D heat equation calculation.");
+
             double density, specificHeat, alpha;
             int highTempLocation, numSteps, nx;
             float initialTemperature, ambientTemperature;
@@ -142,6 +153,8 @@ int main() {
                 return 1;
             }
 
+            logProgress("Received density: " + std::to_string(density));
+
             recvResult = recv(ClientSocket, (char*)&specificHeat, sizeof(specificHeat), 0);
             if (recvResult != sizeof(specificHeat)) {
                 logError("Error receiving specificHeat.");
@@ -151,6 +164,8 @@ int main() {
                 WSACleanup();
                 return 1;
             }
+
+            logProgress("Received specificHeat: " + std::to_string(specificHeat));
 
             recvResult = recv(ClientSocket, (char*)&alpha, sizeof(alpha), 0);
             if (recvResult != sizeof(alpha)) {
@@ -162,6 +177,8 @@ int main() {
                 return 1;
             }
 
+            logProgress("Received alpha: " + std::to_string(alpha));
+
             recvResult = recv(ClientSocket, (char*)&highTempLocation, sizeof(highTempLocation), 0);
             if (recvResult != sizeof(highTempLocation)) {
                 logError("Error receiving highTempLocation.");
@@ -171,6 +188,8 @@ int main() {
                 WSACleanup();
                 return 1;
             }
+
+            logProgress("Received highTempLocation: " + std::to_string(highTempLocation));
 
             recvResult = recv(ClientSocket, (char*)&initialTemperature, sizeof(initialTemperature), 0);
             if (recvResult != sizeof(initialTemperature)) {
@@ -182,6 +201,8 @@ int main() {
                 return 1;
             }
 
+            logProgress("Received initialTemperature: " + std::to_string(initialTemperature));
+
             recvResult = recv(ClientSocket, (char*)&ambientTemperature, sizeof(ambientTemperature), 0);
             if (recvResult != sizeof(ambientTemperature)) {
                 logError("Error receiving ambientTemperature.");
@@ -191,6 +212,8 @@ int main() {
                 WSACleanup();
                 return 1;
             }
+
+            logProgress("Received ambientTemperature: " + std::to_string(ambientTemperature));
 
             recvResult = recv(ClientSocket, (char*)&numSteps, sizeof(numSteps), 0);
             if (recvResult != sizeof(numSteps)) {
@@ -202,6 +225,8 @@ int main() {
                 return 1;
             }
 
+            logProgress("Received numSteps: " + std::to_string(numSteps));
+
             recvResult = recv(ClientSocket, (char*)&nx, sizeof(nx), 0);
             if (recvResult != sizeof(nx)) {
                 logError("Error receiving nx.");
@@ -212,25 +237,29 @@ int main() {
                 return 1;
             }
 
-            logProgress("Received 1D parameters: density=" + std::to_string(density) + ", specificHeat=" + std::to_string(specificHeat) +
-                ", alpha=" + std::to_string(alpha) + ", highTempLocation=" + std::to_string(highTempLocation) +
-                ", initialTemperature=" + std::to_string(initialTemperature) + ", ambientTemperature=" + std::to_string(ambientTemperature) +
-                ", numSteps=" + std::to_string(numSteps) + ", nx=" + std::to_string(nx));
+            logProgress("Received nx: " + std::to_string(nx));
 
             result = solveHeatEquation1D(density, specificHeat, alpha, highTempLocation, initialTemperature, ambientTemperature, numSteps, nx);
 
+            logProgress("1D calculation completed, sending result to client.");
+
             int sendResult = send(ClientSocket, reinterpret_cast<char*>(result.data()), result.size() * sizeof(double), 0);
+
             if (sendResult == SOCKET_ERROR) {
-                logError("Error sending result: " + std::to_string(WSAGetLastError()));
-                logProgress("Error sending result.");
+                logError("send failed: " + std::to_string(WSAGetLastError()));
+                logProgress("send failed");
                 closesocket(ClientSocket);
                 closesocket(ListenSocket);
                 WSACleanup();
                 return 1;
             }
 
+            logProgress("Result sent to client.");
         }
         else if (calculationType == 2) {
+
+            logProgress("Starting 2D heat equation calculation.");
+
             double density, specificHeat, alpha;
             int highTempX, highTempY, numSteps, nx, ny;
             float initialTemperature, ambientTemperature;
@@ -245,6 +274,8 @@ int main() {
                 return 1;
             }
 
+            logProgress("Received density: " + std::to_string(density));
+
             recvResult = recv(ClientSocket, (char*)&specificHeat, sizeof(specificHeat), 0);
             if (recvResult != sizeof(specificHeat)) {
                 logError("Error receiving specificHeat.");
@@ -254,6 +285,8 @@ int main() {
                 WSACleanup();
                 return 1;
             }
+
+            logProgress("Received specificHeat: " + std::to_string(specificHeat));
 
             recvResult = recv(ClientSocket, (char*)&alpha, sizeof(alpha), 0);
             if (recvResult != sizeof(alpha)) {
@@ -265,6 +298,8 @@ int main() {
                 return 1;
             }
 
+            logProgress("Received alpha: " + std::to_string(alpha));
+
             recvResult = recv(ClientSocket, (char*)&highTempX, sizeof(highTempX), 0);
             if (recvResult != sizeof(highTempX)) {
                 logError("Error receiving highTempX.");
@@ -274,6 +309,8 @@ int main() {
                 WSACleanup();
                 return 1;
             }
+
+            logProgress("Received highTempX: " + std::to_string(highTempX));
 
             recvResult = recv(ClientSocket, (char*)&highTempY, sizeof(highTempY), 0);
             if (recvResult != sizeof(highTempY)) {
@@ -285,6 +322,8 @@ int main() {
                 return 1;
             }
 
+            logProgress("Received highTempY: " + std::to_string(highTempY));
+
             recvResult = recv(ClientSocket, (char*)&initialTemperature, sizeof(initialTemperature), 0);
             if (recvResult != sizeof(initialTemperature)) {
                 logError("Error receiving initialTemperature.");
@@ -294,6 +333,8 @@ int main() {
                 WSACleanup();
                 return 1;
             }
+
+            logProgress("Received initialTemperature: " + std::to_string(initialTemperature));
 
             recvResult = recv(ClientSocket, (char*)&ambientTemperature, sizeof(ambientTemperature), 0);
             if (recvResult != sizeof(ambientTemperature)) {
@@ -305,6 +346,8 @@ int main() {
                 return 1;
             }
 
+            logProgress("Received ambientTemperature: " + std::to_string(ambientTemperature));
+
             recvResult = recv(ClientSocket, (char*)&numSteps, sizeof(numSteps), 0);
             if (recvResult != sizeof(numSteps)) {
                 logError("Error receiving numSteps.");
@@ -314,6 +357,8 @@ int main() {
                 WSACleanup();
                 return 1;
             }
+
+            logProgress("Received numSteps: " + std::to_string(numSteps));
 
             recvResult = recv(ClientSocket, (char*)&nx, sizeof(nx), 0);
             if (recvResult != sizeof(nx)) {
@@ -325,6 +370,8 @@ int main() {
                 return 1;
             }
 
+            logProgress("Received nx: " + std::to_string(nx));
+
             recvResult = recv(ClientSocket, (char*)&ny, sizeof(ny), 0);
             if (recvResult != sizeof(ny)) {
                 logError("Error receiving ny.");
@@ -335,13 +382,11 @@ int main() {
                 return 1;
             }
 
-            logProgress("Received 2D parameters: density=" + std::to_string(density) + ", specificHeat=" + std::to_string(specificHeat) +
-                ", alpha=" + std::to_string(alpha) + ", highTempX=" + std::to_string(highTempX) +
-                ", highTempY=" + std::to_string(highTempY) + ", initialTemperature=" + std::to_string(initialTemperature) +
-                ", ambientTemperature=" + std::to_string(ambientTemperature) + ", numSteps=" + std::to_string(numSteps) +
-                ", nx=" + std::to_string(nx) + ", ny=" + std::to_string(ny));
+            logProgress("Received ny: " + std::to_string(ny));
 
             result = solveHeatEquation2D(density, specificHeat, alpha, highTempX, highTempY, initialTemperature, ambientTemperature, numSteps, nx, ny);
+
+            logProgress("2D calculation completed, sending result to client.");
 
             int sendResult = send(ClientSocket, reinterpret_cast<char*>(result.data()), result.size() * sizeof(double), 0);
             if (sendResult == SOCKET_ERROR) {
@@ -352,15 +397,12 @@ int main() {
                 WSACleanup();
                 return 1;
             }
-        }
-        else {
-            logError("Invalid calculation type received: " + std::to_string(calculationType));
-            closesocket(ClientSocket);
-            closesocket(ListenSocket);
-            WSACleanup();
-            return 1;
+            logProgress("Result sent to client.");
+
         }
     }
+
+    logProgress("Shutting down server.");
 
     closesocket(ClientSocket);
     closesocket(ListenSocket);

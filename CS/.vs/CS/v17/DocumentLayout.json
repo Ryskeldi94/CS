@@ -3,44 +3,70 @@
   "WorkspaceRootPath": "C:\\My projects\\CS\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{8C3136C8-BBB2-4BE3-AFB7-C4A82CF59530}|..\\Server for app\\Server for app.vcxproj|C:\\My projects\\Server for app\\server.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8C3136C8-BBB2-4BE3-AFB7-C4A82CF59530}|..\\Server for app\\Server for app.vcxproj|C:\\My projects\\Server for app\\solveHeatEquation1D.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9F8C9757-7A81-4597-8C21-66947CC4BE83}|..\\NewTest\\NewTest.csproj|c:\\my projects\\newtest\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{329103F4-644B-4E71-95B2-B6B6B8B11FE7}|CS.csproj|C:\\My projects\\CS\\singl.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{329103F4-644B-4E71-95B2-B6B6B8B11FE7}|CS.csproj|solutionrelative:singl.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{329103F4-644B-4E71-95B2-B6B6B8B11FE7}|CS.csproj|c:\\my projects\\cs\\settingspage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{329103F4-644B-4E71-95B2-B6B6B8B11FE7}|CS.csproj|solutionrelative:settingspage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{9F8C9757-7A81-4597-8C21-66947CC4BE83}|..\\NewTest\\NewTest.csproj|c:\\my projects\\newtest\\analys.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{329103F4-644B-4E71-95B2-B6B6B8B11FE7}|CS.csproj|C:\\My projects\\CS\\mainpage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{329103F4-644B-4E71-95B2-B6B6B8B11FE7}|CS.csproj|solutionrelative:mainpage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{329103F4-644B-4E71-95B2-B6B6B8B11FE7}|CS.csproj|c:\\my projects\\cs\\settingspage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{329103F4-644B-4E71-95B2-B6B6B8B11FE7}|CS.csproj|solutionrelative:settingspage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{329103F4-644B-4E71-95B2-B6B6B8B11FE7}|CS.csproj|C:\\My projects\\CS\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{329103F4-644B-4E71-95B2-B6B6B8B11FE7}|CS.csproj|solutionrelative:class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{329103F4-644B-4E71-95B2-B6B6B8B11FE7}|CS.csproj|c:\\my projects\\cs\\singl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{329103F4-644B-4E71-95B2-B6B6B8B11FE7}|CS.csproj|solutionrelative:singl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{329103F4-644B-4E71-95B2-B6B6B8B11FE7}|CS.csproj|C:\\My projects\\CS\\singl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{329103F4-644B-4E71-95B2-B6B6B8B11FE7}|CS.csproj|c:\\my projects\\cs\\singl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{329103F4-644B-4E71-95B2-B6B6B8B11FE7}|CS.csproj|solutionrelative:singl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{329103F4-644B-4E71-95B2-B6B6B8B11FE7}|CS.csproj|C:\\My projects\\CS\\tdimen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{329103F4-644B-4E71-95B2-B6B6B8B11FE7}|CS.csproj|solutionrelative:tdimen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{329103F4-644B-4E71-95B2-B6B6B8B11FE7}|CS.csproj|c:\\my projects\\cs\\loaddata_2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{329103F4-644B-4E71-95B2-B6B6B8B11FE7}|CS.csproj|solutionrelative:loaddata_2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{329103F4-644B-4E71-95B2-B6B6B8B11FE7}|CS.csproj|C:\\My projects\\CS\\loaddata_td.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{329103F4-644B-4E71-95B2-B6B6B8B11FE7}|CS.csproj|c:\\my projects\\cs\\loaddata_td.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{329103F4-644B-4E71-95B2-B6B6B8B11FE7}|CS.csproj|solutionrelative:loaddata_td.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{329103F4-644B-4E71-95B2-B6B6B8B11FE7}|CS.csproj|C:\\My projects\\CS\\loaddata_td.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{00000000-0000-0000-0000-000000000000}|\u003CSolution\u003E|CS||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{329103F4-644B-4E71-95B2-B6B6B8B11FE7}|CS.csproj|c:\\my projects\\cs\\dbmetals.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{329103F4-644B-4E71-95B2-B6B6B8B11FE7}|CS.csproj|solutionrelative:dbmetals.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{329103F4-644B-4E71-95B2-B6B6B8B11FE7}|CS.csproj|c:\\my projects\\cs\\loaddata_td.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{329103F4-644B-4E71-95B2-B6B6B8B11FE7}|CS.csproj|solutionrelative:loaddata_td.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{329103F4-644B-4E71-95B2-B6B6B8B11FE7}|CS.csproj|c:\\my projects\\cs\\settingspage.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{329103F4-644B-4E71-95B2-B6B6B8B11FE7}|CS.csproj|solutionrelative:settingspage.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{329103F4-644B-4E71-95B2-B6B6B8B11FE7}|CS.csproj|c:\\my projects\\cs\\mainpage.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{329103F4-644B-4E71-95B2-B6B6B8B11FE7}|CS.csproj|solutionrelative:mainpage.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{329103F4-644B-4E71-95B2-B6B6B8B11FE7}|CS.csproj|c:\\my projects\\cs\\mainpage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{329103F4-644B-4E71-95B2-B6B6B8B11FE7}|CS.csproj|solutionrelative:mainpage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{329103F4-644B-4E71-95B2-B6B6B8B11FE7}|CS.csproj|c:\\my projects\\cs\\dbmetals.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{329103F4-644B-4E71-95B2-B6B6B8B11FE7}|CS.csproj|solutionrelative:dbmetals.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{329103F4-644B-4E71-95B2-B6B6B8B11FE7}|CS.csproj|c:\\my projects\\cs\\mainpage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{329103F4-644B-4E71-95B2-B6B6B8B11FE7}|CS.csproj|solutionrelative:mainpage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{329103F4-644B-4E71-95B2-B6B6B8B11FE7}|CS.csproj|c:\\my projects\\cs\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{329103F4-644B-4E71-95B2-B6B6B8B11FE7}|CS.csproj|solutionrelative:class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{329103F4-644B-4E71-95B2-B6B6B8B11FE7}|CS.csproj|c:\\my projects\\cs\\properties\\settings.settings||{6D2695F9-5365-4A78-89ED-F205C045BFE6}",
+      "RelativeMoniker": "D:0:0:{329103F4-644B-4E71-95B2-B6B6B8B11FE7}|CS.csproj|solutionrelative:properties\\settings.settings||{6D2695F9-5365-4A78-89ED-F205C045BFE6}"
     }
   ],
   "DocumentGroupContainers": [
@@ -50,19 +76,87 @@
       "DocumentGroups": [
         {
           "DockedWidth": 481,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Singl.Designer.cs",
-              "DocumentMoniker": "C:\\My projects\\CS\\Singl.Designer.cs",
-              "RelativeDocumentMoniker": "Singl.Designer.cs",
-              "ToolTip": "C:\\My projects\\CS\\Singl.Designer.cs",
-              "RelativeToolTip": "Singl.Designer.cs",
-              "ViewState": "AQIAAIQAAAAAAAAAAAAYwEYAAABGAAAA",
+              "DocumentIndex": 7,
+              "Title": "CS",
+              "DocumentMoniker": "C:\\My projects\\CS\\CS.csproj",
+              "RelativeDocumentMoniker": "CS.csproj",
+              "ToolTip": "C:\\My projects\\CS\\CS.csproj",
+              "RelativeToolTip": "CS.csproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2024-10-18T15:41:57.121Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "MainPage.cs",
+              "DocumentMoniker": "C:\\My projects\\CS\\MainPage.cs",
+              "RelativeDocumentMoniker": "MainPage.cs",
+              "ToolTip": "C:\\My projects\\CS\\MainPage.cs",
+              "RelativeToolTip": "MainPage.cs",
+              "ViewState": "AQIAAB0AAAAAAAAAAAAAwDUAAAAbAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-09T15:25:27.601Z",
+              "WhenOpened": "2024-10-18T15:57:20.507Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "SettingsPage.cs",
+              "DocumentMoniker": "C:\\My projects\\CS\\SettingsPage.cs",
+              "RelativeDocumentMoniker": "SettingsPage.cs",
+              "ToolTip": "C:\\My projects\\CS\\SettingsPage.cs*",
+              "RelativeToolTip": "SettingsPage.cs*",
+              "ViewState": "AQIAAAUBAAAAAAAAAAAIwCIBAAAPAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-18T16:00:42.606Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "SettingsPage.cs [Design]",
+              "DocumentMoniker": "C:\\My projects\\CS\\SettingsPage.cs",
+              "RelativeDocumentMoniker": "SettingsPage.cs",
+              "ToolTip": "C:\\My projects\\CS\\SettingsPage.cs [Design]*",
+              "RelativeToolTip": "SettingsPage.cs [Design]*",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-18T15:51:36.283Z",
+              "IsPinned": true,
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Analys.cs",
+              "DocumentMoniker": "C:\\My projects\\NewTest\\Analys.cs",
+              "RelativeDocumentMoniker": "..\\NewTest\\Analys.cs",
+              "ToolTip": "C:\\My projects\\NewTest\\Analys.cs",
+              "RelativeToolTip": "..\\NewTest\\Analys.cs",
+              "ViewState": "AQIAAF0AAAAAAAAAAADwv3wAAAARAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-18T17:18:20.076Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Singl.cs",
+              "DocumentMoniker": "C:\\My projects\\CS\\Singl.cs",
+              "RelativeDocumentMoniker": "Singl.cs",
+              "ToolTip": "C:\\My projects\\CS\\Singl.cs",
+              "RelativeToolTip": "Singl.cs",
+              "ViewState": "AQIAAKkAAAAAAAAAAADwv7AAAAA2AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-18T17:16:53.889Z",
               "IsPinned": true,
               "EditorCaption": ""
             },
@@ -76,123 +170,128 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "solveHeatEquation1D.cpp",
-              "DocumentMoniker": "C:\\My projects\\Server for app\\solveHeatEquation1D.cpp",
-              "RelativeDocumentMoniker": "..\\Server for app\\solveHeatEquation1D.cpp",
-              "ToolTip": "C:\\My projects\\Server for app\\solveHeatEquation1D.cpp",
-              "RelativeToolTip": "..\\Server for app\\solveHeatEquation1D.cpp",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAB4AAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-09-12T18:57:30.323Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "server.cpp",
-              "DocumentMoniker": "C:\\My projects\\Server for app\\server.cpp",
-              "RelativeDocumentMoniker": "..\\Server for app\\server.cpp",
-              "ToolTip": "C:\\My projects\\Server for app\\server.cpp",
-              "RelativeToolTip": "..\\Server for app\\server.cpp",
-              "ViewState": "AQIAABUAAAAAAAAAAAAAADAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-09-12T18:56:36.137Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\My projects\\NewTest\\Program.cs",
-              "RelativeDocumentMoniker": "..\\NewTest\\Program.cs",
-              "ToolTip": "C:\\My projects\\NewTest\\Program.cs",
-              "RelativeToolTip": "..\\NewTest\\Program.cs",
-              "ViewState": "AQIAAEkAAAAAAAAAAAAQwJ0AAAAfAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-12T18:56:24.14Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "Analys.cs",
-              "DocumentMoniker": "C:\\My projects\\NewTest\\Analys.cs",
-              "RelativeDocumentMoniker": "..\\NewTest\\Analys.cs",
-              "ToolTip": "C:\\My projects\\NewTest\\Analys.cs",
-              "RelativeToolTip": "..\\NewTest\\Analys.cs",
-              "ViewState": "AQIAAH4AAAAAAAAAAAAYwKYAAAAfAAAA",
+              "Title": "Singl.cs [Design - English]",
+              "DocumentMoniker": "C:\\My projects\\CS\\Singl.cs",
+              "RelativeDocumentMoniker": "Singl.cs",
+              "ToolTip": "C:\\My projects\\CS\\Singl.cs [Design - English]",
+              "RelativeToolTip": "Singl.cs [Design - English]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-12T18:56:15.059Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-18T17:16:51.368Z",
+              "EditorCaption": " [Design - English]"
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "MainPage.cs [Design - Kazakh (Kazakhstan)]",
-              "DocumentMoniker": "C:\\My projects\\CS\\MainPage.cs",
-              "RelativeDocumentMoniker": "MainPage.cs",
-              "ToolTip": "C:\\My projects\\CS\\MainPage.cs [Design - Kazakh (Kazakhstan)]",
-              "RelativeToolTip": "MainPage.cs [Design - Kazakh (Kazakhstan)]",
+              "Title": "LoadData_2.cs [Design - English]",
+              "DocumentMoniker": "C:\\My projects\\CS\\LoadData_2.cs",
+              "RelativeDocumentMoniker": "LoadData_2.cs",
+              "ToolTip": "C:\\My projects\\CS\\LoadData_2.cs [Design - English]",
+              "RelativeToolTip": "LoadData_2.cs [Design - English]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-12T18:52:58.857Z"
+              "WhenOpened": "2024-10-18T17:16:45.628Z",
+              "EditorCaption": " [Design - English]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Singl.cs [Design]",
-              "DocumentMoniker": "C:\\My projects\\CS\\Singl.cs",
-              "RelativeDocumentMoniker": "Singl.cs",
-              "ToolTip": "C:\\My projects\\CS\\Singl.cs [Design]",
-              "RelativeToolTip": "Singl.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-09T15:25:15.013Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "TDimen.cs [Design]",
-              "DocumentMoniker": "C:\\My projects\\CS\\TDimen.cs",
-              "RelativeDocumentMoniker": "TDimen.cs",
-              "ToolTip": "C:\\My projects\\CS\\TDimen.cs [Design]",
-              "RelativeToolTip": "TDimen.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-09T15:25:13.486Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 6,
               "Title": "LoadData_TD.cs",
               "DocumentMoniker": "C:\\My projects\\CS\\LoadData_TD.cs",
               "RelativeDocumentMoniker": "LoadData_TD.cs",
               "ToolTip": "C:\\My projects\\CS\\LoadData_TD.cs",
               "RelativeToolTip": "LoadData_TD.cs",
-              "ViewState": "AQIAAGIAAAAAAAAAAAAswFAAAAAJAAAA",
+              "ViewState": "AQIAAI0AAAAAAAAAAAAIwLIAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-09T15:16:41.825Z"
+              "WhenOpened": "2024-10-18T16:54:15.302Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "LoadData_TD.cs [Design - Kazakh (Kazakhstan)]",
+              "DocumentMoniker": "C:\\My projects\\CS\\LoadData_TD.cs",
+              "RelativeDocumentMoniker": "LoadData_TD.cs",
+              "ToolTip": "C:\\My projects\\CS\\LoadData_TD.cs [Design - Kazakh (Kazakhstan)]",
+              "RelativeToolTip": "LoadData_TD.cs [Design - Kazakh (Kazakhstan)]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-18T16:54:12.55Z",
+              "EditorCaption": " [Design - Kazakh (Kazakhstan)]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "DBMetals.cs",
+              "DocumentMoniker": "C:\\My projects\\CS\\DBMetals.cs",
+              "RelativeDocumentMoniker": "DBMetals.cs",
+              "ToolTip": "C:\\My projects\\CS\\DBMetals.cs",
+              "RelativeToolTip": "DBMetals.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAAA8AAAAvAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-18T16:19:02.267Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 10,
-              "Title": "LoadData_TD.cs [Design]",
-              "DocumentMoniker": "C:\\My projects\\CS\\LoadData_TD.cs",
-              "RelativeDocumentMoniker": "LoadData_TD.cs",
-              "ToolTip": "C:\\My projects\\CS\\LoadData_TD.cs [Design]",
-              "RelativeToolTip": "LoadData_TD.cs [Design]",
+              "Title": "SettingsPage.Designer.cs",
+              "DocumentMoniker": "C:\\My projects\\CS\\SettingsPage.Designer.cs",
+              "RelativeDocumentMoniker": "SettingsPage.Designer.cs",
+              "ToolTip": "C:\\My projects\\CS\\SettingsPage.Designer.cs",
+              "RelativeToolTip": "SettingsPage.Designer.cs",
+              "ViewState": "AQIAAAsAAAAAAAAAAAAAwB8AAAA7AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-09T14:54:18.822Z"
+              "WhenOpened": "2024-10-18T16:12:55.808Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 11,
+              "Title": "MainPage.Designer.cs",
+              "DocumentMoniker": "C:\\My projects\\CS\\MainPage.Designer.cs",
+              "RelativeDocumentMoniker": "MainPage.Designer.cs",
+              "ToolTip": "C:\\My projects\\CS\\MainPage.Designer.cs",
+              "RelativeToolTip": "MainPage.Designer.cs",
+              "ViewState": "AQIAABMAAAAAAAAAAAAzwCUAAAA7AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-18T15:58:25.825Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "DBMetals.cs [Design - Russian (Russia)]",
+              "DocumentMoniker": "C:\\My projects\\CS\\DBMetals.cs",
+              "RelativeDocumentMoniker": "DBMetals.cs",
+              "ToolTip": "C:\\My projects\\CS\\DBMetals.cs [Design - Russian (Russia)]",
+              "RelativeToolTip": "DBMetals.cs [Design - Russian (Russia)]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-18T16:18:59.758Z",
+              "EditorCaption": " [Design - Russian (Russia)]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "MainPage.cs [Design - Russian (Russia)]",
+              "DocumentMoniker": "C:\\My projects\\CS\\MainPage.cs",
+              "RelativeDocumentMoniker": "MainPage.cs",
+              "ToolTip": "C:\\My projects\\CS\\MainPage.cs [Design - Russian (Russia)]",
+              "RelativeToolTip": "MainPage.cs [Design - Russian (Russia)]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-18T15:49:04.083Z",
+              "EditorCaption": " [Design - Russian (Russia)]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
               "Title": "Class1.cs",
               "DocumentMoniker": "C:\\My projects\\CS\\Class1.cs",
               "RelativeDocumentMoniker": "Class1.cs",
               "ToolTip": "C:\\My projects\\CS\\Class1.cs",
               "RelativeToolTip": "Class1.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAB4AAAAFAAAA",
+              "ViewState": "AQIAAIUAAAAAAAAAAAAvwJcAAABOAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-09T10:30:52.423Z"
+              "WhenOpened": "2024-10-18T16:05:40.201Z",
+              "EditorCaption": ""
             }
           ]
         }

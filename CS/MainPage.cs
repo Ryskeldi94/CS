@@ -1,4 +1,5 @@
-﻿using CS.Properties;
+﻿using CS;
+using CS.Properties;
 using System;
 using System.Globalization;
 using System.Threading;
@@ -9,47 +10,19 @@ namespace Version2
     public partial class MainPage : Form
     {
         private DBMetals dbMetalsForm;
+        private SettingsPage SetForm;
 
         public MainPage()
         {
             InitializeComponent();
             ThemeHelper.UpdateTheme(this);
-            ThemeHelper.ApplyLanguage(this);
-        }
-
-        private void languageComboBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (languageComboBox.Text == "English")
-            {
-                Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("en");
-                Program.GlobalVariables.Language = "en";
-            }
-            
-            if (languageComboBox.Text == "Русский")
-            {
-                Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("ru-RU");
-                Program.GlobalVariables.Language = "ru";
-            }
-            
-            if (languageComboBox.Text == "Қазақша")
-            {
-                Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("kk-KZ");
-                Program.GlobalVariables.Language = "kz";
-            }
-
-            this.Controls.Clear();
-            
-            InitializeComponent();
-            ThemeHelper.UpdateTheme(this);
-
+            ThemeHelper.ApplyLanguage(this); 
         }
 
         private void ChoiceShow_Click_1(object sender, EventArgs e)
         {
-            // Очищаем панель panel1 перед добавлением нового контента
             panel1.Controls.Clear();
 
-            // Создаем экземпляр формы DBMetals (если еще не создан)
             if (dbMetalsForm == null)
             {
                 dbMetalsForm = new DBMetals();
@@ -58,13 +31,27 @@ namespace Version2
                 dbMetalsForm.Dock = DockStyle.Fill;
             }
 
-            // Добавляем форму DBMetals на панель panel1
             panel1.Controls.Add(dbMetalsForm);
 
-            // Отображаем форму DBMetals на панели panel1
             dbMetalsForm.Show();
           
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            panel1.Controls.Clear();
+
+            if (SetForm == null)
+            {
+                SetForm = new SettingsPage();
+                SetForm.TopLevel = false;
+                SetForm .FormBorderStyle = FormBorderStyle.None;
+                SetForm .Dock = DockStyle.Fill;
+            }
+
+            panel1.Controls.Add(SetForm);
+
+            SetForm.Show();
+        }
     }
 }

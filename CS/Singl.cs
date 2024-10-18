@@ -44,6 +44,10 @@ namespace Version2
             this.KeyPreview = true; 
             this.KeyDown += Singl_KeyDown;
 
+            highTempLocation.Text = "5";
+            ambientTemperature.Text = "100";
+            initialTemperature.Text = "20";
+
             ThemeHelper.UpdateTheme(this);
         }
 
@@ -160,7 +164,7 @@ namespace Version2
         {
             ProcessStartInfo serverStartInfo = new ProcessStartInfo
             {
-                FileName = @"C:\My projects\Server for app\server.exe", 
+                FileName = CS.Properties.Settings.Default.UserFilePathForServer,
                 UseShellExecute = false,
                 CreateNoWindow = true, // Скрыть консольное окно
                 WindowStyle = ProcessWindowStyle.Hidden

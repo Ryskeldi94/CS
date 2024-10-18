@@ -118,10 +118,61 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="textBox7.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Times New Roman, 14pt</value>
+  </data>
+  <data name="textBox7.Location" type="System.Drawing.Point, System.Drawing">
+    <value>663, 434</value>
+  </data>
+  <data name="textBox7.Size" type="System.Drawing.Size, System.Drawing">
+    <value>93, 40</value>
+  </data>
+  <data name="textBox7.Text" xml:space="preserve">
+    <value>Название</value>
+  </data>
+  <data name="textBox6.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Times New Roman, 14pt</value>
+  </data>
+  <data name="textBox6.Location" type="System.Drawing.Point, System.Drawing">
+    <value>663, 344</value>
+  </data>
+  <data name="textBox6.Size" type="System.Drawing.Size, System.Drawing">
+    <value>93, 40</value>
+  </data>
+  <data name="textBox6.Text" xml:space="preserve">
+    <value>Название</value>
+  </data>
+  <data name="textBox5.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Times New Roman, 14pt</value>
+  </data>
+  <data name="textBox5.Location" type="System.Drawing.Point, System.Drawing">
+    <value>663, 265</value>
+  </data>
+  <data name="textBox5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>93, 40</value>
+  </data>
+  <data name="textBox5.Text" xml:space="preserve">
+    <value>Название</value>
+  </data>
+  <data name="AlphaBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>195, 40</value>
+  </data>
+  <data name="SpecificHeatBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>195, 40</value>
+  </data>
+  <data name="DensityBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>195, 40</value>
+  </data>
+  <data name="NameBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>294, 40</value>
+  </data>
+  <data name="ShowItems.Size" type="System.Drawing.Size, System.Drawing">
+    <value>388, 44</value>
+  </data>
   <data name="back.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vgAADr4B6kKxwAAAArJJREFUaEPV2UuITmEcx/HXkHGpKWnkPmOyMA0pk4TkspCJhbJAshMahWIhWc6S
+        vQAADr0BR/uQrQAAArJJREFUaEPV2UuITmEcx/HXkHGpKWnkPmOyMA0pk4TkspCJhbJAshMahWIhWc6S
         LVJKTKPEQkpZSBFKbkkRNjLjvmDIuPP9qX/9e5uNef+nzv9Xn5pO03Oe53nPeW6nUmOGYQ/6cQHDkSZj
         0IM/TitSpBn34Ct/BSl+gRV4B1/5IxiJUkfP+278gFX8K7ag9BmNk/C93oeFKH2m4TZ85W9gEkqfpXgD
         X/ljKP3zruzAd1jFv2E7Sp8ROA7f6/IcF4dAE5zmi4PQCz8XdSgsq1Fd+Wh6LA+jHeGZhQEMduMiXMYC

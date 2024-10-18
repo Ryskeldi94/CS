@@ -118,31 +118,25 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>471, 289</value>
+  <data name="SettingsButton.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial, 16pt, style=Bold</value>
   </data>
-  <data name="label3.Text" xml:space="preserve">
-    <value>Change Theme</value>
+  <data name="SettingsButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>114, 560</value>
   </data>
-  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>440, 60</value>
+  <data name="SettingsButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>430, 90</value>
   </data>
-  <data name="label2.Text" xml:space="preserve">
-    <value>Change language</value>
-  </data>
-  <data name="ThemeComboBox.Items" xml:space="preserve">
-    <value>White</value>
-  </data>
-  <data name="ThemeComboBox.Items1" xml:space="preserve">
-    <value>Dark</value>
-  </data>
-  <data name="ThemeComboBox.Items2" xml:space="preserve">
-    <value>System</value>
+  <data name="SettingsButton.Text" xml:space="preserve">
+    <value>Settings</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
     <value>Welcome</value>
   </data>
   <data name="ChoiceShow.Text" xml:space="preserve">
     <value>Start</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Calculator</value>
   </data>
 </root>

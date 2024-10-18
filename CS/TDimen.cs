@@ -142,7 +142,7 @@ namespace Version2
         private void soket(double density, double specificHeat, double alpha, int highTempX, int highTempY, float initialTemperature, float ambientTemperature)
         {
             ProcessStartInfo serverStartInfo = new ProcessStartInfo();
-            serverStartInfo.FileName = @"C:\My projects\Server for app\server.exe";
+            serverStartInfo.FileName = CS.Properties.Settings.Default.UserFilePathForServer;
             serverStartInfo.UseShellExecute = false;
             serverStartInfo.CreateNoWindow = true; // Скрыть консольное окно
             serverStartInfo.WindowStyle = ProcessWindowStyle.Hidden;

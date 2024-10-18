@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CS", "CS.csproj", "{329103F
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Server for app", "..\Server for app\Server for app.vcxproj", "{8C3136C8-BBB2-4BE3-AFB7-C4A82CF59530}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NewTest", "..\NewTest\NewTest.csproj", "{9F8C9757-7A81-4597-8C21-66947CC4BE83}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NewTest", "..\NewTest\NewTest.csproj", "{9F8C9757-7A81-4597-8C21-66947CC4BE83}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
