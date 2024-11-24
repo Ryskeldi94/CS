@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Text.Json.Serialization;
+using System.Resources;
 
 namespace Version2
 {
@@ -16,6 +17,7 @@ namespace Version2
         private readonly string jsonFilePath = CS.Properties.Settings.Default.UserFilePathForJson;
         int selectedMetod = 0;
         private List<Metal> metals = new List<Metal>();
+        ResourceManager rm = new ResourceManager("CS.Resources.MessageBox", typeof(MainPage).Assembly);
 
         public DBMetals()
         {
@@ -78,7 +80,8 @@ namespace Version2
                 }
                 else
                 {
-                    MessageBox.Show("Металл не найден!");
+                    string message = rm.GetString("MetalNotFound");
+                    MessageBox.Show(message);
                 }
             }
         }
@@ -169,17 +172,7 @@ namespace Version2
             }
             else
             {
-                if (Program.GlobalVariables.Language == "ru")
-                {
-                    MessageBox.Show("Файл 'metals.json' не найден!");
-                } 
-                else if (Program.GlobalVariables.Language == "kz")
-                {
-                    MessageBox.Show("Файл 'metals.json' табылмады!");
-                } else
-                {
-                    MessageBox.Show("The 'metals.json' file not found!");
-                }
+                MessageBox.Show(rm.GetString("MetalsJsonNotF"));
             }
         }
 
@@ -195,16 +188,7 @@ namespace Version2
         {
             if (comboBoxMetals.SelectedIndex == -1)
             {
-                if (Program.GlobalVariables.Language == "ru") {
-                    MessageBox.Show("Металл не выбран!");
-                } 
-                else if (Program.GlobalVariables.Language == "kz")
-                {
-                    MessageBox.Show("Метал түрі таңдалмаған!");
-                } else
-                {
-                    MessageBox.Show("Metal not selected");
-                }
+                MessageBox.Show(rm.GetString("MetalNotSelected"));
             }
             else
             {
@@ -213,15 +197,21 @@ namespace Version2
 
                 if (selectedMetal != null)
                 {
-                    MessageBox.Show(
-                                    $"Плотность: {selectedMetal.Density} г/см³\n" +
-                                    $"Удельная теплоемкость: {selectedMetal.SpecificHeat} Дж/г·°C\n" +
-                                    $"Коэффициент теплопроводности: {selectedMetal.Alpha} Вт/м·°C");
+                    string messageTemplate = rm.GetString("MetalProperties");
+
+                    string message = string.Format(
+                        messageTemplate,
+                        selectedMetal.Density,
+                        selectedMetal.SpecificHeat,
+                        selectedMetal.Alpha
+                    );
+
+                    MessageBox.Show(message);
                 }
 
                 else
                 {
-                    MessageBox.Show("Металл не выбран!");
+                    MessageBox.Show(rm.GetString("MetalNotSelected"));
                 }
             }
         }
@@ -232,7 +222,7 @@ namespace Version2
 
             if (comboBoxMetals.SelectedIndex == -1)
             {
-                MessageBox.Show("Металл не выбран!");
+                MessageBox.Show(rm.GetString("MetalNotSelected"));
             }
             else
             {
@@ -247,7 +237,7 @@ namespace Version2
 
                     if (selectedMetod == 0)
                     {
-                        MessageBox.Show("Выберите метод типа решения");
+                        MessageBox.Show(rm.GetString("NotSelectedTypeMethod"));
                     }
                     else
                     {

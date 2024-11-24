@@ -31,14 +31,14 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SettingsPage));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.BrowsButtonServer = new System.Windows.Forms.Button();
-            this.BrowsButtonJson = new System.Windows.Forms.Button();
+            this.BrowseButtonServer = new System.Windows.Forms.Button();
+            this.BrowseButtonJson = new System.Windows.Forms.Button();
             this.serverPathTextBox = new System.Windows.Forms.TextBox();
             this.JsonPathTextBox = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.CancerButton = new System.Windows.Forms.Button();
-            this.SaveButon = new System.Windows.Forms.Button();
+            this.CancelButton = new System.Windows.Forms.Button();
+            this.SaveButton = new System.Windows.Forms.Button();
             this.ThemeComboBox = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.languageComboBox = new System.Windows.Forms.ComboBox();
@@ -49,39 +49,39 @@
             // panel1
             // 
             resources.ApplyResources(this.panel1, "panel1");
-            this.panel1.Controls.Add(this.BrowsButtonServer);
-            this.panel1.Controls.Add(this.BrowsButtonJson);
+            this.panel1.Controls.Add(this.BrowseButtonServer);
+            this.panel1.Controls.Add(this.BrowseButtonJson);
             this.panel1.Controls.Add(this.serverPathTextBox);
             this.panel1.Controls.Add(this.JsonPathTextBox);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.CancerButton);
-            this.panel1.Controls.Add(this.SaveButon);
+            this.panel1.Controls.Add(this.CancelButton);
+            this.panel1.Controls.Add(this.SaveButton);
             this.panel1.Controls.Add(this.ThemeComboBox);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.languageComboBox);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Name = "panel1";
             // 
-            // BrowsButtonServer
+            // BrowseButtonServer
             // 
-            resources.ApplyResources(this.BrowsButtonServer, "BrowsButtonServer");
-            this.BrowsButtonServer.FlatAppearance.BorderColor = System.Drawing.Color.DarkBlue;
-            this.BrowsButtonServer.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSteelBlue;
-            this.BrowsButtonServer.ForeColor = System.Drawing.Color.DarkBlue;
-            this.BrowsButtonServer.Name = "BrowsButtonServer";
-            this.BrowsButtonServer.UseVisualStyleBackColor = true;
-            this.BrowsButtonServer.Click += new System.EventHandler(this.BrowsButtonServer_Click);
+            resources.ApplyResources(this.BrowseButtonServer, "BrowseButtonServer");
+            this.BrowseButtonServer.FlatAppearance.BorderColor = System.Drawing.Color.DarkBlue;
+            this.BrowseButtonServer.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSteelBlue;
+            this.BrowseButtonServer.ForeColor = System.Drawing.Color.DarkBlue;
+            this.BrowseButtonServer.Name = "BrowseButtonServer";
+            this.BrowseButtonServer.UseVisualStyleBackColor = true;
+            this.BrowseButtonServer.Click += new System.EventHandler(this.BrowsButtonServer_Click);
             // 
-            // BrowsButtonJson
+            // BrowseButtonJson
             // 
-            resources.ApplyResources(this.BrowsButtonJson, "BrowsButtonJson");
-            this.BrowsButtonJson.FlatAppearance.BorderColor = System.Drawing.Color.DarkBlue;
-            this.BrowsButtonJson.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSteelBlue;
-            this.BrowsButtonJson.ForeColor = System.Drawing.Color.DarkBlue;
-            this.BrowsButtonJson.Name = "BrowsButtonJson";
-            this.BrowsButtonJson.UseVisualStyleBackColor = true;
-            this.BrowsButtonJson.Click += new System.EventHandler(this.BrowsButtonJson_Click);
+            resources.ApplyResources(this.BrowseButtonJson, "BrowseButtonJson");
+            this.BrowseButtonJson.FlatAppearance.BorderColor = System.Drawing.Color.DarkBlue;
+            this.BrowseButtonJson.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSteelBlue;
+            this.BrowseButtonJson.ForeColor = System.Drawing.Color.DarkBlue;
+            this.BrowseButtonJson.Name = "BrowseButtonJson";
+            this.BrowseButtonJson.UseVisualStyleBackColor = true;
+            this.BrowseButtonJson.Click += new System.EventHandler(this.BrowsButtonJson_Click);
             // 
             // serverPathTextBox
             // 
@@ -109,25 +109,25 @@
             this.label1.ForeColor = System.Drawing.Color.DarkBlue;
             this.label1.Name = "label1";
             // 
-            // CancerButton
+            // CancelButton
             // 
-            resources.ApplyResources(this.CancerButton, "CancerButton");
-            this.CancerButton.FlatAppearance.BorderColor = System.Drawing.Color.DarkBlue;
-            this.CancerButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSteelBlue;
-            this.CancerButton.ForeColor = System.Drawing.Color.DarkBlue;
-            this.CancerButton.Name = "CancerButton";
-            this.CancerButton.UseVisualStyleBackColor = true;
-            this.CancerButton.Click += new System.EventHandler(this.CancerButton_Click);
+            resources.ApplyResources(this.CancelButton, "CancelButton");
+            this.CancelButton.FlatAppearance.BorderColor = System.Drawing.Color.DarkBlue;
+            this.CancelButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSteelBlue;
+            this.CancelButton.ForeColor = System.Drawing.Color.DarkBlue;
+            this.CancelButton.Name = "CancelButton";
+            this.CancelButton.UseVisualStyleBackColor = true;
+            this.CancelButton.Click += new System.EventHandler(this.CancerButton_Click);
             // 
-            // SaveButon
+            // SaveButton
             // 
-            resources.ApplyResources(this.SaveButon, "SaveButon");
-            this.SaveButon.FlatAppearance.BorderColor = System.Drawing.Color.DarkBlue;
-            this.SaveButon.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSteelBlue;
-            this.SaveButon.ForeColor = System.Drawing.Color.DarkBlue;
-            this.SaveButon.Name = "SaveButon";
-            this.SaveButon.UseVisualStyleBackColor = true;
-            this.SaveButon.Click += new System.EventHandler(this.SaveButton_Click);
+            resources.ApplyResources(this.SaveButton, "SaveButton");
+            this.SaveButton.FlatAppearance.BorderColor = System.Drawing.Color.DarkBlue;
+            this.SaveButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSteelBlue;
+            this.SaveButton.ForeColor = System.Drawing.Color.DarkBlue;
+            this.SaveButton.Name = "SaveButton";
+            this.SaveButton.UseVisualStyleBackColor = true;
+            this.SaveButton.Click += new System.EventHandler(this.SaveButton_Click);
             // 
             // ThemeComboBox
             // 
@@ -136,9 +136,7 @@
             this.ThemeComboBox.Items.AddRange(new object[] {
             resources.GetString("ThemeComboBox.Items"),
             resources.GetString("ThemeComboBox.Items1"),
-            resources.GetString("ThemeComboBox.Items2"),
-            resources.GetString("ThemeComboBox.Items3"),
-            resources.GetString("ThemeComboBox.Items4")});
+            resources.GetString("ThemeComboBox.Items2")});
             this.ThemeComboBox.Name = "ThemeComboBox";
             this.ThemeComboBox.SelectedIndexChanged += new System.EventHandler(this.ThemeComboBox_SelectedIndexChanged);
             // 
@@ -187,13 +185,13 @@
         private System.Windows.Forms.ComboBox languageComboBox;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox ThemeComboBox;
-        private System.Windows.Forms.Button SaveButon;
-        private System.Windows.Forms.Button CancerButton;
+        private System.Windows.Forms.Button SaveButton;
+        private System.Windows.Forms.Button CancelButton;
         private System.Windows.Forms.TextBox JsonPathTextBox;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button BrowsButtonServer;
-        private System.Windows.Forms.Button BrowsButtonJson;
+        private System.Windows.Forms.Button BrowseButtonServer;
+        private System.Windows.Forms.Button BrowseButtonJson;
         private System.Windows.Forms.TextBox serverPathTextBox;
     }
 }

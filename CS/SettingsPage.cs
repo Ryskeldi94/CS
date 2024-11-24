@@ -21,6 +21,8 @@ namespace CS
         public SettingsPage()
         {
             InitializeComponent();
+            PathJson = CS.Properties.Settings.Default.UserFilePathForJson;
+            PathServer = CS.Properties.Settings.Default.UserFilePathForServer;
         }
 
         string SelectedLanguage;
@@ -28,6 +30,7 @@ namespace CS
         string PathServer;
         string PathJson;
 
+        
         private void languageComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (languageComboBox.Text == "English")
@@ -82,7 +85,9 @@ namespace CS
             {
                 return; // Прерываем сохранение, если проверка не пройдена
             }
+
             // Сохраняем язык и тему в глобальные переменные
+            CS.Properties.Settings.Default.UserSetLanguage = SelectedLanguage;
             Program.GlobalVariables.Language = SelectedLanguage;
             Program.GlobalVariables.Theme = SelectedTheme;
 
@@ -134,7 +139,7 @@ namespace CS
 
                 if (openFileDialog.ShowDialog() == DialogResult.OK)
                 {
-                    if (sender == BrowsButtonServer)
+                    if (sender == BrowseButtonServer)
                     {
                         serverPathTextBox.Text = openFileDialog.FileName; 
                         PathServer = serverPathTextBox.Text;
@@ -173,7 +178,6 @@ namespace CS
                 return false;
             }
 
-            // Попытка считать файл как JSON (дополнительно)
             try
             {
                 string jsonContent = System.IO.File.ReadAllText(filePath);

@@ -142,8 +142,10 @@
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
     <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="textBox2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>47, 430</value>
+  <data name="textBox3.Text" xml:space="preserve">
+    <value>Введите местоположение с высокой температурой
+
+</value>
   </data>
   <data name="&gt;&gt;textBox2.Parent" xml:space="preserve">
     <value>panel1</value>
@@ -160,11 +162,14 @@
   <data name="&gt;&gt;textBox2.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="panel1.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="back.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
   </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="highTempLocation.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
@@ -173,9 +178,6 @@
   </data>
   <data name="&gt;&gt;label2.Name" xml:space="preserve">
     <value>label2</value>
-  </data>
-  <data name="back.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
   </data>
   <data name="&gt;&gt;highTempLocation.Parent" xml:space="preserve">
     <value>panel1</value>
@@ -195,8 +197,8 @@
   <data name="&gt;&gt;initialTemperature.Type" xml:space="preserve">
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="textBox3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>619, 40</value>
+  <data name="back.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
   </data>
   <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
@@ -246,14 +248,11 @@
   <data name="textBox3.Location" type="System.Drawing.Point, System.Drawing">
     <value>47, 193</value>
   </data>
-  <data name="&gt;&gt;back.Parent" xml:space="preserve">
-    <value>panel1</value>
-  </data>
   <data name="&gt;&gt;initialTemperature.Name" xml:space="preserve">
     <value>initialTemperature</value>
   </data>
-  <data name="&gt;&gt;textBox2.Name" xml:space="preserve">
-    <value>textBox2</value>
+  <data name="&gt;&gt;back.Parent" xml:space="preserve">
+    <value>panel1</value>
   </data>
   <data name="ambientTemperature.Font" type="System.Drawing.Font, System.Drawing">
     <value>Times New Roman, 14pt</value>
@@ -270,9 +269,6 @@
   <data name="calculate.Text" xml:space="preserve">
     <value>Рассчитать</value>
   </data>
-  <data name="&gt;&gt;calculate.Parent" xml:space="preserve">
-    <value>panel1</value>
-  </data>
   <data name="highTempLocation.Location" type="System.Drawing.Point, System.Drawing">
     <value>691, 193</value>
   </data>
@@ -284,9 +280,6 @@
   </data>
   <data name="ambientTemperature.Location" type="System.Drawing.Point, System.Drawing">
     <value>691, 430</value>
-  </data>
-  <data name="textBox3.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
   </data>
   <data name="textBox1.Location" type="System.Drawing.Point, System.Drawing">
     <value>47, 313</value>
@@ -303,6 +296,9 @@
   <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
     <value>1278, 684</value>
   </data>
+  <data name="textBox2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>47, 430</value>
+  </data>
   <data name="panel1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
@@ -314,6 +310,9 @@
   </data>
   <data name="&gt;&gt;ambientTemperature.Parent" xml:space="preserve">
     <value>panel1</value>
+  </data>
+  <data name="textBox3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>619, 40</value>
   </data>
   <data name="label2.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -330,7 +329,7 @@
   <data name="back.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vgAADr4B6kKxwAAAArJJREFUaEPV2UuITmEcx/HXkHGpKWnkPmOyMA0pk4TkspCJhbJAshMahWIhWc6S
+        vAAADrwBlbxySQAAArJJREFUaEPV2UuITmEcx/HXkHGpKWnkPmOyMA0pk4TkspCJhbJAshMahWIhWc6S
         LVJKTKPEQkpZSBFKbkkRNjLjvmDIuPP9qX/9e5uNef+nzv9Xn5pO03Oe53nPeW6nUmOGYQ/6cQHDkSZj
         0IM/TitSpBn34Ct/BSl+gRV4B1/5IxiJUkfP+278gFX8K7ag9BmNk/C93oeFKH2m4TZ85W9gEkqfpXgD
         X/ljKP3zruzAd1jFv2E7Sp8ROA7f6/IcF4dAE5zmi4PQCz8XdSgsq1Fd+Wh6LA+jHeGZhQEMduMiXMYC
@@ -367,10 +366,8 @@
   <data name="&gt;&gt;calculate.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="textBox3.Text" xml:space="preserve">
-    <value>Введите местоположение с высокой температурой
-
-</value>
+  <data name="&gt;&gt;calculate.Parent" xml:space="preserve">
+    <value>panel1</value>
   </data>
   <data name="&gt;&gt;ambientTemperature.Type" xml:space="preserve">
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -380,6 +377,9 @@
   </data>
   <data name="initialTemperature.Location" type="System.Drawing.Point, System.Drawing">
     <value>691, 313</value>
+  </data>
+  <data name="&gt;&gt;textBox2.Name" xml:space="preserve">
+    <value>textBox2</value>
   </data>
   <data name="&gt;&gt;textBox3.Name" xml:space="preserve">
     <value>textBox3</value>
@@ -396,8 +396,8 @@
   <data name="label2.Font" type="System.Drawing.Font, System.Drawing">
     <value>Times New Roman, 26pt</value>
   </data>
-  <data name="panel1.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
+  <data name="textBox3.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
   </data>
   <data name="&gt;&gt;highTempLocation.Name" xml:space="preserve">
     <value>highTempLocation</value>
@@ -422,6 +422,6 @@
     <value>True</value>
   </metadata>
   <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>en</value>
+    <value>kk-KZ</value>
   </metadata>
 </root>

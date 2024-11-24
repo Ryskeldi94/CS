@@ -125,7 +125,7 @@
     <value>112, 40</value>
   </data>
   <data name="textBox7.Text" xml:space="preserve">
-    <value>Вт/м*C</value>
+    <value>W/m*C</value>
   </data>
   <data name="textBox6.Font" type="System.Drawing.Font, System.Drawing">
     <value>Times New Roman, 14pt</value>
@@ -134,7 +134,7 @@
     <value>112, 40</value>
   </data>
   <data name="textBox6.Text" xml:space="preserve">
-    <value>Дж/г*C</value>
+    <value>J/g*C</value>
   </data>
   <data name="textBox5.Font" type="System.Drawing.Font, System.Drawing">
     <value>Times New Roman, 14pt</value>
@@ -143,7 +143,7 @@
     <value>112, 40</value>
   </data>
   <data name="textBox5.Text" xml:space="preserve">
-    <value>г/см^3</value>
+    <value>g/cm^3</value>
   </data>
   <data name="DelMetal.Text" xml:space="preserve">
     <value>Remove metal</value>

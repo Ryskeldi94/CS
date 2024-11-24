@@ -2,6 +2,7 @@
 using CS.Properties;
 using System;
 using System.Globalization;
+using System.Resources;
 using System.Threading;
 using System.Windows.Forms;
 
@@ -11,15 +12,27 @@ namespace Version2
     {
         private DBMetals dbMetalsForm;
         private SettingsPage SetForm;
+        ResourceManager rm = new ResourceManager("CS.Resources.MessageBox", typeof(MainPage).Assembly);
 
         public MainPage()
         {
+            var savedLanguage = CS.Properties.Settings.Default.UserSetLanguage;
+
+            // Если язык не задан, по умолчанию ставим русский
+            if (string.IsNullOrEmpty(savedLanguage))
+            {
+                savedLanguage = "ru-RU";
+            }
+
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo(savedLanguage);
+            Thread.CurrentThread.CurrentCulture = new CultureInfo(savedLanguage);
+
             InitializeComponent();
             ThemeHelper.UpdateTheme(this);
-            ThemeHelper.ApplyLanguage(this); 
+            ThemeHelper.ApplyLanguage(this);
         }
 
-        private void ChoiceShow_Click_1(object sender, EventArgs e)
+        private void ChoiceShow_Click(object sender, EventArgs e)
         {
             panel1.Controls.Clear();
 
@@ -37,7 +50,7 @@ namespace Version2
           
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void SettingsButton_Click(object sender, EventArgs e)
         {
             panel1.Controls.Clear();
 
@@ -53,5 +66,6 @@ namespace Version2
 
             SetForm.Show();
         }
+
     }
 }

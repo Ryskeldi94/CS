@@ -3,9 +3,36 @@
   <Profiles />
   <Settings>
     <Setting Name="UserFilePathForJson" Type="System.String" Scope="User">
-      <Value Profile="(Default)">@"C:\My projects\CS\metals.json";</Value>
+      <Value Profile="(Default)" />
     </Setting>
     <Setting Name="UserFilePathForServer" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="UserSetLanguage" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="UserSetTheme" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="SavedHighTempLocationSingl" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="SavedAmbientTemperatureSingl" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="SavedInitialTemperatureSingl" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="SavedInitialTemperature" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="SavedAmbientTemperature" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="SavedHighTempLocationX" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="SavedHighTempLocationY" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
   </Settings>

@@ -100,3 +100,13 @@ C:\My projects\CS\bin\Debug\CS.application
 C:\My projects\CS\obj\Debug\CS.exe.manifest
 C:\My projects\CS\obj\Debug\CS.application
 C:\My projects\CS\obj\Debug\CS.SettingsPage.resources
+C:\My projects\CS\obj\Debug\CS.SettingsPage.en.resources
+C:\My projects\CS\obj\Debug\CS.SettingsPage.kk-KZ.resources
+C:\My projects\CS\obj\Debug\CS.SettingsPage.ru-RU.resources
+C:\My projects\CS\obj\Debug\Version2.Singl.kk-KZ.resources
+C:\My projects\CS\obj\Debug\Version2.TDimen.en.resources
+C:\My projects\CS\obj\Debug\Version2.TDimen.kk-KZ.resources
+C:\My projects\CS\obj\Debug\Version2.TDimen.ru-RU.resources
+C:\My projects\CS\obj\Debug\CS.Resources.MessageBox.en.resources
+C:\My projects\CS\obj\Debug\CS.Resources.MessageBox.ru-RU.resources
+C:\My projects\CS\obj\Debug\CS.Resources.MessageBox.kk-KZ.resources

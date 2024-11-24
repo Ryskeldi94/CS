@@ -122,7 +122,7 @@
     <value>Arial, 16pt, style=Bold</value>
   </data>
   <data name="SettingsButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>114, 560</value>
+    <value>140, 408</value>
   </data>
   <data name="SettingsButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>430, 90</value>
@@ -132,6 +132,9 @@
   </data>
   <data name="label1.Text" xml:space="preserve">
     <value>Welcome</value>
+  </data>
+  <data name="ChoiceShow.Location" type="System.Drawing.Point, System.Drawing">
+    <value>743, 408</value>
   </data>
   <data name="ChoiceShow.Text" xml:space="preserve">
     <value>Start</value>

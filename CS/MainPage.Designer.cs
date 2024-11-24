@@ -59,7 +59,7 @@ namespace Version2
             this.SettingsButton.ForeColor = System.Drawing.Color.DarkBlue;
             this.SettingsButton.Name = "SettingsButton";
             this.SettingsButton.UseVisualStyleBackColor = true;
-            this.SettingsButton.Click += new System.EventHandler(this.button1_Click);
+            this.SettingsButton.Click += new System.EventHandler(this.SettingsButton_Click);
             // 
             // label1
             // 
@@ -77,7 +77,7 @@ namespace Version2
             this.ChoiceShow.ForeColor = System.Drawing.Color.DarkBlue;
             this.ChoiceShow.Name = "ChoiceShow";
             this.ChoiceShow.UseVisualStyleBackColor = true;
-            this.ChoiceShow.Click += new System.EventHandler(this.ChoiceShow_Click_1);
+            this.ChoiceShow.Click += new System.EventHandler(this.ChoiceShow_Click);
             // 
             // MainPage
             // 

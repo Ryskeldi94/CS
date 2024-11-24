@@ -121,9 +121,6 @@
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>1278, 684</value>
   </data>
-  <data name="&gt;&gt;textBox5.Name" xml:space="preserve">
-    <value>textBox5</value>
-  </data>
   <data name="button2.Text" xml:space="preserve">
     <value>Решение на двухмерной плоскости</value>
   </data>
@@ -441,6 +438,9 @@
   <data name="textBox2.Size" type="System.Drawing.Size, System.Drawing">
     <value>409, 40</value>
   </data>
+  <data name="textBox3.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Times New Roman, 14pt</value>
+  </data>
   <data name="&gt;&gt;textBox3.ZOrder" xml:space="preserve">
     <value>9</value>
   </data>
@@ -675,8 +675,8 @@
   <data name="&gt;&gt;NameBox.Parent" xml:space="preserve">
     <value>panel1</value>
   </data>
-  <data name="textBox3.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Times New Roman, 14pt</value>
+  <data name="&gt;&gt;textBox5.Name" xml:space="preserve">
+    <value>textBox5</value>
   </data>
   <data name="textBox1.Size" type="System.Drawing.Size, System.Drawing">
     <value>409, 40</value>
@@ -706,6 +706,6 @@
     <value>True</value>
   </metadata>
   <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>ru-RU</value>
+    <value>kk-KZ</value>
   </metadata>
 </root>

@@ -22,9 +22,10 @@ namespace Version2
         public Singl(double density, double specificHeat, double alpha)
         {
             InitializeComponent();
-            highTempLocation.KeyPress += textBox1_KeyPress;
-            ambientTemperature.KeyPress += textBox2_KeyPress;
-            initialTemperature.KeyPress += textBox3_KeyPress;
+            highTempLocation.KeyPress += (s, e) => HandleNumericInput(s, e);
+            ambientTemperature.KeyPress += (s, e) => HandleNumericInput(s, e, true);
+            initialTemperature.KeyPress += (s, e) => HandleNumericInput(s, e, true);
+
 
             _density = density;
             _specificHeat = specificHeat;
@@ -44,9 +45,10 @@ namespace Version2
             this.KeyPreview = true; 
             this.KeyDown += Singl_KeyDown;
 
-            highTempLocation.Text = "5";
-            ambientTemperature.Text = "100";
-            initialTemperature.Text = "20";
+            highTempLocation.Text = CS.Properties.Settings.Default.SavedHighTempLocationSingl;
+            ambientTemperature.Text = CS.Properties.Settings.Default.SavedAmbientTemperatureSingl;
+            initialTemperature.Text = CS.Properties.Settings.Default.SavedInitialTemperatureSingl;
+            CS.Properties.Settings.Default.Save();
 
             ThemeHelper.UpdateTheme(this);
         }
@@ -64,76 +66,35 @@ namespace Version2
             InitializeComponent();
         }
 
-        private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
-            {
-                e.Handled = true;
-            }
-
-            if (e.KeyChar == (char)Keys.Enter)
-            {
-                // Вызываем метод, обрабатывающий событие Click для кнопки calculate
-                button1_Click(sender, e);
-                e.Handled = true; // Предотвращение дальнейшей обработки нажатия клавиши Enter
-            }
-        }
-
-        private void textBox2_KeyPress(object sender, KeyPressEventArgs e)
+        private void HandleNumericInput(object sender, KeyPressEventArgs e, bool allowDecimal = false)
         {
             TextBox textBox = sender as TextBox;
 
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && e.KeyChar != '.' && e.KeyChar != ',')
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
+                !(allowDecimal && (e.KeyChar == '.' || e.KeyChar == ',')))
             {
                 e.Handled = true;
             }
 
-            if ((e.KeyChar == '.' || e.KeyChar == ',') && textBox.Text.Contains('.'))
+            if (allowDecimal && (e.KeyChar == '.' || e.KeyChar == ','))
             {
-                e.Handled = true;
-            }
-
-            if (e.KeyChar == ',')
-            {
-                e.KeyChar = '.';
-            }
-
-            if ((textBox.SelectionStart == 0 || textBox.Text == "") && (e.KeyChar == '.' || e.KeyChar == ','))
-            {
-                textBox.Text = "0" + e.KeyChar;
-                textBox.SelectionStart = 2;
-                e.Handled = true;
-            }
-
-            if (textBox.Text.Contains('.'))
-            {
-                int indexOfDot = textBox.Text.IndexOf('.');
-                if (textBox.Text.Length - indexOfDot > 2 && !char.IsControl(e.KeyChar))
+                if (textBox.Text.Contains('.') || string.IsNullOrEmpty(textBox.Text))
                 {
                     e.Handled = true;
                 }
-            }
-
-            if ((e.KeyChar == '.' || e.KeyChar == ',') && textBox.Text.Length < 2)
-            {
-                e.Handled = true;
+                else
+                {
+                    e.KeyChar = '.';
+                }
             }
 
             if (e.KeyChar == (char)Keys.Enter)
             {
-                // Вызываем метод, обрабатывающий событие Click для кнопки calculate
                 button1_Click(sender, e);
-                e.Handled = true; // Предотвращение дальнейшей обработки нажатия клавиши Enter
+                e.Handled = true;
             }
         }
 
-        
-
-
-        private void textBox3_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            textBox2_KeyPress(sender, e);
-        }
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -151,13 +112,12 @@ namespace Version2
                 float ambientTempValue = float.Parse(ambientTemperature.Text);
                 float initialTempValue = float.Parse(initialTemperature.Text);
 
+                CS.Properties.Settings.Default.SavedAmbientTemperatureSingl = ambientTemperature.Text;
+                CS.Properties.Settings.Default.SavedHighTempLocationSingl= highTempLocation.Text;
+                CS.Properties.Settings.Default.SavedInitialTemperatureSingl = initialTemperature.Text;
+
                 soket(density, specificHeat, alpha, highTempValue, initialTempValue, ambientTempValue);
             }
-        }
-
-        private void ambientTemperature_TextChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void soket(double density, double specificHeat, double alpha, int highTempLocation, float initialTemperature, float ambientTemperature)
@@ -166,7 +126,7 @@ namespace Version2
             {
                 FileName = CS.Properties.Settings.Default.UserFilePathForServer,
                 UseShellExecute = false,
-                CreateNoWindow = true, // Скрыть консольное окно
+                CreateNoWindow = true,
                 WindowStyle = ProcessWindowStyle.Hidden
             };
 
@@ -204,7 +164,6 @@ namespace Version2
 
             panel1.Controls.Clear();
 
-            // Создаем экземпляр формы MainPage (если еще не создан)
             if (LoadData_2 == null)
             {
                 LoadData_2 = new LoadData_2(result);
@@ -213,19 +172,17 @@ namespace Version2
                 LoadData_2.Dock = DockStyle.Fill;
             }
 
-            // Добавляем форму MainPage на панель panel1
             panel1.Controls.Add(LoadData_2);
 
-            // Отображаем форму MainPage на панели panel1
             LoadData_2.Show();
         }
+
 
         private void back_Click(object sender, EventArgs e)
         {
             
                 panel1.Controls.Clear();
 
-                // Создаем экземпляр формы MainPage (если еще не создан)
                 if (DBMetals == null)
                 {
                     DBMetals = new DBMetals();
@@ -234,14 +191,16 @@ namespace Version2
                     DBMetals.Dock = DockStyle.Fill;
                 }
 
-                // Добавляем форму MainPage на панель panel1
                 panel1.Controls.Add(DBMetals);
 
-                // Отображаем форму MainPage на панели panel1
                 DBMetals.Show();
             
            
         }
 
+        private void Singl_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

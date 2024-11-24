@@ -25,7 +25,7 @@ namespace CS.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("@\"C:\\My projects\\CS\\metals.json\";")]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
         public string UserFilePathForJson {
             get {
                 return ((string)(this["UserFilePathForJson"]));
@@ -44,6 +44,114 @@ namespace CS.Properties {
             }
             set {
                 this["UserFilePathForServer"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string UserSetLanguage {
+            get {
+                return ((string)(this["UserSetLanguage"]));
+            }
+            set {
+                this["UserSetLanguage"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string UserSetTheme {
+            get {
+                return ((string)(this["UserSetTheme"]));
+            }
+            set {
+                this["UserSetTheme"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string SavedHighTempLocationSingl {
+            get {
+                return ((string)(this["SavedHighTempLocationSingl"]));
+            }
+            set {
+                this["SavedHighTempLocationSingl"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string SavedAmbientTemperatureSingl {
+            get {
+                return ((string)(this["SavedAmbientTemperatureSingl"]));
+            }
+            set {
+                this["SavedAmbientTemperatureSingl"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string SavedInitialTemperatureSingl {
+            get {
+                return ((string)(this["SavedInitialTemperatureSingl"]));
+            }
+            set {
+                this["SavedInitialTemperatureSingl"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string SavedInitialTemperature {
+            get {
+                return ((string)(this["SavedInitialTemperature"]));
+            }
+            set {
+                this["SavedInitialTemperature"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string SavedAmbientTemperature {
+            get {
+                return ((string)(this["SavedAmbientTemperature"]));
+            }
+            set {
+                this["SavedAmbientTemperature"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string SavedHighTempLocationX {
+            get {
+                return ((string)(this["SavedHighTempLocationX"]));
+            }
+            set {
+                this["SavedHighTempLocationX"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string SavedHighTempLocationY {
+            get {
+                return ((string)(this["SavedHighTempLocationY"]));
+            }
+            set {
+                this["SavedHighTempLocationY"] = value;
             }
         }
     }

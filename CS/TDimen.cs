@@ -53,6 +53,11 @@ namespace Version2
             initialTemperature.TabIndex = 2;
             ambientTemperature.TabIndex = 3;
             calculate.TabIndex = 4;
+
+            highTempX.Text = CS.Properties.Settings.Default.SavedHighTempLocationX;
+            highTempY.Text = CS.Properties.Settings.Default.SavedHighTempLocationY;
+            initialTemperature.Text = CS.Properties.Settings.Default.SavedInitialTemperature;
+            ambientTemperature.Text = CS.Properties.Settings.Default.SavedAmbientTemperature;
             
         }
 
@@ -129,6 +134,12 @@ namespace Version2
                 string highTempValueY = highTempY.Text;
                 string ambientTemp = ambientTemperature.Text;
                 string initialTemp = initialTemperature.Text;
+
+                CS.Properties.Settings.Default.SavedHighTempLocationX = highTempX.Text;
+                CS.Properties.Settings.Default.SavedHighTempLocationY = highTempY.Text;
+                CS.Properties.Settings.Default.SavedAmbientTemperature = ambientTemperature.Text;
+                CS.Properties.Settings.Default.SavedInitialTemperature = initialTemperature.Text;
+                CS.Properties.Settings.Default.Save();
 
                 int highTempVX = int.Parse(highTempValueX);
                 int highTempVY = int.Parse(highTempValueY);
