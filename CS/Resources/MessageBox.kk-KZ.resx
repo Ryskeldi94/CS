@@ -129,6 +129,9 @@
   <data name="MetalsJsonNotF" xml:space="preserve">
     <value>Файл 'metals.json' табылмады!</value>
   </data>
+  <data name="NotSelectedTypeMethod" xml:space="preserve">
+    <value>Есептеу түрін тандаңыз</value>
+  </data>
   <data name="Ok" xml:space="preserve">
     <value>ok</value>
   </data>

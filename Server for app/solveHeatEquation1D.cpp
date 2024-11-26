@@ -1,4 +1,4 @@
-#include "solveHeatEquation1D.h"
+﻿#include "solveHeatEquation1D.h"
 
 const double dt = 0.1;  
 const double dx = 0.1;  

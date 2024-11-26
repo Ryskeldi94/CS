@@ -48,7 +48,6 @@ namespace Version2
             highTempLocation.Text = CS.Properties.Settings.Default.SavedHighTempLocationSingl;
             ambientTemperature.Text = CS.Properties.Settings.Default.SavedAmbientTemperatureSingl;
             initialTemperature.Text = CS.Properties.Settings.Default.SavedInitialTemperatureSingl;
-            CS.Properties.Settings.Default.Save();
 
             ThemeHelper.UpdateTheme(this);
         }

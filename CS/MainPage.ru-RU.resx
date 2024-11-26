@@ -131,6 +131,9 @@
   <data name="SettingsButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
+  <data name="SettingsButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>57, 494</value>
+  </data>
   <data name="SettingsButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>430, 90</value>
   </data>

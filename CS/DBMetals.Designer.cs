@@ -26,6 +26,9 @@ namespace Version2
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DBMetals));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.textBox5 = new System.Windows.Forms.TextBox();
             this.DelMetal = new System.Windows.Forms.Button();
             this.AlphaBox = new System.Windows.Forms.TextBox();
             this.SpecificHeatBox = new System.Windows.Forms.TextBox();
@@ -43,9 +46,6 @@ namespace Version2
             this.label1 = new System.Windows.Forms.Label();
             this.comboBoxMetals = new System.Windows.Forms.ComboBox();
             this.back = new System.Windows.Forms.Button();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -74,6 +74,24 @@ namespace Version2
             this.panel1.Controls.Add(this.comboBoxMetals);
             this.panel1.Controls.Add(this.back);
             this.panel1.Name = "panel1";
+            // 
+            // textBox7
+            // 
+            resources.ApplyResources(this.textBox7, "textBox7");
+            this.textBox7.Name = "textBox7";
+            this.textBox7.ReadOnly = true;
+            // 
+            // textBox6
+            // 
+            resources.ApplyResources(this.textBox6, "textBox6");
+            this.textBox6.Name = "textBox6";
+            this.textBox6.ReadOnly = true;
+            // 
+            // textBox5
+            // 
+            resources.ApplyResources(this.textBox5, "textBox5");
+            this.textBox5.Name = "textBox5";
+            this.textBox5.ReadOnly = true;
             // 
             // DelMetal
             // 
@@ -199,24 +217,6 @@ namespace Version2
             this.back.UseVisualStyleBackColor = false;
             this.back.Click += new System.EventHandler(this.back_Click);
             // 
-            // textBox5
-            // 
-            resources.ApplyResources(this.textBox5, "textBox5");
-            this.textBox5.Name = "textBox5";
-            this.textBox5.ReadOnly = true;
-            // 
-            // textBox6
-            // 
-            resources.ApplyResources(this.textBox6, "textBox6");
-            this.textBox6.Name = "textBox6";
-            this.textBox6.ReadOnly = true;
-            // 
-            // textBox7
-            // 
-            resources.ApplyResources(this.textBox7, "textBox7");
-            this.textBox7.Name = "textBox7";
-            this.textBox7.ReadOnly = true;
-            // 
             // DBMetals
             // 
             resources.ApplyResources(this, "$this");
@@ -253,22 +253,22 @@ namespace Version2
         }
 
 
-        private Button ChoiceShow;
+        private Button ChoiceShow;//
         private Button SelectThis;
-        private Button button2;
-        private Button button1;
+        private Button button2; //решения на двух
+        private Button button1; // решенея на одном
         private Button ShowItems;
-        private TextBox textBox1;
-        private TextBox textBox4;
-        private TextBox textBox3;
-        private TextBox textBox2;
-        private TextBox NameBox;
+        private TextBox textBox1; //названия металла
+        private TextBox textBox4; //SpecificHeat металла
+        private TextBox textBox3; //Alpha металла
+        private TextBox textBox2; //плотность металла
+        private TextBox NameBox; //
         private TextBox AlphaBox;
         private TextBox SpecificHeatBox;
         private TextBox DensityBox;
-        private Button DelMetal;
-        private TextBox textBox7;
-        private TextBox textBox6;
-        private TextBox textBox5;
+        private Button DelMetal; //
+        private TextBox textBox7; //
+        private TextBox textBox6; //
+        private TextBox textBox5; //
     }
 }

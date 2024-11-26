@@ -183,11 +183,6 @@ namespace Version2
             SaveDataToFile();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            Back(sender, e);
-        }
-
         private void back_Click(object sender, EventArgs e) 
         {
             Back(sender, e);

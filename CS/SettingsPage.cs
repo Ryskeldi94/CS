@@ -77,13 +77,12 @@ namespace CS
         {
             if (!IsJsonFileValid(PathJson))
             {
-                return; // Прерываем сохранение, если проверка не пройдена
+                return;
             }
 
-            // Проверяем серверный файл
             if (!IsServerFileValid(PathServer))
             {
-                return; // Прерываем сохранение, если проверка не пройдена
+                return; 
             }
 
             // Сохраняем язык и тему в глобальные переменные
@@ -171,7 +170,6 @@ namespace CS
                 return false;
             }
 
-            // Проверка расширения файла
             if (System.IO.Path.GetExtension(filePath).ToLower() != ".json")
             {
                 MessageBox.Show("Неверный формат файла данных. Ожидался файл формата JSON.", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);

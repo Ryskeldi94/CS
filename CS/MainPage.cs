@@ -26,10 +26,10 @@ namespace Version2
 
             Thread.CurrentThread.CurrentUICulture = new CultureInfo(savedLanguage);
             Thread.CurrentThread.CurrentCulture = new CultureInfo(savedLanguage);
-
-            InitializeComponent();
+            
             ThemeHelper.UpdateTheme(this);
             ThemeHelper.ApplyLanguage(this);
+            InitializeComponent();
         }
 
         private void ChoiceShow_Click(object sender, EventArgs e)

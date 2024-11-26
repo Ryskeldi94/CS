@@ -4,6 +4,7 @@ using System.Globalization;
 using System.Threading;
 using System.Windows.Forms;
 
+
 namespace Version2
 {
     partial class MainPage
@@ -12,7 +13,6 @@ namespace Version2
         /// Обязательная переменная конструктора.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
-
         /// <summary>
         /// Освободить все используемые ресурсы.
         /// </summary>

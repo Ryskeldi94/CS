@@ -21,13 +21,14 @@ namespace Version2
 
         public DBMetals()
         {
-            ThemeHelper.ApplyLanguage(this);
+            ThemeHelper.ApplyLanguage(this); // Применение языковых настроек
             InitializeComponent();
-            comboBoxMetals.DropDownStyle = ComboBoxStyle.DropDownList;
-            LoadMetalsData();
+            comboBoxMetals.DropDownStyle = ComboBoxStyle.DropDownList; // Установка типа ComboBox для выбора
+            LoadMetalsData(); // Загрузка данных из JSON
             this.KeyPreview = true;
-            this.KeyDown += Singl_KeyDown;
+            this.KeyDown += Singl_KeyDown; // Обработка нажатия клавиш
 
+            // Установка только для чтения текстовых полей
             textBox2.ReadOnly = true;
             textBox2.TabStop = false;
 
@@ -49,13 +50,14 @@ namespace Version2
             textBox7.ReadOnly = true;
             textBox7.TabStop = false;
 
-
+            // Подписка на события ввода
             AlphaBox.KeyPress += alpha_KeyPress;
             NameBox.KeyPress += nameTextBoxt_KeyPress;
             SpecificHeatBox.KeyPress += specificHeat_KeyPress;
             DensityBox.KeyPress += density_KeyPress;
             comboBoxMetals.SelectedIndexChanged += ComboBoxMetals_SelectedIndexChanged;
 
+            // Установка порядка переключения между элементами
             SetTabIndexes();
             ThemeHelper.UpdateTheme(this);
         }
@@ -66,11 +68,12 @@ namespace Version2
         {
             if (comboBoxMetals.SelectedIndex != -1)
             {
-                string selectedMetalName = comboBoxMetals.SelectedItem.ToString();
-                Metal selectedMetal = metals.FirstOrDefault(m => m.Name == selectedMetalName);
+                string selectedMetalName = comboBoxMetals.SelectedItem.ToString(); // Получение имени выбранного металла
+                Metal selectedMetal = metals.FirstOrDefault(m => m.Name == selectedMetalName); // Поиск металла по имени
 
                 if (selectedMetal != null)
                 {
+                    // Заполнение текстовых полей данными выбранного металла
                     DensityBox.Text = selectedMetal.Density.ToString();       
                     SpecificHeatBox.Text = selectedMetal.SpecificHeat.ToString();  
                     AlphaBox.Text = selectedMetal.Alpha.ToString();        
@@ -80,6 +83,7 @@ namespace Version2
                 }
                 else
                 {
+                    // Если металл не найден, отображается сообщение
                     string message = rm.GetString("MetalNotFound");
                     MessageBox.Show(message);
                 }
@@ -90,21 +94,25 @@ namespace Version2
         {
             System.Windows.Forms.TextBox textBox = sender as System.Windows.Forms.TextBox;
 
+            // Ограничение ввода: только цифры, точка, запятая
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && e.KeyChar != '.' && e.KeyChar != ',')
             {
                 e.Handled = true;
             }
 
+            // Запрет ввода более одной точки
             if ((e.KeyChar == '.' || e.KeyChar == ',') && textBox.Text.Contains('.'))
             {
                 e.Handled = true;
             }
 
+            // Автоматическая замена запятой на точку
             if (e.KeyChar == ',')
             {
                 e.KeyChar = '.';
             }
 
+            // Добавление 0 перед точкой, если поле пустое
             if ((textBox.SelectionStart == 0 || textBox.Text == "") && (e.KeyChar == '.' || e.KeyChar == ','))
             {
                 textBox.Text = "0" + e.KeyChar;
@@ -112,6 +120,7 @@ namespace Version2
                 e.Handled = true;
             }
 
+            // Ограничение количества знаков после точки
             if (textBox.Text.Contains('.'))
             {
                 int indexOfDot = textBox.Text.IndexOf('.');
@@ -147,6 +156,7 @@ namespace Version2
 
         private void SetTabIndexes()
         {
+            // Установка порядка переключения (TabIndex) между элементами формы
             comboBoxMetals.TabIndex = 0;
             ShowItems.TabIndex = 1;
             AddMetal.TabIndex = 2;
@@ -158,21 +168,21 @@ namespace Version2
 
         private void LoadMetalsData()
         {
-            comboBoxMetals.Items.Clear();
+            comboBoxMetals.Items.Clear(); // Очистка ComboBox перед загрузкой данных
             string jsonFilePath = CS.Properties.Settings.Default.UserFilePathForJson;
             if (File.Exists(jsonFilePath))
             {
-                string jsonData = File.ReadAllText(jsonFilePath);
+                string jsonData = File.ReadAllText(jsonFilePath); // Чтение JSON-файла
                 metals = System.Text.Json.JsonSerializer.Deserialize<MetalData>(jsonData).Metals;
-                foreach (var metal in metals)
+                foreach (var metal in metals) 
                 {
-                    comboBoxMetals.Items.Add(metal.Name); 
+                    comboBoxMetals.Items.Add(metal.Name);  // Добавление имен металлов в ComboBox
                 }
 
             }
             else
             {
-                MessageBox.Show(rm.GetString("MetalsJsonNotF"));
+                MessageBox.Show(rm.GetString("MetalsJsonNotF")); // Сообщение об ошибке, если файл не найден
             }
         }
 
@@ -197,7 +207,7 @@ namespace Version2
 
                 if (selectedMetal != null)
                 {
-                    string messageTemplate = rm.GetString("MetalProperties");
+                    string messageTemplate = rm.GetString("MetalProperties"); 
 
                     string message = string.Format(
                         messageTemplate,
@@ -331,7 +341,7 @@ namespace Version2
                     try
                     {
                         var metalData = System.Text.Json.JsonSerializer.Deserialize<MetalData>(jsonString);
-                        metals = metalData.Metals;
+                        metals = metalData.Metals; // Обновление списка металлов из файла
                     }
                     catch (System.Text.Json.JsonException ex)
                     {
