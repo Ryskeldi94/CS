@@ -1,33 +1,34 @@
 ﻿#include "solveHeatEquation1D.h"
 
-const double dt = 0.1;  
-const double dx = 0.1;  
+std::vector<double> solveHeatEquation1D(double density, double specificHeat, double alpha, int highTempLocation, float initialTemperature, float ambientTemperature, int numSteps, int nx, double dt, double dx) {
 
-std::vector<double> solveHeatEquation1D(double density, double specificHeat, double alpha, int highTempLocation, float initialTemperature, float ambientTemperature, int numSteps, int nx) {
+    // Convert density and specific heat to standard units
+    density *= 1000;         // g/cm^3 -> kg/m^3
+    specificHeat *= 1000;    // kJ/(kg*K) -> J/(kg*K)
 
-    density *= 1000;
-    specificHeat *= 1000;
-
+    // Initialize the temperature array with ambient temperature
     std::vector<double> temperature(nx, ambientTemperature);
-    temperature[highTempLocation] = initialTemperature;
+    if (highTempLocation >= 0 && highTempLocation < nx) {
+        temperature[highTempLocation] = initialTemperature;
+    }
 
+    // Allocate space to store all results
     std::vector<double> allResults(nx * numSteps);
 
-    double coefficient = alpha * dt / (dx * dx) / (density * specificHeat);
-
+    // Time-stepping loop
     for (int step = 0; step < numSteps; ++step) {
-        std::vector<double> newTemperature(nx, 0.0);
+        std::vector<double> newTemperature(nx, ambientTemperature);
 
+        // Compute the new temperature for internal points
 #pragma omp parallel for
         for (int i = 1; i < nx - 1; ++i) {
-            newTemperature[i] = temperature[i] + coefficient * (temperature[i - 1] - 2 * temperature[i] + temperature[i + 1]);
+            newTemperature[i] = temperature[i] + alpha * dt / (dx * dx) *
+                (temperature[i - 1] - 2 * temperature[i] + temperature[i + 1]) /
+                (density * specificHeat);
         }
+        temperature = newTemperature;
 
-        newTemperature[0] = temperature[0]; 
-        newTemperature[nx - 1] = temperature[nx - 1];
-
-        std::swap(temperature, newTemperature);
-
+        // Save the temperature distribution at each step
         std::copy(temperature.begin(), temperature.end(), allResults.begin() + step * nx);
     }
 

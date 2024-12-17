@@ -77,7 +77,7 @@ namespace Version2
             this.ChoiceShow.ForeColor = System.Drawing.Color.DarkBlue;
             this.ChoiceShow.Name = "ChoiceShow";
             this.ChoiceShow.UseVisualStyleBackColor = true;
-            this.ChoiceShow.Click += new System.EventHandler(this.ChoiceShow_Click);
+            this.ChoiceShow.Click += new System.EventHandler(this.StartButton_Click);
             // 
             // MainPage
             // 

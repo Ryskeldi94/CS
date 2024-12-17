@@ -117,6 +117,18 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="ErrorRemovingMetal" xml:space="preserve">
+    <value>An error occurred when removing metal!</value>
+  </data>
+  <data name="FieldsNotFilled" xml:space="preserve">
+    <value>Please fill in all the fields!</value>
+  </data>
+  <data name="IncorrectValuesWereEntered" xml:space="preserve">
+    <value>Please enter the correct values.</value>
+  </data>
+  <data name="MetalAdded" xml:space="preserve">
+    <value>Metal has been added successfully</value>
+  </data>
   <data name="MetalNotFount" xml:space="preserve">
     <value>Metall not fount</value>
   </data>
@@ -125,6 +137,9 @@
   </data>
   <data name="MetalProperties" xml:space="preserve">
     <value>Density: {0} g/cm^3\nSpecific heat: {1} J/g·°C\nThermal conductivity coefficient: {2} W/m·°C</value>
+  </data>
+  <data name="MetalRemoved" xml:space="preserve">
+    <value>Metal {0} has been successfully removed!</value>
   </data>
   <data name="MetalsJsonNotF" xml:space="preserve">
     <value>The 'metals.json' file not found!</value>

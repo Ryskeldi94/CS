@@ -117,6 +117,18 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="ErrorRemovingMetal" xml:space="preserve">
+    <value>Металл өшіру кезіңде қате</value>
+  </data>
+  <data name="FieldsNotFilled" xml:space="preserve">
+    <value>Барлық өрістерді толтырыңыз!</value>
+  </data>
+  <data name="IncorrectValuesWereEntered" xml:space="preserve">
+    <value>Дұрыс мәндерді енгізіңіз.</value>
+  </data>
+  <data name="MetalAdded" xml:space="preserve">
+    <value>Металл сәтті қосылды</value>
+  </data>
   <data name="MetalNotFount" xml:space="preserve">
     <value>Металл табылмады</value>
   </data>
@@ -125,6 +137,9 @@
   </data>
   <data name="MetalProperties" xml:space="preserve">
     <value>Тығыздық: {0} г/см³\nМеншікті жылу сыйымдылығы: {1} Дж/г·°C\nЖылу өткізгіштік коэффициенті: {2} Вт/м·°C</value>
+  </data>
+  <data name="MetalRemoved" xml:space="preserve">
+    <value>Металл {0} сәтті жойылды!</value>
   </data>
   <data name="MetalsJsonNotF" xml:space="preserve">
     <value>Файл 'metals.json' табылмады!</value>

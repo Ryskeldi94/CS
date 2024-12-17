@@ -27,7 +27,7 @@ namespace Test
 
         private static void SendData1D(NetworkStream stream, int numSteps)
         {
-            double density = 7.78, specificHeat = 0.449, alpha = 80.2;
+            double density = 7.78, specificHeat = 0.449, alpha = 80.2, dt = 1, dx = 0.1;
             int highTempLocation = 5, nx = 10;
             float initialTemperature = 100.0f, ambientTemperature = 20.0f;
 
@@ -40,6 +40,8 @@ namespace Test
             stream.Write(BitConverter.GetBytes(ambientTemperature), 0, sizeof(float));
             stream.Write(BitConverter.GetBytes(numSteps), 0, sizeof(int));
             stream.Write(BitConverter.GetBytes(nx), 0, sizeof(int));
+            stream.Write(BitConverter.GetBytes(dt), 0, sizeof(double));
+            stream.Write(BitConverter.GetBytes(dx), 0, sizeof(double));
         }
 
         private static void ReceiveAndDisplayResults1D(NetworkStream stream, int numSteps)
@@ -71,7 +73,7 @@ namespace Test
 
         private static void SendData2D(NetworkStream stream, int numSteps)
         {
-            double density = 7.78, specificHeat = 0.449, alpha = 80.2;
+            double density = 7.78, specificHeat = 0.449, alpha = 80.2, dt = 1, dx = 0.1, dy = 0.1;
             int highTempX = 5, highTempY = 5, nx = 10, ny = 10;
             float initialTemperature = 100.0f, ambientTemperature = 20.0f;
 
@@ -86,6 +88,9 @@ namespace Test
             stream.Write(BitConverter.GetBytes(numSteps), 0, sizeof(int));
             stream.Write(BitConverter.GetBytes(nx), 0, sizeof(int));
             stream.Write(BitConverter.GetBytes(ny), 0, sizeof(int));
+            stream.Write(BitConverter.GetBytes(dt), 0, sizeof(double));
+            stream.Write(BitConverter.GetBytes(dx), 0, sizeof(double));
+            stream.Write(BitConverter.GetBytes(dy), 0, sizeof(double));
         }
 
         private static void ReceiveAndDisplayResults2D(NetworkStream stream, int numSteps)

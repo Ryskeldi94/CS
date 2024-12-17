@@ -169,7 +169,7 @@ namespace Version2
         private void LoadMetalsData()
         {
             comboBoxMetals.Items.Clear(); // Очистка ComboBox перед загрузкой данных
-            string jsonFilePath = CS.Properties.Settings.Default.UserFilePathForJson;
+            string jsonFilePath = CS.Properties.Settings.Default.UserFilePathForJson; // загрузка JSON файла
             if (File.Exists(jsonFilePath))
             {
                 string jsonData = File.ReadAllText(jsonFilePath); // Чтение JSON-файла
@@ -182,7 +182,8 @@ namespace Version2
             }
             else
             {
-                MessageBox.Show(rm.GetString("MetalsJsonNotF")); // Сообщение об ошибке, если файл не найден
+                string messsage = rm.GetString("MetalsJsonNotF"); // Сообщение об ошибке, если файл не найден
+
             }
         }
 
@@ -228,9 +229,8 @@ namespace Version2
 
         private void SelectThis_Click(object sender, EventArgs e)
         {
-            
 
-            if (comboBoxMetals.SelectedIndex == -1)
+            if (comboBoxMetals.SelectedIndex == -1) //проверка о выбраного металла
             {
                 MessageBox.Show(rm.GetString("MetalNotSelected"));
             }
@@ -286,10 +286,6 @@ namespace Version2
                         }
                     }
                 }
-                else
-                {
-                    MessageBox.Show("Металл не найден в списке!");
-                }
             }
 
         }
@@ -338,16 +334,8 @@ namespace Version2
                 if (File.Exists(jsonFilePath))
                 {
                     jsonString = File.ReadAllText(jsonFilePath);
-                    try
-                    {
-                        var metalData = System.Text.Json.JsonSerializer.Deserialize<MetalData>(jsonString);
-                        metals = metalData.Metals; // Обновление списка металлов из файла
-                    }
-                    catch (System.Text.Json.JsonException ex)
-                    {
-                        MessageBox.Show($"Ошибка десериализации JSON: {ex.Message}");
-                        metals = new List<Metal>();
-                    }
+                    var metalData = System.Text.Json.JsonSerializer.Deserialize<MetalData>(jsonString);
+                    metals = metalData.Metals; // Обновление списка металлов из файла
                 }
                 else
                 {
@@ -379,11 +367,11 @@ namespace Version2
 
                 LoadMetalsData();
 
-                MessageBox.Show("Металл успешно добавлен!");
+                string message = rm.GetString("MetalAdded"); 
             }
             else
             {
-                MessageBox.Show("Пожалуйста, введите корректные значения.");
+                string message = rm.GetString("IncorrectValuesWereEntered");
             }
 
         }
@@ -397,7 +385,7 @@ namespace Version2
         {
             if (comboBoxMetals.SelectedIndex == -1)
             {
-                MessageBox.Show("Металл не выбран для удаления!");
+                string messsage = rm.GetString("MetalNotSelected");
                 return;
             }
 
@@ -415,11 +403,14 @@ namespace Version2
                 // Обновление выпадающего списка
                 LoadMetalsData();
 
-                MessageBox.Show($"Металл '{selectedMetal.Name}' успешно удален!");
+                string message = string.Format(
+                    rm.GetString("MetalRemoved"),
+                    selectedMetal.Name
+                );
             }
             else
             {
-                MessageBox.Show("Ошибка при удалении металла!");
+                string messsage = rm.GetString("ErrorRemovingMetal");
             }
         }
 

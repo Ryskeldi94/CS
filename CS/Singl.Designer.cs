@@ -77,7 +77,7 @@ namespace Version2
             resources.ApplyResources(this.calculate, "calculate");
             this.calculate.Name = "calculate";
             this.calculate.UseVisualStyleBackColor = true;
-            this.calculate.Click += new System.EventHandler(this.button1_Click);
+            this.calculate.Click += new System.EventHandler(this.Calculate_Click);
             // 
             // textBox3
             // 

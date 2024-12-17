@@ -4,6 +4,7 @@ using System.Net.Sockets;
 using System.Diagnostics;
 using System.Linq;
 using CS;
+using System.Resources;
 
 namespace Version2
 {
@@ -16,8 +17,7 @@ namespace Version2
         private DBMetals DBMetals;
         private LoadData_2 LoadData_2;
 
-        int calculationType = 1;
-        public int SelectedMethod { get; set; }
+        ResourceManager rm = new ResourceManager("CS.Resources.MessageBox", typeof(MainPage).Assembly);
 
         public Singl(double density, double specificHeat, double alpha)
         {
@@ -89,17 +89,17 @@ namespace Version2
 
             if (e.KeyChar == (char)Keys.Enter)
             {
-                button1_Click(sender, e);
+                Calculate_Click(sender, e);
                 e.Handled = true;
             }
         }
 
 
-        private void button1_Click(object sender, EventArgs e)
+        private void Calculate_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(highTempLocation.Text) || string.IsNullOrEmpty(ambientTemperature.Text) || string.IsNullOrEmpty(initialTemperature.Text))
             {
-                MessageBox.Show("Пожалуйста, заполните все поля!");
+                MessageBox.Show(rm.GetString("FieldsNotFilled"));
             }
             else
             {
@@ -115,11 +115,11 @@ namespace Version2
                 CS.Properties.Settings.Default.SavedHighTempLocationSingl= highTempLocation.Text;
                 CS.Properties.Settings.Default.SavedInitialTemperatureSingl = initialTemperature.Text;
 
-                soket(density, specificHeat, alpha, highTempValue, initialTempValue, ambientTempValue);
+                Socket(density, specificHeat, alpha, highTempValue, initialTempValue, ambientTempValue);
             }
         }
 
-        private void soket(double density, double specificHeat, double alpha, int highTempLocation, float initialTemperature, float ambientTemperature)
+        private void Socket(double density, double specificHeat, double alpha, int highTempLocation, float initialTemperature, float ambientTemperature)
         {
             ProcessStartInfo serverStartInfo = new ProcessStartInfo
             {
@@ -135,8 +135,9 @@ namespace Version2
 
             NetworkStream stream = client.GetStream();
             int numSteps = 100, nx = 10;
+            double dt = 1, dx = 0.1;
 
-            stream.Write(BitConverter.GetBytes(calculationType), 0, sizeof(int));
+            stream.Write(BitConverter.GetBytes(1), 0, sizeof(int));
             stream.Write(BitConverter.GetBytes(density), 0, sizeof(double));
             stream.Write(BitConverter.GetBytes(specificHeat), 0, sizeof(double));
             stream.Write(BitConverter.GetBytes(alpha), 0, sizeof(double));
@@ -145,6 +146,8 @@ namespace Version2
             stream.Write(BitConverter.GetBytes(ambientTemperature), 0, sizeof(float));
             stream.Write(BitConverter.GetBytes(numSteps), 0, sizeof(int));
             stream.Write(BitConverter.GetBytes(nx), 0, sizeof(int));
+            stream.Write(BitConverter.GetBytes(dt), 0, sizeof(double));
+            stream.Write(BitConverter.GetBytes(dx), 0, sizeof(double));
 
             byte[] buffer = new byte[sizeof(double) * nx * numSteps];
             int bytesRead = stream.Read(buffer, 0, buffer.Length);

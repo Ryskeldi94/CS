@@ -32,7 +32,7 @@ namespace Version2
             InitializeComponent();
         }
 
-        private void ChoiceShow_Click(object sender, EventArgs e)
+        private void StartButton_Click(object sender, EventArgs e) //функция для начало
         {
             panel1.Controls.Clear();
 
@@ -50,7 +50,7 @@ namespace Version2
           
         }
 
-        private void SettingsButton_Click(object sender, EventArgs e)
+        private void SettingsButton_Click(object sender, EventArgs e) //функция для перехода к окну настройка
         {
             panel1.Controls.Clear();
 

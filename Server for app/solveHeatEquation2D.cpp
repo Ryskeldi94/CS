@@ -1,14 +1,9 @@
 ﻿#include "solveHeatEquation2D.h"
 
-std::vector<double> solveHeatEquation2D(double density, double specificHeat, double alpha, int highTempX, int highTempY, float initialTemperature, float ambientTemperature, int numSteps, int nx, int ny) {
+std::vector<double> solveHeatEquation2D(double density, double specificHeat, double alpha, int highTempX, int highTempY, float initialTemperature, float ambientTemperature, int numSteps, int nx, int ny, double dt, double dx, double dy) {
 
     density *= 1000;
     specificHeat *= 1000;
-
-    const double dx = 0.1;
-    const double dy = 0.1;
-
-    const double dt = 0.1;
 
     if (highTempX < 1 || highTempX > nx) {
         highTempX = nx / 2; 

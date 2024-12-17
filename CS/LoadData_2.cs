@@ -64,6 +64,7 @@ namespace Version2
             N_currentLine.ForeColor = Color.DarkBlue;
             N_currentLine.Font = new Font("Courier New", 10, FontStyle.Bold);
         }
+
         private void Form_MouseWheel(object sender, MouseEventArgs e)
         {
             if (e.Delta > 0 && numericUpDown1.Value < numericUpDown1.Maximum) // Scroll up
@@ -91,7 +92,7 @@ namespace Version2
 
         private void PopulateData(double[] result)
         {
-            int nx = 10;  // Assuming nx is 10 as in your socket method
+            int nx = 10;  
             int numSteps = result.Length / nx;
 
             data = new double[numSteps, nx];
@@ -104,15 +105,12 @@ namespace Version2
                 }
             }
 
-            // Hide column headers
             dataGridView1.ColumnHeadersVisible = false;
 
-            // Add a column for row numbering
             dataGridView1.Columns.Add("RowNumber", "№");
             dataGridView1.Columns["RowNumber"].ReadOnly = true; // Read-only
             dataGridView1.Columns["RowNumber"].Frozen = true; // Freeze the column
 
-            // Set up the other columns
             for (int col = 0; col < data.GetLength(1); col++)
             {
                 dataGridView1.Columns.Add($"Column{col}", $"Column {col + 1}");
@@ -130,7 +128,6 @@ namespace Version2
                 dataGridView1.Rows.Add(rowData);
             }
 
-            // Additional settings for the DataGridView
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
             dataGridView1.ReadOnly = true;
 
@@ -191,8 +188,6 @@ namespace Version2
             return rowData.ToString();
         }
        
-        
-
         private void saveButton_Click(object sender, EventArgs e)
         {
             using (SaveFileDialog saveFileDialog = new SaveFileDialog())

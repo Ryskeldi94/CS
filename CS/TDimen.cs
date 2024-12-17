@@ -146,11 +146,11 @@ namespace Version2
                 float ambientTempValue = float.Parse(ambientTemp);
                 float initialTempValue = float.Parse(initialTemp);
 
-                soket(density, specificHeat, alpha, highTempVX, highTempVY, initialTempValue, ambientTempValue);
+                Socket(density, specificHeat, alpha, highTempVX, highTempVY, initialTempValue, ambientTempValue);
             }
         }
 
-        private void soket(double density, double specificHeat, double alpha, int highTempX, int highTempY, float initialTemperature, float ambientTemperature)
+        private void Socket(double density, double specificHeat, double alpha, int highTempX, int highTempY, float initialTemperature, float ambientTemperature)
         {
             ProcessStartInfo serverStartInfo = new ProcessStartInfo();
             serverStartInfo.FileName = CS.Properties.Settings.Default.UserFilePathForServer;
@@ -164,10 +164,10 @@ namespace Version2
 
             NetworkStream stream = client.GetStream();
 
-            int calculationType = 2;
             int numSteps = 100, nx = 10, ny = 10;
+            double dt = 1, dx = 0.1, dy = 0.1;
 
-            stream.Write(BitConverter.GetBytes(calculationType), 0, sizeof(int));
+            stream.Write(BitConverter.GetBytes(2), 0, sizeof(int));
             stream.Write(BitConverter.GetBytes(density), 0, sizeof(double));
             stream.Write(BitConverter.GetBytes(specificHeat), 0, sizeof(double));
             stream.Write(BitConverter.GetBytes(alpha), 0, sizeof(double));
@@ -178,6 +178,9 @@ namespace Version2
             stream.Write(BitConverter.GetBytes(numSteps), 0, sizeof(int));
             stream.Write(BitConverter.GetBytes(nx), 0, sizeof(int));
             stream.Write(BitConverter.GetBytes(ny), 0, sizeof(int));
+            stream.Write(BitConverter.GetBytes(dt), 0, sizeof(double));
+            stream.Write(BitConverter.GetBytes(dx), 0, sizeof(double));
+            stream.Write(BitConverter.GetBytes(dy), 0, sizeof(double));
 
             byte[] buffer = new byte[sizeof(double) * nx * ny * numSteps];
             int bytesRead = stream.Read(buffer, 0, buffer.Length);

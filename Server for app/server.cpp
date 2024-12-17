@@ -139,7 +139,7 @@ int main() {
 
             logProgress("Starting 1D heat equation calculation.");
 
-            double density, specificHeat, alpha;
+            double density, specificHeat, alpha, dt, dx;
             int highTempLocation, numSteps, nx;
             float initialTemperature, ambientTemperature;
 
@@ -239,7 +239,31 @@ int main() {
 
             logProgress("Received nx: " + std::to_string(nx));
 
-            result = solveHeatEquation1D(density, specificHeat, alpha, highTempLocation, initialTemperature, ambientTemperature, numSteps, nx);
+            recvResult = recv(ClientSocket, (char*)&dt, sizeof(dt), 0);
+            if (recvResult != sizeof(dt)) {
+                logError("Error receiving dt.");
+                logProgress("Error receiving dt.");
+                closesocket(ClientSocket);
+                closesocket(ListenSocket);
+                WSACleanup();
+                return 1;
+            }
+
+            logProgress("Received dt: " + std::to_string(dt));
+
+            recvResult = recv(ClientSocket, (char*)&dx, sizeof(dx), 0);
+            if (recvResult != sizeof(dx)) {
+                logError("Error receiving dx.");
+                logProgress("Error receiving dx.");
+                closesocket(ClientSocket);
+                closesocket(ListenSocket);
+                WSACleanup();
+                return 1;
+            }
+
+            logProgress("Received dx: " + std::to_string(dx));
+
+            result = solveHeatEquation1D(density, specificHeat, alpha, highTempLocation, initialTemperature, ambientTemperature, numSteps, nx, dt, dx);
 
             logProgress("1D calculation completed, sending result to client.");
 
@@ -260,7 +284,7 @@ int main() {
 
             logProgress("Starting 2D heat equation calculation.");
 
-            double density, specificHeat, alpha;
+            double density, specificHeat, alpha, dt, dx, dy;
             int highTempX, highTempY, numSteps, nx, ny;
             float initialTemperature, ambientTemperature;
 
@@ -384,7 +408,39 @@ int main() {
 
             logProgress("Received ny: " + std::to_string(ny));
 
-            result = solveHeatEquation2D(density, specificHeat, alpha, highTempX, highTempY, initialTemperature, ambientTemperature, numSteps, nx, ny);
+            recvResult = recv(ClientSocket, (char*)&dt, sizeof(dt), 0);
+            if (recvResult != sizeof(dt)) {
+                logError("Error receiving dt.");
+                logProgress("Error receiving dt.");
+                closesocket(ClientSocket);
+                closesocket(ListenSocket);
+                WSACleanup();
+                return 1;
+            }
+
+            logProgress("Received dt: " + std::to_string(dt));
+
+            recvResult = recv(ClientSocket, (char*)&dx, sizeof(dx), 0);
+            if (recvResult != sizeof(dx)) {
+                logError("Error receiving dx.");
+                logProgress("Error receiving dx.");
+                closesocket(ClientSocket);
+                closesocket(ListenSocket);
+                WSACleanup();
+                return 1;
+            }
+
+            recvResult = recv(ClientSocket, (char*)&dy, sizeof(dy), 0);
+            if (recvResult != sizeof(dy)) {
+                logError("Error receiving dy.");
+                logProgress("Error receiving dy.");
+                closesocket(ClientSocket);
+                closesocket(ListenSocket);
+                WSACleanup();
+                return 1;
+            }
+
+            result = solveHeatEquation2D(density, specificHeat, alpha, highTempX, highTempY, initialTemperature, ambientTemperature, numSteps, nx, ny , dt, dx, dy);
 
             logProgress("2D calculation completed, sending result to client.");
 
