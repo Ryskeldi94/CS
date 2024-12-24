@@ -367,11 +367,13 @@ namespace Version2
 
                 LoadMetalsData();
 
-                string message = rm.GetString("MetalAdded"); 
+                string message = rm.GetString("MetalAdded");
+                MessageBox.Show(message);
             }
             else
             {
                 string message = rm.GetString("IncorrectValuesWereEntered");
+                MessageBox.Show(message);
             }
 
         }
@@ -407,10 +409,12 @@ namespace Version2
                     rm.GetString("MetalRemoved"),
                     selectedMetal.Name
                 );
+                MessageBox.Show(message);
             }
             else
             {
-                string messsage = rm.GetString("ErrorRemovingMetal");
+                string message = rm.GetString("ErrorRemovingMetal");
+                MessageBox.Show(message);
             }
         }
 

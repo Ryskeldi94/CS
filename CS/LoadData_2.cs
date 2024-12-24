@@ -4,6 +4,7 @@ using System.Windows.Forms;
 using System.IO;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using System.Drawing;
+using System.Resources;
 
 namespace Version2
 {
@@ -11,6 +12,7 @@ namespace Version2
     {
         private double[,] data;
         private Singl Singl;
+        ResourceManager rm = new ResourceManager("CS.Resources.MessageBox", typeof(MainPage).Assembly);
 
         public LoadData_2(double[] result)
         {
@@ -206,7 +208,7 @@ namespace Version2
                         }
                     }
 
-                    MessageBox.Show("Data saved successfully.", "Save Data", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show(rm.GetString("DataSaved"), "Save Data", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
         }

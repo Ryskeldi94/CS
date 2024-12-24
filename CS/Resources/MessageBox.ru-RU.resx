@@ -117,8 +117,17 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="DataSaved" xml:space="preserve">
+    <value>Данные успешно сохранено</value>
+  </data>
+  <data name="error" xml:space="preserve">
+    <value>Ошибка</value>
+  </data>
   <data name="ErrorRemovingMetal" xml:space="preserve">
     <value>Ошибка при удалении металла!</value>
+  </data>
+  <data name="ErrorRunServer" xml:space="preserve">
+    <value>Не удалось запустить сервер</value>
   </data>
   <data name="FieldsNotFilled" xml:space="preserve">
     <value>Пожалуйста, заполните все поля!</value>

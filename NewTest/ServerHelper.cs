@@ -22,9 +22,7 @@ public static class ServerHelper
                 throw new Exception("Не удалось запустить сервер.");
             }
 
-            Console.WriteLine("Сервер запущен.");
             TcpClient client = new TcpClient("127.0.0.1", 54000);
-            Console.WriteLine("Соединение с сервером установлено.");
 
             return client.GetStream();
         }

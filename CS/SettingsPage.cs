@@ -1,4 +1,5 @@
 ﻿using System;
+using System.CodeDom;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -6,6 +7,7 @@ using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Net.Sockets;
+using System.Resources;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -17,7 +19,8 @@ namespace CS
     public partial class SettingsPage : Form
     {
         private MainPage mainPage;
-
+        ResourceManager rm = new ResourceManager("CS.Resources.MessageBox", typeof(MainPage).Assembly);
+        
         public SettingsPage()
         {
             InitializeComponent();
@@ -166,13 +169,13 @@ namespace CS
         {
             if (string.IsNullOrEmpty(filePath) || !System.IO.File.Exists(filePath))
             {
-                MessageBox.Show("Указанный файл с данными не существует!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(rm.GetString("MetalsJsonNotF"), rm.GetString("error"), MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
 
             if (System.IO.Path.GetExtension(filePath).ToLower() != ".json")
             {
-                MessageBox.Show("Неверный формат файла данных. Ожидался файл формата JSON.", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Неверный формат файла данных. Ожидался файл формата JSON.", rm.GetString("error"), MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
 
@@ -183,7 +186,7 @@ namespace CS
             }
             catch (Exception)
             {
-                MessageBox.Show("Ошибка при чтении JSON файла. Проверьте его содержимое.", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Ошибка при чтении JSON файла. Проверьте его содержимое.", rm.GetString("error"), MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
 
@@ -194,14 +197,14 @@ namespace CS
         {
             if (string.IsNullOrEmpty(filePath) || !System.IO.File.Exists(filePath))
             {
-                MessageBox.Show("Указанный серверный файл не существует!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Указанный серверный файл не существует!", rm.GetString("error"), MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
 
             // Проверка расширения файла
             if (System.IO.Path.GetExtension(filePath).ToLower() != ".exe")
             {
-                MessageBox.Show("Неверный формат файла сервера. Ожидался файл формата .exe.", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Неверный формат файла сервера. Ожидался файл формата .exe.", rm.GetString("error"), MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
 
@@ -220,7 +223,7 @@ namespace CS
                 serverProcess = Process.Start(serverStartInfo);
                 if (serverProcess == null)
                 {
-                    MessageBox.Show("Не удалось запустить сервер.");
+                    MessageBox.Show(rm.GetString("ErrorRunServer"));
                     return false;
                 }
 
@@ -275,12 +278,12 @@ namespace CS
             }
             catch (SocketException ex)
             {
-                MessageBox.Show($"Не удалось подключиться к серверу: {ex.Message}", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"Не удалось подключиться к серверу: {ex.Message}", rm.GetString("error"), MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Ошибка проверки сервера: {ex.Message}", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"Ошибка проверки сервера: {ex.Message}", rm.GetString("error"), MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
             //finally

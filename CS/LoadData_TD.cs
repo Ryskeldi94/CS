@@ -3,6 +3,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.IO;
 using System.Drawing;
+using System.Resources;
 
 namespace Version2
 {
@@ -13,6 +14,7 @@ namespace Version2
         private double _specificHeat;
         private double _thermalConductivity;
         private TDimen dimen1;
+        ResourceManager rm = new ResourceManager("CS.Resources.MessageBox", typeof(MainPage).Assembly);
 
         private void InitializeTextBoxes()
         {
@@ -173,7 +175,7 @@ namespace Version2
                         }
                     }
 
-                    MessageBox.Show("Data saved successfully.", "Save Data", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show(rm.GetString("DataSaved"), "Save Data", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
         }

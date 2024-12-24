@@ -16,9 +16,11 @@ void logError(const std::string& errorMessage) {
     std::ofstream errorFile("C:/My projects/Server for app/error_log.txt", std::ios::app);
     if (errorFile.is_open()) {
         time_t now = time(0);
-        tm* localTime = localtime(&now);
+        tm localTime;
+        localtime_s(&localTime, &now); // Безопасная версия localtime
+
         char timeBuffer[80];
-        strftime(timeBuffer, 80, "[%Y-%m-%d %H:%M:%S] ", localTime);
+        strftime(timeBuffer, 80, "[%Y-%m-%d %H:%M:%S] ", &localTime);
         errorFile << timeBuffer << errorMessage << std::endl;
     }
     else {
@@ -30,9 +32,11 @@ void logProgress(const std::string& logMessage) {
     std::ofstream progressFile("C:/My projects/Server for app/progress_log.txt", std::ios::app);
     if (progressFile.is_open()) {
         time_t now = time(0);
-        tm* localTime = localtime(&now);
+        tm localTime;
+        localtime_s(&localTime, &now); // Безопасная версия localtime
+
         char timeBuffer[80];
-        strftime(timeBuffer, 80, "[%Y-%m-%d %H:%M:%S] ", localTime);
+        strftime(timeBuffer, 80, "[%Y-%m-%d %H:%M:%S] ", &localTime);
         progressFile << timeBuffer << logMessage << std::endl;
     }
     else {
