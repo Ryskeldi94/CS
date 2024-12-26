@@ -23,13 +23,16 @@ namespace CS
         
         public SettingsPage()
         {
+
             InitializeComponent();
             PathJson = CS.Properties.Settings.Default.UserFilePathForJson;
             PathServer = CS.Properties.Settings.Default.UserFilePathForServer;
+            SelectedLanguage = CS.Properties.Settings.Default.UserSetLanguage;
+            SelectedTheme = Program.GlobalVariables.Theme;
         }
 
-        string SelectedLanguage;
-        string SelectedTheme;
+        string SelectedLanguage = Program.GlobalVariables.Language;
+        string SelectedTheme = Program.GlobalVariables.Theme;
         string PathServer;
         string PathJson;
 
@@ -85,7 +88,7 @@ namespace CS
 
             if (!IsServerFileValid(PathServer))
             {
-                return; 
+                return;
             }
 
             // Сохраняем язык и тему в глобальные переменные
@@ -192,7 +195,7 @@ namespace CS
 
             return true;
         }
- 
+
         private bool IsServerFileValid(string filePath)
         {
             if (string.IsNullOrEmpty(filePath) || !System.IO.File.Exists(filePath))
@@ -208,94 +211,12 @@ namespace CS
                 return false;
             }
 
-            Process serverProcess = null;
-            try
-            {
-                ProcessStartInfo serverStartInfo = new ProcessStartInfo
-                {
-                    FileName = filePath,
-                    UseShellExecute = false,
-                    CreateNoWindow = true, // Скрываем консольное окно
-                    WindowStyle = ProcessWindowStyle.Hidden
-                };
-
-                // Запуск сервера
-                serverProcess = Process.Start(serverStartInfo);
-                if (serverProcess == null)
-                {
-                    MessageBox.Show(rm.GetString("ErrorRunServer"));
-                    return false;
-                }
-
-                // Даем серверу время для запуска
-                System.Threading.Thread.Sleep(1000);
-
-                // Попытка подключения к серверу
-                using (TcpClient client = new TcpClient())
-                {
-                    client.Connect("127.0.0.1", 54000); // Попытка подключения
-                    NetworkStream stream = client.GetStream();
-
-                    // Отправка тестовых данных на сервер для проверки
-                    double density = 7.78;
-                    double specificHeat = 0.449;
-                    double alpha = 80.2;
-                    int highTempLocation = 5;
-                    float initialTemperature = 100.0f;
-                    float ambientTemperature = 20.0f;
-                    int nx = 10;
-                    int calculationType = 1;
-                    int numSteps = 10;
-
-                    // Отправка данных
-                    stream.Write(BitConverter.GetBytes(calculationType), 0, sizeof(int));
-                    stream.Write(BitConverter.GetBytes(density), 0, sizeof(double));
-                    stream.Write(BitConverter.GetBytes(specificHeat), 0, sizeof(double));
-                    stream.Write(BitConverter.GetBytes(alpha), 0, sizeof(double));
-                    stream.Write(BitConverter.GetBytes(highTempLocation), 0, sizeof(int));
-                    stream.Write(BitConverter.GetBytes(initialTemperature), 0, sizeof(float));
-                    stream.Write(BitConverter.GetBytes(ambientTemperature), 0, sizeof(float));
-                    stream.Write(BitConverter.GetBytes(numSteps), 0, sizeof(int));
-                    stream.Write(BitConverter.GetBytes(nx), 0, sizeof(int));
-
-                    // Ожидание ответа от сервера
-                    byte[] buffer = new byte[sizeof(double) * nx * numSteps];
-                    int bytesRead = stream.Read(buffer, 0, buffer.Length);
-
-                    // Закрытие соединения
-                    stream.Close();
-
-                    if (bytesRead == sizeof(double) * nx * numSteps)
-                    {
-                        return true; // Сервер корректен и ответил
-                    }
-                    else
-                    {
-                        MessageBox.Show("Сервер дал некорректный ответ.");
-                        return false;
-                    }
-                }
-            }
-            catch (SocketException ex)
-            {
-                MessageBox.Show($"Не удалось подключиться к серверу: {ex.Message}", rm.GetString("error"), MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return false;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Ошибка проверки сервера: {ex.Message}", rm.GetString("error"), MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return false;
-            }
-            //finally
-            //{
-            //    // завершение работы сервера
-            //    if (serverprocess != null && !serverprocess.hasexited)
-            //    {
-            //        serverprocess.kill(); 
-            //    }
-            //}
+            return true;
         }
 
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
 
+        }
     }
 }

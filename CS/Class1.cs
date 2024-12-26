@@ -5,14 +5,19 @@ using System.Drawing.Drawing2D;
 using System.Globalization;
 using System.Threading;
 using System.Windows.Forms;
+using System.Runtime.InteropServices; 
 
 namespace Version2
 {
     internal static class Program
     {
+        [DllImport("user32.dll")]
+        private static extern bool SetProcessDPIAware();
+
         [STAThread]
         static void Main()
         {
+            SetProcessDPIAware();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new MainPage());
@@ -160,18 +165,5 @@ namespace Version2
                 Thread.CurrentThread.CurrentUICulture = new CultureInfo("kk-KZ");
             }
         }
-
-        private static void Button_Paint(object sender, PaintEventArgs e) {
-            Button btn = sender as Button;
-            GraphicsPath path = new GraphicsPath();
-            path.AddArc(0, 0, 20, 20, 180, 90);
-            path.AddArc(btn.Width - 21, 0, 20, 20, 270, 90);
-            path.AddArc(btn.Width - 21, btn.Height - 21, 20, 20, 0, 90);
-            path.AddArc(0, btn.Height - 21, 20, 20, 90, 90);
-            path.CloseAllFigures();
-            btn.FlatAppearance.BorderSize = 0;
-            btn.Region = new Region(path);
-        }
-
     }
 }

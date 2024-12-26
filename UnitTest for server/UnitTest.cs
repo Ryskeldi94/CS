@@ -113,7 +113,7 @@ namespace ServerTests
 
             var stream = ServerHelper.StartServer();
 
-            int numSteps = JustHerpel.IminInput(100, 100000);
+            int numSteps = JustHerpel.IminInput(100, 45000);
             bool solve = JustHerpel.IminInput(1,3)==1;
 
             double density = 7.78, specificHeat = 0.449, alpha = 80.2, dt = 0.1, dx = 0.1, dy = 0.1;

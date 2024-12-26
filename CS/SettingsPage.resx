@@ -288,9 +288,6 @@
   <data name="&gt;&gt;languageComboBox.Type" xml:space="preserve">
     <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="BrowsButtonJson.Location" type="System.Drawing.Point, System.Drawing">
-    <value>784, 267</value>
-  </data>
   <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
     <value>28, 195</value>
   </data>
@@ -335,9 +332,6 @@
   </data>
   <data name="&gt;&gt;JsonPathTextBox.ZOrder" xml:space="preserve">
     <value>3</value>
-  </data>
-  <data name="label4.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Arial, 24pt, style=Bold</value>
   </data>
   <data name="label3.TabIndex" type="System.Int32, mscorlib">
     <value>10</value>
@@ -417,6 +411,9 @@
   <data name="&gt;&gt;CancelButton.ZOrder" xml:space="preserve">
     <value>6</value>
   </data>
+  <data name="SaveButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
+  </data>
   <data name="label1.TabIndex" type="System.Int32, mscorlib">
     <value>14</value>
   </data>
@@ -489,6 +486,9 @@
   <data name="&gt;&gt;CancelButton.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;BrowseButtonServer.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="CancerButton.Text" xml:space="preserve">
     <value>Отменить</value>
   </data>
@@ -534,6 +534,9 @@
   <data name="ThemeComboBox.Location" type="System.Drawing.Point, System.Drawing">
     <value>667, 145</value>
   </data>
+  <data name="&gt;&gt;label4.Name" xml:space="preserve">
+    <value>label4</value>
+  </data>
   <data name="label2.Text" xml:space="preserve">
     <value>Изменить язык</value>
   </data>
@@ -549,8 +552,8 @@
   <data name="&gt;&gt;serverPathTextBox.Name" xml:space="preserve">
     <value>serverPathTextBox</value>
   </data>
-  <data name="&gt;&gt;BrowseButtonServer.ZOrder" xml:space="preserve">
-    <value>0</value>
+  <data name="BrowsButtonJson.Location" type="System.Drawing.Point, System.Drawing">
+    <value>784, 267</value>
   </data>
   <data name="ThemeComboBox.Items" xml:space="preserve">
     <value>Белый</value>
@@ -564,8 +567,8 @@
   <data name="SaveButon.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="SaveButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 23</value>
+  <data name="label4.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial, 24pt, style=Bold</value>
   </data>
   <data name="languageComboBox.Size" type="System.Drawing.Size, System.Drawing">
     <value>344, 28</value>
@@ -603,9 +606,6 @@
   <data name="BrowsButtonServer.Location" type="System.Drawing.Point, System.Drawing">
     <value>784, 421</value>
   </data>
-  <data name="&gt;&gt;CancerButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="SaveButon.Location" type="System.Drawing.Point, System.Drawing">
     <value>749, 548</value>
   </data>
@@ -639,8 +639,8 @@
   <data name="&gt;&gt;panel1.Type" xml:space="preserve">
     <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;label4.Name" xml:space="preserve">
-    <value>label4</value>
+  <data name="&gt;&gt;CancerButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>

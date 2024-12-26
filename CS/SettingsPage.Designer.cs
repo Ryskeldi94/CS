@@ -62,6 +62,7 @@
             this.panel1.Controls.Add(this.languageComboBox);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Name = "panel1";
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // BrowseButtonServer
             // 
