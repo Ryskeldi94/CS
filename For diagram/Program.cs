@@ -31,39 +31,39 @@ class Program
         int highTempX = 5, highTempY = 5, nx = 10, ny = 10;
         float initialTemperature = 100.0f, ambientTemperature = 20.0f;
 
-        //for (int numsteps = 100; numsteps<45000; numsteps+=100)
-        //{
-        //    stopwatch stopwatch = new stopwatch();
-        //    stopwatch.start();
+        for (int numsteps = 100; numsteps<45000; numsteps+=100)
+        {
+            Stopwatch stopwatch = new Stopwatch();
+            stopwatch.Start();
 
-        //    stream.write(bitconverter.getbytes(1), 0, sizeof(int));
-        //    stream.write(bitconverter.getbytes(density), 0, sizeof(double));
-        //    stream.write(bitconverter.getbytes(specificheat), 0, sizeof(double));
-        //    stream.write(bitconverter.getbytes(alpha), 0, sizeof(double));
-        //    stream.write(bitconverter.getbytes(hightempx), 0, sizeof(int));
-        //    stream.write(bitconverter.getbytes(initialtemperature), 0, sizeof(float));
-        //    stream.write(bitconverter.getbytes(ambienttemperature), 0, sizeof(float));
-        //    stream.write(bitconverter.getbytes(numsteps), 0, sizeof(int));
-        //    stream.write(bitconverter.getbytes(nx), 0, sizeof(int));
-        //    stream.write(bitconverter.getbytes(dt), 0, sizeof(double));
-        //    stream.write(bitconverter.getbytes(dx), 0, sizeof(double));
+            stream.Write(BitConverter.GetBytes(1), 0, sizeof(int));
+            stream.Write(BitConverter.GetBytes(density), 0, sizeof(double));
+            stream.Write(BitConverter.GetBytes(specificHeat), 0, sizeof(double));
+            stream.Write(BitConverter.GetBytes(alpha), 0, sizeof(double));
+            stream.Write(BitConverter.GetBytes(highTempX), 0, sizeof(int));
+            stream.Write(BitConverter.GetBytes(initialTemperature), 0, sizeof(float));
+            stream.Write(BitConverter.GetBytes(ambientTemperature), 0, sizeof(float));
+            stream.Write(BitConverter.GetBytes(numsteps), 0, sizeof(int));
+            stream.Write(BitConverter.GetBytes(nx), 0, sizeof(int));
+            stream.Write(BitConverter.GetBytes(dt), 0, sizeof(double));
+            stream.Write(BitConverter.GetBytes(dx), 0, sizeof(double));
 
-        //    byte[] buffer = new byte[sizeof(double) * nx * numsteps];
-        //    int bytesread = stream.read(buffer, 0, buffer.length);
+            byte[] buffer = new byte[sizeof(double) * nx * numsteps];
+            int bytesread = stream.Read(buffer, 0, buffer.Length);
 
-        //    stopwatch.stop();
+            stopwatch.Stop();
             
-        //    using (filestream fstream = new filestream(@"c:\my projects\for diagram\1d.txt", filemode.append))
-        //    {
-        //        string text = $"{numsteps}: {stopwatch.elapsed}\r\n";
-        //        // преобразуем строку в байты
-        //        byte[] buffer1 = encoding.default.getbytes(text);
-        //        // запись массива байтов в файл
-        //        await fstream.writeasync(buffer1, 0, buffer1.length);
-        //    }
-        //    console.writeline($"1: {numsteps}");
-        //    thread.sleep(500);
-        //}
+            using (FileStream fstream = new FileStream(@"c:\my projects\for diagram\1d.txt", FileMode.Append))
+            {
+                string text = $"{numsteps}: {stopwatch.Elapsed}\r\n";
+                // преобразуем строку в байты
+                byte[] buffer1 = Encoding.Default.GetBytes(text);
+                // запись массива байтов в файл
+                await fstream.WriteAsync(buffer1, 0, buffer1.Length);
+            }
+            Console.WriteLine($"1: {numsteps}");
+            Thread.Sleep(500);
+        }
 
         for (int numSteps = 100; numSteps < 80000; numSteps += 100)
         {
